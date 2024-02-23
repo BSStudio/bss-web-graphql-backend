@@ -1,4 +1,4 @@
-import dotenv from 'dotenv';
+import dotenv from 'dotenv'
 
 dotenv.config()
 
@@ -33,7 +33,7 @@ const config: Config = {
     schema: process.env.DB_SCHEMA,
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
-  }
+  },
 }
 
 export default config

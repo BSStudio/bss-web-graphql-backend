@@ -1,3 +1,3 @@
-import healthRouter from './health';
+import healthRouter from './health'
 
-export { healthRouter };
+export { healthRouter }

@@ -1,3 +1,3 @@
-import compress from "koa-compress";
+import compress from 'koa-compress'
 
-export default compress({ threshold: 0 });
+export default compress({ threshold: 0 })
