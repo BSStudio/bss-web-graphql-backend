@@ -15,6 +15,16 @@
         "plugin:@typescript-eslint/strict-type-checked",
         "plugin:prettier/recommended"
       ]
+    },
+    {
+      "files": [
+        "*.test.ts"
+      ],
+      "extends": [
+        "eslint:recommended",
+        "plugin:jest/all",
+        "plugin:prettier/recommended"
+      ]
     }
   ]
 }

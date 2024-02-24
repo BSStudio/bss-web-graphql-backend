@@ -1,10 +1,6 @@
-import { Pool } from 'pg'
 import config from '../config'
 import { postgraphile, PostGraphileOptions } from 'postgraphile'
-
-const pool = new Pool({
-  ...config.database,
-})
+import database from '../database'
 
 const postGraphileOptions: PostGraphileOptions = {
   subscriptions: true,
@@ -14,10 +10,14 @@ const postGraphileOptions: PostGraphileOptions = {
   ignoreRBAC: false,
   extendedErrors: ['errcode'],
   appendPlugins: [require('@graphile-contrib/pg-simplify-inflector')],
-  graphiql: false,
+  graphiql: true,
   enableQueryBatching: true,
   disableQueryLog: true,
   legacyRelations: 'omit',
 }
 
-export default postgraphile(pool, config.database.schema, postGraphileOptions)
+export default postgraphile(
+  database.postgres,
+  config.database.schema,
+  postGraphileOptions,
+)
