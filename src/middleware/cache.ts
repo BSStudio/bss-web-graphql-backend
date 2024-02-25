@@ -1,5 +1,5 @@
 import koaCash, { Options } from 'koa-cash'
-import redis from '../database/redis'
+import { redis } from '../database'
 import stringify from 'fast-safe-stringify'
 
 // koa types does not have a method property
