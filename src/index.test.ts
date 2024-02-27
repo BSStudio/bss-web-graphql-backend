@@ -1,5 +1,5 @@
-import {describe, xit} from '@jest/globals'
+import { describe, it } from '@jest/globals'
 
 describe('index', () => {
-  xit('should be tested', () => {})
+  it.skip('should be tested', () => {})
 })
