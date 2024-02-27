@@ -2,7 +2,7 @@ import config from '../config'
 import { postgraphile, PostGraphileOptions } from 'postgraphile'
 import { postgres } from '../database'
 
-const postGraphileOptions: PostGraphileOptions = {
+const options: PostGraphileOptions = {
   // production defaults from:
   // https://www.graphile.org/postgraphile/usage-library/#for-production
   subscriptions: true,
@@ -19,4 +19,4 @@ const postGraphileOptions: PostGraphileOptions = {
   ...config.postGraphile,
 }
 
-export default postgraphile(postgres, config.schema, postGraphileOptions)
+export default postgraphile(postgres, config.schema, options)
