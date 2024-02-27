@@ -1,6 +1,7 @@
 version: '2.1'
 orbs:
   node: circleci/node@5.2.0
+  docker: circleci/docker@2.5.0
 workflows:
   Build:
     jobs:
@@ -13,3 +14,15 @@ workflows:
       - node/run:
           name: Lint
           npm-run: lint
+      - docker/hadolint:
+          name: Lint Dockerfile
+      - docker/publish:
+          name: Build docker image
+          deploy: false
+          image: bsstudio/bss-web-public-backend
+          registry: ghcr.io
+          executor: docker/docker
+          remote-docker-version: default
+          use-remote-docker: true
+          remote-docker-dlc: true
+          use-buildkit: true
