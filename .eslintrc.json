@@ -1,10 +1,16 @@
 {
   "root": true,
-  "ignorePatterns": ["dist/"],
+  "ignorePatterns": [
+    "dist/",
+    "coverage/"
+  ],
   "overrides": [
     {
       "files": [
-        "*.ts"
+        "src/**/*.ts"
+      ],
+      "excludedFiles": [
+        "src/**/*.test.ts"
       ],
       "parserOptions": {
         "project": true,
@@ -15,16 +21,16 @@
         "plugin:@typescript-eslint/strict-type-checked",
         "plugin:prettier/recommended"
       ]
-    },
-    {
-      "files": [
-        "*.test.ts"
-      ],
-      "extends": [
-        "eslint:recommended",
-        "plugin:jest/all",
-        "plugin:prettier/recommended"
-      ]
     }
+//    {
+//      "files": [
+//        "src/**.test.ts"
+//      ],
+//      "extends": [
+//        "eslint:recommended",
+//        "plugin:jest/all",
+//        "plugin:prettier/recommended"
+//      ]
+//    }
   ]
 }

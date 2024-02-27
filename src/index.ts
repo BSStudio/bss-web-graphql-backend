@@ -3,8 +3,6 @@ import config from './config'
 import { bodyParser, compress, helmet, postGraphile } from './middleware'
 import { healthRouter } from './router'
 
-console.log(config)
-
 const app = new koa()
 // register middleware
 app

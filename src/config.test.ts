@@ -1,5 +1,5 @@
 import {describe, xit} from '@jest/globals'
 
-describe('index', () => {
+describe('config', () => {
   xit('should be tested', () => {})
 })

@@ -7,6 +7,7 @@
     "start": "node dist/index.js",
     "dev": "nodemon src/index.ts",
     "test": "jest",
+    "lint": "eslint .",
     "semantic-release": "semantic-release"
   },
   "author": "",
@@ -27,6 +28,7 @@
     "@types/koa-bodyparser": "4.3.12",
     "@types/koa-compress": "4.0.6",
     "@types/koa-router": "7.4.8",
+    "@types/supertest": "^6.0.2",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-jest": "^27.9.0",
@@ -34,10 +36,12 @@
     "jest": "^29.7.0",
     "nodemon": "3.1.0",
     "prettier": "^3.2.5",
+    "semantic-release": "^23.0.2",
+    "supertest": "^6.3.4",
+    "ts-jest": "29.1.2",
     "ts-node": "10.9.2",
     "typescript": "^5.3.3",
-    "typescript-eslint": "^7.0.2",
-    "semantic-release": "^23.0.2"
+    "typescript-eslint": "^7.0.2"
   },
   "repository": {
     "type": "git",
