@@ -1,4 +1,4 @@
-# BSS web public backend
+# BSS web graphQL backend
 
 This project exposes public information for the BSS website.
 It uses [Postgraphile][postgraphile] to expose a GraphQL API.
