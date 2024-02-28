@@ -1,10 +1,10 @@
-FROM node:20-alpine as base
+FROM node:20-alpine AS base
 WORKDIR /app
 COPY package.json package-lock.json ./
-RUN npm install --omit=dev
+RUN npm clean-install --ignore-scripts --no-fund --no-audit --omit=dev
 
-FROM base as builder
-RUN npm install
+FROM base AS builder
+RUN npm clean-install --ignore-scripts --no-fund --no-audit
 COPY ./ ./
 RUN npm run build
 
