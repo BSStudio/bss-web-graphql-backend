@@ -15,6 +15,7 @@ if (process.env.DATABASE_CONNECTION_STRING === undefined) {
   throw new Error('DATABASE_CONNECTION_STRING is not set')
 }
 
+// Please update the environment variables documentation in the README.md file
 const config: Config = {
   port: Number(process.env.PORT) || 3000,
   database: {

@@ -8,6 +8,7 @@
     "dev": "nodemon src/index.ts",
     "test": "jest",
     "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "semantic-release": "semantic-release"
   },
   "author": "",
