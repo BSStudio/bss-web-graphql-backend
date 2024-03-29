@@ -1,6 +1,6 @@
-import { afterAll, describe, expect, it, jest } from '@jest/globals'
+import {describe, afterAll, it} from 'vitest'
 import supertest from 'supertest'
-import healthRouter from './health'
+import healthRouter from '../../src/router/health'
 import koa from "koa";
 
 describe('health', () => {

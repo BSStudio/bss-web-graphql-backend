@@ -1,14 +1,18 @@
 FROM node:20-alpine AS base
-WORKDIR /app
+WORKDIR /home/node
 COPY package.json package-lock.json ./
-RUN npm clean-install --ignore-scripts --no-fund --no-audit --omit=dev
+RUN npm clean-install --ignore-scripts --no-fund --no-audit --omit=optional --omit=dev
 
 FROM base AS builder
-RUN npm clean-install --ignore-scripts --no-fund --no-audit
-COPY ./ ./
+RUN npm clean-install --ignore-scripts --no-fund --no-audit --omit=optional
+COPY ./src ./src
+COPY tsconfig.json ./
 RUN npm run build
 
 FROM base
-COPY --from=builder /app/dist ./
+# node packages were installed as root, so we need to change the owner to node
+RUN chown -R node:node /home/node
+USER node:node
+COPY --from=builder /home/node/dist ./
 EXPOSE 3000
 ENTRYPOINT ["node", "index.js"]

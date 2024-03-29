@@ -4,7 +4,7 @@ import { PoolConfig } from 'pg'
 
 dotenv.config()
 
-interface Config {
+export interface Config {
   port: number
   database: PoolConfig
   schema: string

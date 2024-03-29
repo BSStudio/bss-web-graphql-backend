@@ -16,6 +16,7 @@ const options: PostGraphileOptions = {
   enableQueryBatching: true,
   disableQueryLog: true,
   legacyRelations: 'omit',
+  disableDefaultMutations: true,
   ...config.postGraphile,
 }
 

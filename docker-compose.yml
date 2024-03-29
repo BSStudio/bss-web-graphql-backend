@@ -1,0 +1,52 @@
+services:
+  graphql:
+    build: .
+    ports:
+      - "127.0.0.1:3000:3000"
+    environment:
+      DATABASE_CONNECTION_STRING: "postgresql://user:password@db:5432/bss"
+      POSTGRAPHILE_GRAPHIQL: "true"
+      POSTGRAPHILE_WATCH_PG: "true"
+      POSTGRAPHILE_SHOW_ERROR_STACK: "true"
+    depends_on:
+      - backend
+    healthcheck:
+      test: ""
+      start_period: 5s
+      interval: 30s
+      timeout: 5s
+      retries: 3
+  # once db is initialized, we can shut down the container
+  # however it makes it easy to add data to the db
+  backend:
+    image: ghcr.io/bsstudio/bss-web-admin-backend:v1.8.0
+    healthcheck:
+      test: "wget --tries=1 --no-verbose -qO- http://localhost:8080/actuator/health | grep -q UP"
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+    depends_on:
+      - db
+    environment:
+      bss.file-api.url: "http://mock-file-api:8080"
+      spring.security.user.password: "password"
+      spring.datasource.url: "jdbc:postgresql://db:5432/bss?currentSchema=private"
+      spring.datasource.username: "user"
+      spring.datasource.password: "password"
+      spring.flyway.default-schema: "private"
+      spring.flyway.schemas: "private, public"
+  db:
+    image: "postgres:16.2-alpine3.18"
+    ports:
+      - "1111:5432"
+    environment:
+      POSTGRES_DB: "bss"
+      POSTGRES_USER: "user"
+      POSTGRES_PASSWORD: "password"
+    healthcheck:
+      test: "pg_isready -q -U postgres"
+      start_period: 5s
+      interval: 30s
+      timeout: 5s
+      retries: 3
