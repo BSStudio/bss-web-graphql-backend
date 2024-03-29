@@ -1,6 +1,6 @@
 import {describe, it, vi, expect} from 'vitest'
 import {Pool} from 'pg'
-import config from '../../src/config'
+import config from '../../src/config.js'
 
 vi.mock('pg', () => {
   return {
@@ -21,7 +21,7 @@ describe('postgres', () => {
   it('should be tested', async () => {
     expect.assertions(1)
 
-    const { default: actual } = await import('../../src/database/postgres')
+    const { default: actual } = await import('../../src/database/postgres.js')
 
     expect.soft(actual).toMatchObject(new Pool(mockConfig.database))
   })

@@ -1,7 +1,12 @@
 import koa from 'koa'
-import config from './config'
-import { bodyParser, compress, helmet, postGraphile } from './middleware'
-import { healthRouter } from './router'
+import config from './config.js'
+import {
+  bodyParser,
+  compress,
+  helmet,
+  postGraphile,
+} from './middleware/index.js'
+import { healthRouter } from './router/index.js'
 
 const app = new koa()
 // register middleware

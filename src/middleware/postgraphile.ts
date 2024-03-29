@@ -1,6 +1,6 @@
-import config from '../config'
+import config from '../config.js'
 import { postgraphile, PostGraphileOptions } from 'postgraphile'
-import { postgres } from '../database'
+import { postgres } from '../database/index.js'
 
 const options: PostGraphileOptions = {
   // production defaults from:
