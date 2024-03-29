@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest'
-import { Config } from '../src/config'
-import config from '../src/config'
+import { Config } from '../src/config.js'
+import config from '../src/config.js'
 
 vi.mock('dotenv', (importOriginal) => ({
   default: {
@@ -13,7 +13,7 @@ describe('config', () => {
 
     import.meta.env.DATABASE_CONNECTION_STRING = 'connectionString'
 
-    const {default: actual} = await import('../src/config')
+    const {default: actual} = await import('../src/config.js')
 
     const expected: Config = {
       port: 3000,

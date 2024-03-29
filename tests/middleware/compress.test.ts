@@ -7,7 +7,7 @@ const mockCompress = vi.mocked(compress)
 
 describe('compress', () => {
   it('should export compress', async () => {
-    await import('../../src/middleware/compress');
+    await import('../../src/middleware/compress.js');
 
     expect(mockCompress).toHaveBeenCalledWith({ threshold: 0 })
   })

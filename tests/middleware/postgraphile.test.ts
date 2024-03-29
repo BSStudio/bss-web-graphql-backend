@@ -9,6 +9,6 @@ vi.mock('../../src/config', () => ({
 
 describe('postgraphile', () => {
   it('should be tested', async () => {
-    await import('../../src/middleware/postgraphile')
+    await import('../../src/middleware/postgraphile.js')
   })
 })

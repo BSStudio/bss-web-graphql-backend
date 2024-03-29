@@ -1,8 +1,8 @@
 import {describe, expect, it, vi} from "vitest";
-import bodyParser from '../../src/middleware/bodyparser'
-import compress from '../../src/middleware/compress'
-import helmet from '../../src/middleware/helmet'
-import postGraphile from '../../src/middleware/postgraphile'
+import bodyParser from '../../src/middleware/bodyparser.js'
+import compress from '../../src/middleware/compress.js'
+import helmet from '../../src/middleware/helmet.js'
+import postGraphile from '../../src/middleware/postgraphile.js'
 
 vi.mock('../../src/middleware/bodyparser', () => ({default: {}}))
 vi.mock('../../src/middleware/compress', () => ({default: {}}))
@@ -16,7 +16,7 @@ const mockPostGraphile = vi.mocked(postGraphile)
 
 describe('index', () => {
   it('should export middlewares', async () => {
-    const actual = await import('../../src/middleware')
+    const actual = await import('../../src/middleware/index.js')
 
     expect(actual).toMatchObject({
       bodyParser: mockBodyParser,

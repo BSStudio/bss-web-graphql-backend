@@ -1,6 +1,6 @@
 import {describe, afterAll, it} from 'vitest'
 import supertest from 'supertest'
-import healthRouter from '../../src/router/health'
+import healthRouter from '../../src/router/health.js'
 import koa from "koa";
 
 describe('health', () => {

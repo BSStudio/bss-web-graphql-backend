@@ -7,7 +7,7 @@ const mockHelmet = vi.mocked(helmet)
 
 describe('helmet', () => {
   it('should export helmet', async () => {
-    await import('../../src/middleware/helmet');
+    await import('../../src/middleware/helmet.js');
 
     expect(mockHelmet).toHaveBeenCalledWith()
   })

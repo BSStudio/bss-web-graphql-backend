@@ -1,8 +1,8 @@
 import {describe, it, vi} from 'vitest'
 import koa from 'koa'
-import config from '../src/config'
-import { bodyParser, compress, helmet, postGraphile } from '../src/middleware'
-import { healthRouter } from '../src/router'
+import config from '../src/config.js'
+import { bodyParser, compress, helmet, postGraphile } from '../src/middleware/index.js'
+import { healthRouter } from '../src/router/index.js'
 
 vi.mock('koa',  () => ({
     default: vi.fn(args => {
@@ -32,7 +32,7 @@ const mockRouter = vi.mocked('../src/router')
 
 describe.skip('index', () => {
   it('should be tested', async () => {
-    await import('../src')
+    await import('../src/index.js')
 
 
 
