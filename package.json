@@ -6,7 +6,7 @@
     "build": "tsc",
     "start": "node dist/index.js",
     "dev": "nodemon src/index.ts",
-    "test": "jest",
+    "test": "vitest",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "semantic-release": "semantic-release"
