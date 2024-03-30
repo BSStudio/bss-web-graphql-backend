@@ -48,7 +48,6 @@ workflows:
           name: Unit test
           run-command: test:ci
           test-results-path: reports
-          npm-run: test
       - coverage:
           name: Coverage
       - node/run:
