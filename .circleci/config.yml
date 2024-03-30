@@ -20,13 +20,12 @@ defaults:
       tags:
         only: /.*/
 jobs:
-  test:
+  coverage:
     executor: node/default
     steps:
       - checkout
       - node/test:
-          run-command: test:ci
-          test-results-path: test-results # todo rename
+          run-command: test:coverage
       - codecov/upload:
           flags: unit
   github_release:
@@ -48,8 +47,10 @@ workflows:
       - node/test:
           name: Unit test
           run-command: test:ci
-          test-results-path: test-results # todo rename
+          test-results-path: reports
           npm-run: test
+      - coverage:
+          name: Coverage
       - node/run:
           name: Lint
           npm-run: lint

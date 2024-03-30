@@ -212,3 +212,6 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
+# test reports
+reports
+
