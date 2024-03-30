@@ -2,6 +2,32 @@ version: '2.1'
 orbs:
   node: circleci/node@5.2.0
   docker: circleci/docker@2.5.0
+  codecov: codecov/codecov@4.0.1
+defaults:
+  docker_publish: &docker_publish
+    image: bsstudio/bss-web-graphql-backend
+    registry: ghcr.io
+    executor: docker/docker
+    remote-docker-version: default
+    use-remote-docker: true
+    remote-docker-dlc: true
+    use-buildkit: true
+  tag_only: &tag_only
+    filters:
+      branches:
+        ignore: /.*/
+      tags:
+        only: /.*/
+jobs:
+  test:
+    executor: node/default
+    steps:
+      - checkout
+      - node/test:
+          run-command: test:ci
+          test-results-path: test-results # todo rename
+      - codecov/upload:
+          flags: unit
 workflows:
   Build:
     jobs:
@@ -26,3 +52,16 @@ workflows:
           use-remote-docker: true
           remote-docker-dlc: true
           use-buildkit: true
+  Release:
+    jobs:
+      - docker/publish:
+          name: Publish image
+          context:
+            - BSS Github deploy
+          <<: [*docker_publish, *tag_only]
+          tag: latest,<< pipeline.git.tag >>
+      - github_release:
+          name: Create release
+          context:
+            - BSS Github deploy
+          <<: *tag_only

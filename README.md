@@ -1,5 +1,25 @@
 # BSS web graphQL backend
 
+![CircleCI](https://img.shields.io/circleci/build/github/BSStudio/bss-web-graphql-backend/main?label=build)
+![GitHub Release Date](https://img.shields.io/github/release-date/BSStudio/bss-web-graphql-backend)
+![GitHub Tag](https://img.shields.io/github/v/tag/BSStudio/bss-web-graphql-backend)
+![GitHub branch checks state](https://img.shields.io/github/checks-status/BSStudio/bss-web-graphql-backend/main)
+![Codecov branch](https://img.shields.io/codecov/c/gh/BSStudio/bss-web-graphql-backend/main)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/BSStudio/bss-web-graphql-backend)
+![GitHub](https://img.shields.io/github/license/BSStudio/bss-web-graphql-backend)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=BSStudio_bss-web-graphql-backend&metric=bugs)](https://sonarcloud.io/dashboard?id=BSStudio_bss-web-graphql-backend)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=BSStudio_bss-web-graphql-backend&metric=code_smells)](https://sonarcloud.io/dashboard?id=BSStudio_bss-web-graphql-backend)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=BSStudio_bss-web-graphql-backend&metric=duplicated_lines_density)](https://sonarcloud.io/dashboard?id=BSStudio_bss-web-graphql-backend)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=BSStudio_bss-web-graphql-backend&metric=ncloc)](https://sonarcloud.io/dashboard?id=BSStudio_bss-web-graphql-backend)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=BSStudio_bss-web-graphql-backend&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=BSStudio_bss-web-graphql-backend)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=BSStudio_bss-web-graphql-backend&metric=alert_status)](https://sonarcloud.io/dashboard?id=BSStudio_bss-web-graphql-backend)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=BSStudio_bss-web-graphql-backend&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=BSStudio_bss-web-graphql-backend)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=BSStudio_bss-web-graphql-backend&metric=security_rating)](https://sonarcloud.io/dashboard?id=BSStudio_bss-web-graphql-backend)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=BSStudio_bss-web-graphql-backend&metric=sqale_index)](https://sonarcloud.io/dashboard?id=BSStudio_bss-web-graphql-backend)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=BSStudio_bss-web-graphql-backend&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=BSStudio_bss-web-graphql-backend)
+
+
+
 This project exposes public information for the BSS website.
 It uses [Postgraphile][postgraphile] to expose a GraphQL API.
 

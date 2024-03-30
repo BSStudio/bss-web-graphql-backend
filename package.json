@@ -7,6 +7,7 @@
     "start": "node dist/index.js",
     "dev": "nodemon src/index.ts",
     "test": "vitest",
+    "test:ci": "vitest --coverage",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "semantic-release": "semantic-release"
@@ -30,23 +31,23 @@
     "@types/koa-bodyparser": "4.3.12",
     "@types/koa-compress": "4.0.6",
     "@types/koa-router": "7.4.8",
-    "@types/supertest": "^6.0.2",
-    "@vitest/ui": "^1.4.0",
+    "@types/supertest": "6.0.2",
     "ts-node": "10.9.2",
-    "typescript": "^5.3.3"
+    "typescript": "5.3.3"
   },
   "optionalDependencies": {
-    "@vitest/coverage-v8": "^1.4.0",
-    "eslint": "^8.56.0",
+    "@vitest/coverage-v8": "1.4.0",
+    "@vitest/ui": "1.4.0",
+    "eslint": "8.56.0",
     "eslint-config-prettier": "9.1.0",
-    "eslint-plugin-jest": "^27.9.0",
-    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-jest": "27.9.0",
+    "eslint-plugin-prettier": "5.1.3",
     "nodemon": "3.1.0",
-    "prettier": "^3.2.5",
-    "semantic-release": "^23.0.2",
-    "supertest": "^6.3.4",
-    "typescript-eslint": "^7.0.2",
-    "vitest": "^1.4.0"
+    "prettier": "3.2.5",
+    "semantic-release": "23.0.2",
+    "supertest": "6.3.4",
+    "typescript-eslint": "7.0.2",
+    "vitest": "1.4.0"
   },
   "repository": {
     "type": "git",
