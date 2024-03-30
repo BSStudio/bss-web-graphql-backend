@@ -28,6 +28,16 @@ jobs:
           test-results-path: test-results # todo rename
       - codecov/upload:
           flags: unit
+  github_release:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - github-cli/install:
+          version: 2.43.1
+      - github-cli/setup:
+          version: 2.43.1
+      - run: gh release create << pipeline.git.tag >> -t << pipeline.git.tag >> --generate-notes
 workflows:
   Build:
     jobs:
