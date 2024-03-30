@@ -24,8 +24,8 @@ jobs:
     executor: node/default
     steps:
       - checkout
-      - node/run:
-          npm-run: test:coverage
+      - node/install-packages
+      - run: npm run test:coverage
       - codecov/upload:
           flags: unit
   github_release:
