@@ -45,8 +45,10 @@ workflows:
       - node/run:
           name: Compile
           npm-run: build
-      - node/run:
+      - node/test:
           name: Unit test
+          run-command: test:ci
+          test-results-path: test-results # todo rename
           npm-run: test
       - node/run:
           name: Lint
