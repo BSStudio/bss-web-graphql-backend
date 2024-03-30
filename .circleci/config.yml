@@ -28,6 +28,8 @@ jobs:
       - run: npm run test:coverage
       - codecov/upload:
           flags: unit
+      - store_artifacts:
+          path: reports
   github_release:
     docker:
       - image: cimg/base:stable
