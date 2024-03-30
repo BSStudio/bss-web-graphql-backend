@@ -7,7 +7,7 @@
     "start": "node dist/index.js",
     "dev": "nodemon src/index.ts",
     "test": "vitest",
-    "test:ci": "vitest --run --reporter=junit --outputFile=reports/test-results.xml",
+    "test:ci": "vitest --run --reporter=junit --outputFile=reports/test-results.xml --reporter=basic",
     "test:coverage": "vitest --run --coverage --coverage.reporter=lcov",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
