@@ -20,19 +20,12 @@ defaults:
       tags:
         only: /.*/
 jobs:
-  test:
-    executor: node/default
-    steps:
-      - checkout
-      - node/test:
-          run-command: test:ci
-          test-results-path: reports
   coverage:
     executor: node/default
     steps:
       - checkout
-      - node/test:
-          run-command: test:coverage
+      - node/run:
+          npm-run: test:coverage
       - codecov/upload:
           flags: unit
   github_release:
@@ -51,8 +44,10 @@ workflows:
       - node/run:
           name: Compile
           npm-run: build
-      - test:
+      - node/test:
           name: Unit test
+          run-command: test:ci
+          test-results-path: reports
       - coverage:
           name: Coverage
       - node/run:
