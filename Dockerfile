@@ -16,3 +16,6 @@ USER node:node
 COPY --from=builder /home/node/dist ./
 EXPOSE 3000
 ENTRYPOINT ["node", "index.js"]
+LABEL org.opencontainers.image.source="https://github.com/BSStudio/bss-web-graphql-backend"
+LABEL org.opencontainers.image.description="BSS Web GraphQL backend"
+LABEL org.opencontainers.image.licenses="GPL-3.0"
