@@ -9,10 +9,12 @@ const mockPostgres = vi.mocked(postgres)
 
 describe('index', () => {
   it('should export databases', async () => {
-    expect.assertions(1)
+    expect.assertions(2)
 
     const actual = await import('../../src/database/index.js')
 
-    expect(actual).toMatchObject({ postgres: mockPostgres })
+    const expected = { postgres: mockPostgres }
+    expect.soft(actual).toMatchObject(expected)
+    expect.soft(Object.keys(actual)).toEqual(Object.keys(expected))
   })
 })

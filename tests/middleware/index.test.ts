@@ -24,15 +24,17 @@ const mockPostGraphile = vi.mocked(postGraphile)
 
 describe('index', () => {
   it('should export middlewares', async () => {
-    expect.assertions(1)
+    expect.assertions(2)
 
     const actual = await import('../../src/middleware/index.js')
 
-    expect(actual).toMatchObject({
+    const expected = {
       bodyParser: mockBodyParser,
       compress: mockCompress,
       helmet: mockHelmet,
       postGraphile: mockPostGraphile,
-    })
+    }
+    expect.soft(actual).toMatchObject(expected)
+    expect.soft(Object.keys(actual)).toEqual(Object.keys(expected))
   })
 })

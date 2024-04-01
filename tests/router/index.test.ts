@@ -9,10 +9,12 @@ const mockHealthRouter = vi.mocked(healthRouter)
 
 describe('index', () => {
   it('should export routers', async () => {
-    expect.assertions(1)
+    expect.assertions(2)
 
     const actual = await import('../../src/router/index.js')
 
-    expect(actual).toMatchObject({ healthRouter: mockHealthRouter })
+    const expected = { healthRouter: mockHealthRouter }
+    expect.soft(actual).toMatchObject(expected)
+    expect.soft(Object.keys(actual)).toEqual(Object.keys(expected))
   })
 })
