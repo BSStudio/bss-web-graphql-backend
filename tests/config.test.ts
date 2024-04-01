@@ -14,7 +14,6 @@ describe('config', () => {
     expect.assertions(2)
 
     mockDotenv.config.mockImplementation(() => {
-      console.log('with env')
       vi.stubEnv('DATABASE_CONNECTION_STRING', 'connectionString')
       return {}
     })

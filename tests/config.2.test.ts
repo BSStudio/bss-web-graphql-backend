@@ -12,7 +12,6 @@ describe('config', () => {
   it('should throw error when DATABASE_CONNECTION_STRING is not set', async () => {
     expect.assertions(2)
     mockDotenv.config.mockImplementation(() => {
-      console.log('empty')
       vi.unstubAllEnvs()
       return {}
     })
