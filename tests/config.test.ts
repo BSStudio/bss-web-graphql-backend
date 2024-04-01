@@ -1,18 +1,25 @@
 import { describe, expect, it, vi } from 'vitest'
 import { Config } from '../src/config.js'
+import dotenv from 'dotenv'
 
-vi.mock('dotenv', (importOriginal) => ({
+vi.mock('dotenv', () => ({
   default: {
     config: vi.fn(),
-  }
+  },
 }))
+const mockDotenv = vi.mocked(dotenv)
 
 describe('config', () => {
-  it('should be tested', async () => {
+  it('return config with defaults', async () => {
+    expect.assertions(2)
 
-    import.meta.env.DATABASE_CONNECTION_STRING = 'connectionString'
+    mockDotenv.config.mockImplementation(() => {
+      console.log('with env')
+      vi.stubEnv('DATABASE_CONNECTION_STRING', 'connectionString')
+      return {}
+    })
 
-    const {default: actual} = await import('../src/config.js')
+    const { default: actual } = await import('../src/config.js')
 
     const expected: Config = {
       port: 3000,
@@ -26,6 +33,7 @@ describe('config', () => {
         showErrorStack: false,
       },
     }
-    expect(actual).toEqual(expected)
+    expect(mockDotenv.config).toHaveBeenCalledOnce()
+    expect(actual).toStrictEqual(expected)
   })
 })

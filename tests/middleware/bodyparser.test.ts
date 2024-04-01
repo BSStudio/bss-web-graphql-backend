@@ -6,8 +6,12 @@ const mockBodyParser = vi.mocked(bodyParser)
 
 describe('bodyparser', () => {
   it('should export bodyparser', async () => {
-    await import('../../src/middleware/bodyparser.js')
+    expect.assertions(1)
 
-    expect(mockBodyParser).toHaveBeenCalledWith()
+    const { default: actual } = await import(
+      '../../src/middleware/bodyparser.js'
+    )
+
+    expect(actual).toBe(mockBodyParser())
   })
 })

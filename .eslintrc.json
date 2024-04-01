@@ -9,9 +9,6 @@
       "files": [
         "src/**/*.ts"
       ],
-      "excludedFiles": [
-        "src/**/*.test.ts"
-      ],
       "parserOptions": {
         "project": true,
         "tsconfigRootDir": "__dirname"
@@ -24,11 +21,11 @@
     },
     {
       "files": [
-        "src/**.test.ts"
+        "tests/**/*.test.ts"
       ],
       "extends": [
         "eslint:recommended",
-        "plugin:jest/recommended",
+        "plugin:vitest/all",
         "plugin:@typescript-eslint/strict",
         "plugin:prettier/recommended"
       ]
