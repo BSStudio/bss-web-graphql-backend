@@ -12,7 +12,10 @@ import { healthRouter } from '../src/router/index.js'
 vi.mock('koa', () => ({
   default: vi.fn(() => ({
     use: vi.fn().mockName('use').mockReturnThis(),
-    listen: vi.fn().mockName('listen'),
+    listen: vi
+      .fn()
+      .mockName('listen')
+      .mockImplementation((port, cb) => cb()),
   })),
 }))
 vi.mock('../src/config.js', () => ({
