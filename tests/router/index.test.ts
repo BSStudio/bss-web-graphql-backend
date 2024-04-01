@@ -13,7 +13,6 @@ describe('index', () => {
 
     const actual = await import('../../src/router/index.js')
 
-    // todo use strictEqual
     expect(actual).toMatchObject({ healthRouter: mockHealthRouter })
   })
 })

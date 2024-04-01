@@ -13,7 +13,6 @@ describe('index', () => {
 
     const actual = await import('../../src/database/index.js')
 
-    // todo replace with toStrictEqual
     expect(actual).toMatchObject({ postgres: mockPostgres })
   })
 })

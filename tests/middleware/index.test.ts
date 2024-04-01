@@ -28,7 +28,6 @@ describe('index', () => {
 
     const actual = await import('../../src/middleware/index.js')
 
-    // todo: use toStrictEqual
     expect(actual).toMatchObject({
       bodyParser: mockBodyParser,
       compress: mockCompress,
