@@ -1,5 +1,6 @@
 import config from '../config.js'
 import { postgraphile, PostGraphileOptions } from 'postgraphile'
+import PgSimplifyInflectorPlugin from '@graphile-contrib/pg-simplify-inflector'
 import { postgres } from '../database/index.js'
 
 const options: PostGraphileOptions = {
@@ -11,7 +12,7 @@ const options: PostGraphileOptions = {
   setofFunctionsContainNulls: false,
   ignoreRBAC: false,
   extendedErrors: ['errcode'],
-  appendPlugins: [require('@graphile-contrib/pg-simplify-inflector')],
+  appendPlugins: [PgSimplifyInflectorPlugin.default],
   graphiql: false,
   enableQueryBatching: true,
   disableQueryLog: true,
