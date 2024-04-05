@@ -1,10 +1,12 @@
 import { describe, it, vi, expect } from 'vitest'
-import { Pool } from 'pg'
+import pg from 'pg'
 import config from '../../src/config.js'
 
 vi.mock('pg', () => {
   return {
-    Pool: vi.fn(),
+    default: {
+      Pool: vi.fn(),
+    },
   }
 })
 vi.mock('../../src/config', () => ({
@@ -13,7 +15,7 @@ vi.mock('../../src/config', () => ({
   },
 }))
 
-const mockPool = vi.mocked(Pool)
+const mockPg = vi.mocked(pg)
 const mockConfig = vi.mocked(config)
 
 describe('postgres', () => {
@@ -22,7 +24,7 @@ describe('postgres', () => {
 
     const { default: actual } = await import('../../src/database/postgres.js')
 
-    expect.soft(actual).toStrictEqual(new mockPool(mockConfig.database))
-    expect.soft(mockPool).toHaveBeenCalledWith(mockConfig.database)
+    expect.soft(actual).toStrictEqual(new pg.Pool(mockConfig.database))
+    expect.soft(pg.Pool).toHaveBeenCalledWith(mockConfig.database)
   })
 })
