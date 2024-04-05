@@ -25,6 +25,6 @@ describe('postgres', () => {
     const { default: actual } = await import('../../src/database/postgres.js')
 
     expect.soft(actual).toStrictEqual(new pg.Pool(mockConfig.database))
-    expect.soft(pg.Pool).toHaveBeenCalledWith(mockConfig.database)
+    expect.soft(mockPg.Pool).toHaveBeenCalledWith(mockConfig.database)
   })
 })
