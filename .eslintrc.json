@@ -10,8 +10,7 @@
         "src/**/*.ts"
       ],
       "parserOptions": {
-        "project": true,
-        "tsconfigRootDir": "__dirname"
+        "project": "tsconfig.json"
       },
       "extends": [
         "eslint:recommended",
@@ -21,8 +20,12 @@
     },
     {
       "files": [
-        "tests/**/*.test.ts"
+        "tests/**/*.test.ts",
+        "vitest.config.ts"
       ],
+      "parserOptions": {
+        "project": "tsconfig.test.json"
+      },
       "extends": [
         "eslint:recommended",
         "plugin:vitest/all",
