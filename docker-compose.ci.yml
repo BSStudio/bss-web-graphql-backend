@@ -1,0 +1,7 @@
+services:
+  graphql:
+    ports: ["3000"]
+  backend:
+    ports: ["8080"]
+  db:
+    ports: ["5432"]

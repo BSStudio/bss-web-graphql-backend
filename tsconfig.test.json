@@ -2,6 +2,9 @@
   "extends": "@tsconfig/node20/tsconfig.json",
   "include": [
     "tests/**/*.ts",
-    "vitest.config.ts"
+    "testsInt/**/*.ts",
+    "testsInt/global-setup.ts",
+    "vitest.config.ts",
+    "vitest.int.config.ts"
   ]
 }

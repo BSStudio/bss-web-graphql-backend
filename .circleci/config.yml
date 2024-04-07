@@ -4,6 +4,11 @@ orbs:
   docker: circleci/docker@2.6.0
   codecov: codecov/codecov@4.0.1
   github-cli: circleci/github-cli@2.3.0
+executors:
+  node-machine:
+    machine:
+      image: ubuntu-2204:edge
+      docker_layer_caching: true
 defaults:
   docker_publish: &docker_publish
     image: bsstudio/bss-web-graphql-backend
@@ -30,6 +35,17 @@ jobs:
           flags: unit
       - store_artifacts:
           path: reports
+  integration-test:
+    executor: node-machine
+    steps:
+      - checkout
+      - node/install-packages
+      - run:
+          command: npm run test:int:ci
+          environemnt:
+            - DEBUG: testcontainers:compose
+      - store_test_results:
+          path: reports
   github_release:
     docker:
       - image: cimg/base:stable
@@ -50,6 +66,8 @@ workflows:
           name: Unit test
           run-command: test:ci
           test-results-path: reports
+      - integration-test:
+          name: Integration test
       - coverage:
           name: Coverage
       - node/run:
