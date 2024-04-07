@@ -10,7 +10,7 @@
     "test:ci": "vitest --run --reporter=verbose --reporter=junit --outputFile.junit=reports/test-results.xml",
     "test:coverage": "vitest --run --reporter=verbose --coverage --coverage.reporter=lcov --reporter=html --outputFile.html=reports/index.html",
     "test:int": " vitest --config vitest.int.config.ts",
-    "test:int:ci": "vitest --run --config vitest.unit.config.ts --reporter=verbose --reporter=junit --outputFile.junit=reports/test-results.xml",
+    "test:int:ci": "vitest --run --config vitest.int.config.ts --reporter=verbose --reporter=junit --outputFile.junit=reports/test-results.xml",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "semantic-release": "semantic-release"
