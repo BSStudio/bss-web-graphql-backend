@@ -39,6 +39,8 @@ jobs:
     executor: node-machine
     steps:
       - checkout
+      - setup_remote_docker:
+          docker_layer_caching: true
       - node/install-packages
       - run: npm run test:int:ci
       - store_test_results:
