@@ -61,12 +61,12 @@ workflows:
       - node/run:
           name: Compile
           npm-run: build
-      - integration-test:
-          name: Unit test
       - node/test:
-          name: Integration test
+          name: Unit test
           run-command: test:int:ci
           test-results-path: reports
+      - integration-test:
+          name: Integration test
       - coverage:
           name: Coverage
       - node/run:
