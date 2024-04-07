@@ -18,7 +18,7 @@ app
   // register health router
   .use(healthRouter.routes())
   .use(healthRouter.allowedMethods())
-  // postgraphile middleware
+  // postGraphile middleware
   .use(postGraphile)
   // start server
   .listen(config.port, () => {

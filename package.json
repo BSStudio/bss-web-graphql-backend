@@ -9,6 +9,8 @@
     "test": "vitest",
     "test:ci": "vitest --run --reporter=verbose --reporter=junit --outputFile.junit=reports/test-results.xml",
     "test:coverage": "vitest --run --reporter=verbose --coverage --coverage.reporter=lcov --reporter=html --outputFile.html=reports/index.html",
+    "test:int": " vitest --config vitest.int.config.ts",
+    "test:int:ci": "vitest --run --config vitest.unit.config.ts",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "semantic-release": "semantic-release"
@@ -16,6 +18,7 @@
   "author": "",
   "license": "ISC",
   "type": "module",
+  "//": "Dependencies required at runtime",
   "dependencies": {
     "@graphile-contrib/pg-simplify-inflector": "6.1.0",
     "dotenv": "16.4.5",
@@ -26,6 +29,7 @@
     "koa-router": "12.0.1",
     "postgraphile": "4.13.0"
   },
+  "// build": "Dependencies required to build the project",
   "devDependencies": {
     "@tsconfig/node20": "20.1.4",
     "@types/koa": "2.15.0",
@@ -36,18 +40,23 @@
     "ts-node": "10.9.2",
     "typescript": "5.4.4"
   },
+  "// optional": "Dependencies that required to test and lint the project",
   "optionalDependencies": {
     "@typescript-eslint/eslint-plugin": "7.5.0",
     "@vitest/coverage-v8": "1.4.0",
     "@vitest/ui": "1.4.0",
+    "axios": "1.6.8",
     "eslint": "8.57.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-prettier": "5.1.3",
     "eslint-plugin-vitest": "0.4.1",
+    "graphql": "15.8.0",
+    "graphql-request": "6.1.0",
     "nodemon": "3.1.0",
     "prettier": "3.2.5",
     "semantic-release": "23.0.7",
     "supertest": "6.3.4",
+    "testcontainers": "10.8.1",
     "typescript-eslint": "7.5.0",
     "vitest": "1.4.0"
   },

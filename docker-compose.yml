@@ -11,9 +11,9 @@ services:
     depends_on:
       - backend
     healthcheck:
-      test: ""
+      test: "wget --tries=1 --no-verbose -qO- http://localhost:3000/actuator/health | grep -q UP"
       start_period: 5s
-      interval: 30s
+      interval: 10s
       timeout: 5s
       retries: 3
   # once db is initialized, we can shut down the container
@@ -22,10 +22,10 @@ services:
     image: ghcr.io/bsstudio/bss-web-admin-backend:v1.8.0
     healthcheck:
       test: "wget --tries=1 --no-verbose -qO- http://localhost:8080/actuator/health | grep -q UP"
+      start_period: 5s
       interval: 10s
       timeout: 5s
       retries: 5
-      start_period: 20s
     depends_on:
       - db
     environment:
@@ -39,7 +39,7 @@ services:
   db:
     image: "postgres:16.2-alpine3.18"
     ports:
-      - "1111:5432"
+      - "127.0.0.1:5432:5432"
     environment:
       POSTGRES_DB: "bss"
       POSTGRES_USER: "user"
