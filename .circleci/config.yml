@@ -61,7 +61,7 @@ workflows:
           npm-run: build
       - node/test:
           name: Unit test
-          run-command: test:int:ci
+          run-command: test:ci
           test-results-path: reports
       - integration-test:
           name: Integration test
