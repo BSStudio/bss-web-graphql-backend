@@ -50,6 +50,10 @@ workflows:
           name: Unit test
           run-command: test:ci
           test-results-path: reports
+      - node/test:
+          name: Integration test
+          run-command: test:int:ci
+          test-results-path: reports
       - coverage:
           name: Coverage
       - node/run:
