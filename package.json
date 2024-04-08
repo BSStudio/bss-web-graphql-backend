@@ -42,7 +42,7 @@
   },
   "// optional": "Dependencies that required to test and lint the project",
   "optionalDependencies": {
-    "@typescript-eslint/eslint-plugin": "7.5.0",
+    "@typescript-eslint/eslint-plugin": "7.6.0",
     "@vitest/coverage-v8": "1.4.0",
     "@vitest/ui": "1.4.0",
     "axios": "1.6.8",
@@ -56,7 +56,7 @@
     "semantic-release": "23.0.7",
     "supertest": "6.3.4",
     "testcontainers": "10.8.1",
-    "typescript-eslint": "7.5.0",
+    "typescript-eslint": "7.6.0",
     "vitest": "1.4.0"
   },
   "repository": {
