@@ -5,6 +5,7 @@ services:
       - "127.0.0.1:3000:3000"
     environment:
       DATABASE_CONNECTION_STRING: "postgresql://user:password@db:5432/bss"
+      POSTGRAPHILE_ALLOW_EXPLAIN: "true"
       POSTGRAPHILE_GRAPHIQL: "true"
       POSTGRAPHILE_WATCH_PG: "true"
       POSTGRAPHILE_SHOW_ERROR_STACK: "true"
