@@ -11,8 +11,8 @@
     "test:coverage": "vitest --run --reporter=verbose --coverage --coverage.reporter=lcov --reporter=html --outputFile.html=reports/index.html",
     "test:int": " vitest --config vitest.int.config.ts",
     "test:int:ci": "vitest --run --config vitest.int.config.ts --reporter=verbose --reporter=junit --outputFile.junit=reports/test-results.xml",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
+    "lint": "biome format .",
+    "lint:fix": "biome format . --write",
     "semantic-release": "semantic-release"
   },
   "author": "",
@@ -42,21 +42,16 @@
   },
   "// optional": "Dependencies that required to test and lint the project",
   "optionalDependencies": {
-    "@typescript-eslint/eslint-plugin": "7.6.0",
+    "@biomejs/biome": "1.6.4",
     "@vitest/coverage-v8": "1.4.0",
     "@vitest/ui": "1.4.0",
     "axios": "1.6.8",
-    "eslint": "8.57.0",
-    "eslint-config-prettier": "9.1.0",
-    "eslint-plugin-prettier": "5.1.3",
-    "eslint-plugin-vitest": "0.4.1",
     "graphql-request": "6.1.0",
     "nodemon": "3.1.0",
     "prettier": "3.2.5",
     "semantic-release": "23.0.8",
     "supertest": "6.3.4",
     "testcontainers": "10.8.1",
-    "typescript-eslint": "7.6.0",
     "vitest": "1.4.0"
   },
   "repository": {
