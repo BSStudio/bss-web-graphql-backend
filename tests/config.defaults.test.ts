@@ -4,16 +4,20 @@ import dotenv from 'dotenv'
 
 vi.mock('dotenv', () => ({
   default: {
-    config: vi.fn(),
+    configDotenv: vi.fn(),
   },
 }))
 const mockDotenv = vi.mocked(dotenv)
 
+/**
+ * there are three version of the same test defined
+ * import() will trigger side effects once per test file
+ */
 describe('config', () => {
   it('return config with defaults', async () => {
     expect.assertions(2)
 
-    mockDotenv.config.mockImplementation(() => {
+    mockDotenv.configDotenv.mockImplementation(() => {
       vi.stubEnv('DATABASE_CONNECTION_STRING', 'connectionString')
       return {}
     })
@@ -27,12 +31,13 @@ describe('config', () => {
       },
       schema: 'public',
       postGraphile: {
+        allowExplain: false,
         graphiql: false,
         watchPg: false,
         showErrorStack: false,
       },
     }
-    expect(mockDotenv.config).toHaveBeenCalledOnce()
+    expect(mockDotenv.configDotenv).toHaveBeenCalledOnce()
     expect(actual).toStrictEqual(expected)
   })
 })
