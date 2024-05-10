@@ -38,7 +38,7 @@ services:
       spring.flyway.default-schema: "private"
       spring.flyway.schemas: "private, public"
   db:
-    image: "postgres:16.2-alpine3.18"
+    image: "postgres:16.3-alpine3.18"
     ports:
       - "127.0.0.1:5432:5432"
     environment:
