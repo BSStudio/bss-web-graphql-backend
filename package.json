@@ -48,7 +48,7 @@
     "axios": "1.7.2",
     "graphql-request": "6.1.0",
     "nodemon": "3.1.4",
-    "prettier": "3.3.2",
+    "prettier": "3.3.3",
     "semantic-release": "24.0.0",
     "supertest": "7.0.0",
     "testcontainers": "10.10.3",
