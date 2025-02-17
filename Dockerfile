@@ -1,4 +1,4 @@
-FROM node:20-alpine AS base
+FROM node:22-alpine AS base
 WORKDIR /home/node
 COPY package.json package-lock.json ./
 RUN npm clean-install --ignore-scripts --no-fund --no-audit --omit=optional --omit=dev
