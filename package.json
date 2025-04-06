@@ -22,7 +22,7 @@
   "dependencies": {
     "@graphile-contrib/pg-simplify-inflector": "6.1.0",
     "dotenv": "16.4.7",
-    "koa": "2.16.0",
+    "koa": "2.16.1",
     "koa-bodyparser": "4.4.1",
     "koa-compress": "5.1.1",
     "koa-helmet": "7.1.0",
