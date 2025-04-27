@@ -27,7 +27,7 @@
     "koa-compress": "5.1.1",
     "koa-helmet": "7.1.0",
     "koa-router": "13.0.1",
-    "postgraphile": "4.14.0"
+    "postgraphile": "4.14.1"
   },
   "// build": "Dependencies required to build the project",
   "devDependencies": {
