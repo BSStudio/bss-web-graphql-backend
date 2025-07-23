@@ -45,7 +45,7 @@
     "@biomejs/biome": "1.9.4",
     "@vitest/coverage-v8": "3.2.4",
     "@vitest/ui": "3.2.4",
-    "axios": "1.10.0",
+    "axios": "1.11.0",
     "graphql-request": "6.1.0",
     "nodemon": "3.1.10",
     "prettier": "3.6.2",
