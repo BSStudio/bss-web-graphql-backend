@@ -22,7 +22,7 @@
   "dependencies": {
     "@graphile-contrib/pg-simplify-inflector": "6.1.0",
     "dotenv": "17.2.1",
-    "koa": "2.16.2",
+    "koa": "3.0.1",
     "koa-bodyparser": "4.4.1",
     "koa-compress": "5.1.1",
     "koa-helmet": "7.1.0",
@@ -32,7 +32,7 @@
   "// build": "Dependencies required to build the project",
   "devDependencies": {
     "@tsconfig/node20": "20.1.6",
-    "@types/koa": "2.15.0",
+    "@types/koa": "3.0.0",
     "@types/koa-bodyparser": "4.3.12",
     "@types/koa-compress": "4.0.6",
     "@types/koa-router": "7.4.8",
