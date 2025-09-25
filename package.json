@@ -25,7 +25,7 @@
     "koa": "2.16.2",
     "koa-bodyparser": "4.4.1",
     "koa-compress": "5.1.1",
-    "koa-helmet": "7.1.0",
+    "koa-helmet": "8.0.1",
     "koa-router": "13.1.1",
     "postgraphile": "4.14.1"
   },
