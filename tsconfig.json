@@ -1,5 +1,8 @@
 {
-  "extends": ["@tsconfig/strictest/tsconfig.json", "@tsconfig/node22/tsconfig.json"],
+  "extends": [
+    "@tsconfig/strictest/tsconfig.json",
+    "@tsconfig/node22/tsconfig.json"
+  ],
   "compilerOptions": {
     "rootDir": "src",
     "outDir": "dist"
