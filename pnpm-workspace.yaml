@@ -1,0 +1,8 @@
+ignoredBuiltDependencies:
+  - cpu-features
+  - esbuild
+  - protobufjs
+  - ssh2
+
+onlyBuiltDependencies:
+  - '@biomejs/biome'
