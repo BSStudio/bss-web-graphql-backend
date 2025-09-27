@@ -31,12 +31,14 @@ services:
       - db
     environment:
       bss.file-api.url: "http://mock-file-api:8080"
-      spring.security.user.password: "password"
+      spring.security.oauth2.resourceserver.opaquetoken.introspection-uri: "http://mock-oidc:8080/o/introspect"
+      spring.security.oauth2.resourceserver.opaquetoken.client-id: client-id
+      spring.security.oauth2.resourceserver.opaquetoken.client-secret: client-secret
       spring.datasource.url: "jdbc:postgresql://db:5432/bss?currentSchema=private"
       spring.datasource.username: "user"
       spring.datasource.password: "password"
       spring.flyway.default-schema: "private"
-      spring.flyway.schemas: "private, public"
+      spring.flyway.schemas: "private,public"
   db:
     image: "postgres:16.3-alpine3.18"
     ports:
