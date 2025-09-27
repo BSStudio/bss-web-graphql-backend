@@ -44,7 +44,7 @@ const mockHelmet = vi.mocked(helmet)
 const mockPostGraphile = vi.mocked(postGraphile)
 const mockHealthRouter = vi.mocked(healthRouter)
 
-vi.spyOn(global.console, 'log').mockImplementation(() => {})
+vi.spyOn(globalThis.console, 'log').mockImplementation(() => {})
 
 describe('index', () => {
   it('should be tested', async () => {
@@ -72,7 +72,7 @@ describe('index', () => {
       .soft(mockKoaInstance.listen)
       .toHaveBeenCalledWith(mockConfig.port, expect.any(Function))
     expect
-      .soft(global.console.log)
+      .soft(globalThis.console.log)
       .toHaveBeenCalledWith('Server running on port :1234')
   })
 })
