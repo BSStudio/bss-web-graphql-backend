@@ -51,6 +51,9 @@ importers:
       '@types/koa__router':
         specifier: 12.0.4
         version: 12.0.4
+      '@types/pg':
+        specifier: 8.15.5
+        version: 8.15.5
       '@types/supertest':
         specifier: 6.0.3
         version: 6.0.3

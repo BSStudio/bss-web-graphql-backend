@@ -11,8 +11,8 @@
     "test:coverage": "vitest --run --reporter=verbose --coverage --coverage.reporter=lcov --reporter=html --outputFile.html=reports/index.html",
     "test:int": " vitest --config vitest.int.config.ts",
     "test:int:ci": "vitest --run --config vitest.int.config.ts --reporter=verbose --reporter=junit --outputFile.junit=reports/test-results.xml",
-    "lint": "biome format .",
-    "lint:fix": "biome format . --write",
+    "lint": "biome check .",
+    "lint:fix": "biome check . --write",
     "semantic-release": "semantic-release"
   },
   "author": "",
@@ -34,9 +34,10 @@
     "@tsconfig/node22": "22.0.2",
     "@tsconfig/strictest": "2.0.6",
     "@types/koa": "3.0.0",
-    "@types/koa__router": "12.0.4",
     "@types/koa-bodyparser": "4.3.12",
     "@types/koa-compress": "4.0.6",
+    "@types/koa__router": "12.0.4",
+    "@types/pg": "8.15.5",
     "@types/supertest": "6.0.3",
     "ts-node": "10.9.2",
     "typescript": "5.9.2"

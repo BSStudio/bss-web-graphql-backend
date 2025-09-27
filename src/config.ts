@@ -1,6 +1,6 @@
 import dotenv from 'dotenv'
-import { PostGraphileOptions } from 'postgraphile'
-import { PoolConfig } from 'pg'
+import type { PostGraphileOptions } from 'postgraphile'
+import type { PoolConfig } from 'pg'
 
 export interface Config {
   port: number
