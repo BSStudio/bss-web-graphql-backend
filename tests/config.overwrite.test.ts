@@ -1,6 +1,6 @@
-import { describe, expect, it, vi } from 'vitest'
-import { Config } from '../src/config.js'
 import dotenv from 'dotenv'
+import { describe, expect, it, vi } from 'vitest'
+import type { Config } from '../src/config.js'
 
 vi.mock('dotenv', () => ({
   default: {

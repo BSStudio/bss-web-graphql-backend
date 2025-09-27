@@ -1,5 +1,5 @@
-import { describe, expect, it, inject } from 'vitest'
 import axios from 'axios'
+import { describe, expect, inject, it } from 'vitest'
 
 describe('ping', () => {
   const host = inject('host')

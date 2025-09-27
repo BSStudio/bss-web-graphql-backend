@@ -1,5 +1,5 @@
-import { postgres } from '../database/index.js'
 import Router from '@koa/router'
+import { postgres } from '../database/index.js'
 
 const router = new Router({
   prefix: '/actuator',

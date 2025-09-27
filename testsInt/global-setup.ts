@@ -1,10 +1,10 @@
-import path from 'path'
+import path from 'node:path'
 import {
   DockerComposeEnvironment,
-  StartedDockerComposeEnvironment,
+  type StartedDockerComposeEnvironment,
   Wait,
 } from 'testcontainers'
-import { GlobalSetupContext } from 'vitest/node'
+import type { GlobalSetupContext } from 'vitest/node'
 
 declare module 'vitest' {
   export interface ProvidedContext {

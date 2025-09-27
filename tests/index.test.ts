@@ -1,5 +1,5 @@
-import { describe, expect, it, vi } from 'vitest'
 import koa from 'koa'
+import { describe, expect, it, vi } from 'vitest'
 import config from '../src/config.js'
 import {
   bodyParser,
@@ -15,7 +15,7 @@ vi.mock('koa', () => ({
     listen: vi
       .fn()
       .mockName('listen')
-      .mockImplementation((port, cb) => cb()),
+      .mockImplementation((_port, cb) => cb()),
   })),
 }))
 vi.mock('../src/config.js', () => ({

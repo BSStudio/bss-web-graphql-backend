@@ -1,5 +1,5 @@
-import { describe, expect, it, vi } from 'vitest'
 import compress from 'koa-compress'
+import { describe, expect, it, vi } from 'vitest'
 
 vi.mock('koa-compress')
 
