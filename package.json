@@ -62,7 +62,7 @@
     "url": "https://github.com/BSStudio/bss-web-backend.git"
   },
   "engines": {
-    "node": "22.19.0"
+    "node": "22.20.0"
   },
   "packageManager": "pnpm@10.17.0"
 }
