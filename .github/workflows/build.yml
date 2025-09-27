@@ -41,6 +41,8 @@ jobs:
   test:
     name: Unit test
     runs-on: ubuntu-22.04
+    permissions:
+      id-token: write
     steps:
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
       - uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4.1.0
@@ -51,6 +53,8 @@ jobs:
       - run: pnpm install
       - run: pnpm run test:ci
       - uses: codecov/codecov-action@5a1091511ad55cbe89839c7260b706298ca349f7 #v5.5.1
+        with:
+          use_oidc: true
 
   lint:
     name: Lint
