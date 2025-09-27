@@ -13,7 +13,7 @@
     "test:int:ci": "vitest --run --config vitest.int.config.ts --reporter=verbose --reporter=junit --outputFile.junit=reports/test-results.xml",
     "lint": "biome check .",
     "lint:fix": "biome check . --write",
-    "semantic-release": "semantic-release"
+    "release": "semantic-release"
   },
   "author": "",
   "license": "ISC",
@@ -60,6 +60,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/BSStudio/bss-web-backend.git"
+  },
+  "engines": {
+    "node": "22.19.0"
   },
   "packageManager": "pnpm@10.17.0"
 }
