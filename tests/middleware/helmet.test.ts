@@ -11,7 +11,7 @@ describe('helmet', () => {
 
     const { default: actual } = await import('../../src/middleware/helmet.js')
 
-    expect(mockHelmet).toHaveBeenCalledOnce()
+    expect(mockHelmet.default).toHaveBeenCalledOnce()
     expect(actual).toStrictEqual(mockHelmet())
   })
 })
