@@ -58,7 +58,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/BSStudio/bss-web-backend.git"
+    "url": "https://github.com/BSStudio/bss-web-graphql-backend.git"
   },
   "engines": {
     "node": "22.20.0"
