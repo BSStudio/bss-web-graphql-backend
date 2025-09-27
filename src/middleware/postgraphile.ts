@@ -1,6 +1,6 @@
-import config from '../config.js'
-import { postgraphile, PostGraphileOptions } from 'postgraphile'
 import PgSimplifyInflectorPlugin from '@graphile-contrib/pg-simplify-inflector'
+import { type PostGraphileOptions, postgraphile } from 'postgraphile'
+import config from '../config.js'
 import { postgres } from '../database/index.js'
 
 const options: PostGraphileOptions = {

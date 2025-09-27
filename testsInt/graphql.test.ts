@@ -1,5 +1,5 @@
-import { describe, expect, it, inject } from 'vitest'
-import { gql, GraphQLClient } from 'graphql-request'
+import { GraphQLClient, gql } from 'graphql-request'
+import { describe, expect, inject, it } from 'vitest'
 
 interface Query {
   __schema: { types: [{ name: string }] }

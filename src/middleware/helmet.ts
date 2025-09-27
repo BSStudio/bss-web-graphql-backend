@@ -1,3 +1,3 @@
 import helmet from 'koa-helmet'
 
-export default helmet()
+export default helmet.default()

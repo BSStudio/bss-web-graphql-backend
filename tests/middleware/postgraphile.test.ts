@@ -1,6 +1,6 @@
+import { postgraphile } from 'postgraphile'
 import { describe, expect, it, vi } from 'vitest'
 import config from '../../src/config.js'
-import { postgraphile } from 'postgraphile'
 import { postgres } from '../../src/database/index.js'
 
 vi.mock('../../src/config.js', () => ({

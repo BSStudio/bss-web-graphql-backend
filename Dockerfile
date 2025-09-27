@@ -1,13 +1,16 @@
-FROM node:20-alpine AS base
+FROM node:22-alpine@sha256:cb3143549582cc5f74f26f0992cdef4a422b22128cb517f94173a5f910fa4ee7 AS base
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+RUN corepack enable
 WORKDIR /home/node
-COPY package.json package-lock.json ./
-RUN npm clean-install --ignore-scripts --no-fund --no-audit --omit=optional --omit=dev
+COPY package.json pnpm-lock.yaml ./
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --ignore-scripts --frozen-lockfile --no-optional --prod
 
 FROM base AS builder
-RUN npm clean-install --ignore-scripts --no-fund --no-audit --omit=optional
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --ignore-scripts --frozen-lockfile --no-optional
 COPY ./src ./src
 COPY tsconfig.json ./
-RUN npm run build
+RUN pnpm run build
 
 FROM base
 # node packages were installed as root, so we need to change the owner to node
@@ -16,6 +19,3 @@ USER node:node
 COPY --from=builder /home/node/dist ./
 EXPOSE 3000
 ENTRYPOINT ["node", "index.js"]
-LABEL org.opencontainers.image.source="https://github.com/BSStudio/bss-web-graphql-backend"
-LABEL org.opencontainers.image.description="BSS Web GraphQL backend"
-LABEL org.opencontainers.image.licenses="GPL-3.0"

@@ -1,5 +1,5 @@
-import { describe, it, vi, expect } from 'vitest'
 import pg from 'pg'
+import { describe, expect, it, vi } from 'vitest'
 import config from '../../src/config.js'
 
 vi.mock('pg', () => {

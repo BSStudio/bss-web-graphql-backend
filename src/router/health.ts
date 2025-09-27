@@ -1,4 +1,4 @@
-import Router from 'koa-router'
+import Router from '@koa/router'
 import { postgres } from '../database/index.js'
 
 const router = new Router({

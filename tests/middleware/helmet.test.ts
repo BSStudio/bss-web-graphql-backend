@@ -1,9 +1,9 @@
-import { describe, expect, it, vi } from 'vitest'
 import helmet from 'koa-helmet'
+import { describe, expect, it, vi } from 'vitest'
 
 vi.mock('koa-helmet')
 
-const mockHelmet = vi.mocked(helmet)
+const mockHelmet = vi.mocked(helmet.default)
 
 describe('helmet', () => {
   it('should export helmet', async () => {
