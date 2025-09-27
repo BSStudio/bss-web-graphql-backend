@@ -1,9 +1,10 @@
 import path from 'node:path'
-import type { TestProject } from 'vitest/node'
 import {
-  DockerComposeEnvironment, StartedDockerComposeEnvironment,
+  DockerComposeEnvironment,
+  type StartedDockerComposeEnvironment,
   Wait,
 } from 'testcontainers'
+import type { TestProject } from 'vitest/node'
 
 declare module 'vitest' {
   export interface ProvidedContext {
@@ -26,8 +27,7 @@ export async function setup(project: TestProject) {
     .withWaitStrategy('backend-1', Wait.forHealthCheck())
     .withWaitStrategy('db-1', Wait.forHealthCheck())
   compose = await dockerComposeEnvironment.up()
-  const graphqlContainer =
-    compose.getContainer('graphql-1')
+  const graphqlContainer = compose.getContainer('graphql-1')
   project.provide('host', graphqlContainer.getHost())
   project.provide('port', graphqlContainer.getMappedPort(3000))
 }
