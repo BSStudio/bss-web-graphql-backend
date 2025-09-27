@@ -4,10 +4,10 @@ ENV PATH="$PNPM_HOME:$PATH"
 RUN corepack enable
 WORKDIR /home/node
 COPY package.json pnpm-lock.yaml ./
-RUN pnpm install --frozen-lockfile --no-optional --prod
+RUN pnpm install --ignore-scripts --frozen-lockfile --no-optional --prod
 
 FROM base AS builder
-RUN pnpm install --frozen-lockfile --no-optional
+RUN pnpm install --ignore-scripts --frozen-lockfile --no-optional
 COPY ./src ./src
 COPY tsconfig.json ./
 RUN pnpm run build

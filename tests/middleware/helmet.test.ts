@@ -3,7 +3,7 @@ import { describe, expect, it, vi } from 'vitest'
 
 vi.mock('koa-helmet')
 
-const mockHelmet = vi.mocked(helmet)
+const mockHelmet = vi.mocked(helmet.default)
 
 describe('helmet', () => {
   it('should export helmet', async () => {
@@ -11,7 +11,7 @@ describe('helmet', () => {
 
     const { default: actual } = await import('../../src/middleware/helmet.js')
 
-    expect(mockHelmet.default).toHaveBeenCalledOnce()
+    expect(mockHelmet).toHaveBeenCalledOnce()
     expect(actual).toStrictEqual(mockHelmet())
   })
 })
