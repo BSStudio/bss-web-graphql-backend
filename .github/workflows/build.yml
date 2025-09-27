@@ -10,7 +10,7 @@ on:
 permissions: read-all
 
 jobs:
-  coverage:
+  build:
     name: Build
     runs-on: ubuntu-22.04
     steps:
@@ -21,7 +21,7 @@ jobs:
           node-version-file: package.json
           cache: 'pnpm'
       - run: pnpm install
-      - run: pnpm run test:coverage
+      - run: pnpm run build
 
   integration:
     name: Integration test

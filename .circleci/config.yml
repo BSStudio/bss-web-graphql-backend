@@ -34,9 +34,6 @@ jobs:
 workflows:
   Build:
     jobs:
-      - node/run:
-          name: Compile
-          npm-run: build
       - node/test:
           name: Unit test
           run-command: test:ci
