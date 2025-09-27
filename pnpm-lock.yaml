@@ -11,6 +11,9 @@ importers:
       '@graphile-contrib/pg-simplify-inflector':
         specifier: 6.1.0
         version: 6.1.0
+      '@koa/router':
+        specifier: 14.0.0
+        version: 14.0.0
       dotenv:
         specifier: 17.2.1
         version: 17.2.1
@@ -26,9 +29,6 @@ importers:
       koa-helmet:
         specifier: 8.0.1
         version: 8.0.1(helmet@8.1.0)
-      koa-router:
-        specifier: 14.0.0
-        version: 14.0.0
       postgraphile:
         specifier: 4.14.1
         version: 4.14.1
@@ -48,9 +48,9 @@ importers:
       '@types/koa-compress':
         specifier: 4.0.6
         version: 4.0.6
-      '@types/koa-router':
-        specifier: 7.4.8
-        version: 7.4.8
+      '@types/koa__router':
+        specifier: 12.0.4
+        version: 12.0.4
       '@types/supertest':
         specifier: 6.0.3
         version: 6.0.3
@@ -402,6 +402,10 @@ packages:
   '@js-sdsl/ordered-map@4.4.2':
     resolution: {integrity: sha512-iUKgm52T8HOE/makSxjqoWhe95ZJA1/G1sYsGev2JDKUSS14KAgg1LHb+Ba+IPow0xflbnSkOsZcO08C7w1gYw==}
 
+  '@koa/router@14.0.0':
+    resolution: {integrity: sha512-LBSu5K0qAaaQcXX/0WIB9PGDevyCxxpnc1uq13vV/CgObaVxuis5hKl3Eboq/8gcb6ebnkAStW9NB/Em2eYyFA==}
+    engines: {node: '>= 20'}
+
   '@noble/hashes@1.8.0':
     resolution: {integrity: sha512-jCs9ldd7NwzpgXDIf6P3+NrHh9/sD6CQdxHyjQI+h/6rDNo88ypBxxz45UDuZHz9r3tNz7N/VInSVoVdtXEI4A==}
     engines: {node: ^14.21.3 || >=16}
@@ -742,11 +746,11 @@ packages:
   '@types/koa-compress@4.0.6':
     resolution: {integrity: sha512-jJzlsQTeIXRfQzY7y2Dl/syqOxvEaNJzFTJ8ZGaDFWvqgMmCXplfCGjPfHQgU7xYNKq/mCdN3YWus1YOldfIwg==}
 
-  '@types/koa-router@7.4.8':
-    resolution: {integrity: sha512-SkWlv4F9f+l3WqYNQHnWjYnyTxYthqt8W9az2RTdQW7Ay8bc00iRZcrb8MC75iEfPqnGcg2csEl8tTG1NQPD4A==}
-
   '@types/koa@3.0.0':
     resolution: {integrity: sha512-MOcVYdVYmkSutVHZZPh8j3+dAjLyR5Tl59CN0eKgpkE1h/LBSmPAsQQuWs+bKu7WtGNn+hKfJH9Gzml+PulmDg==}
+
+  '@types/koa__router@12.0.4':
+    resolution: {integrity: sha512-Y7YBbSmfXZpa/m5UGGzb7XadJIRBRnwNY9cdAojZGp65Cpe5MAP3mOZE7e3bImt8dfKS4UFcR16SLH8L/z7PBw==}
 
   '@types/methods@1.1.4':
     resolution: {integrity: sha512-ymXWVrDiCxTBE3+RIrrP533E70eA+9qu7zdWoHuOmGujkYtzf4HQF96b8nwHLqhuf4ykX61IGRIB38CC6/sImQ==}
@@ -1878,11 +1882,6 @@ packages:
 
   koa-is-json@1.0.0:
     resolution: {integrity: sha512-+97CtHAlWDx0ndt0J8y3P12EWLwTLMXIfMnYDev3wOTwH/RpBGMlfn4bDXlMEg1u73K6XRE9BbUp+5ZAYoRYWw==}
-
-  koa-router@14.0.0:
-    resolution: {integrity: sha512-Ue8f/PRsLLNm6b7y+eS6xkqvsG2xH11d2VB1HPcfdfW6p5736kCHf2pXaq8q9XPQ01x0Dk7V/P5Il9pe+tGTxA==}
-    engines: {node: '>= 20'}
-    deprecated: 'Please use @koa/router instead, starting from v9! '
 
   koa@3.0.1:
     resolution: {integrity: sha512-oDxVkRwPOHhGlxKIDiDB2h+/l05QPtefD7nSqRgDfZt8P+QVYFWjfeK8jANf5O2YXjk8egd7KntvXKYx82wOag==}
@@ -3328,6 +3327,15 @@ snapshots:
   '@js-sdsl/ordered-map@4.4.2':
     optional: true
 
+  '@koa/router@14.0.0':
+    dependencies:
+      debug: 4.4.3(supports-color@5.5.0)
+      http-errors: 2.0.0
+      koa-compose: 4.1.0
+      path-to-regexp: 8.3.0
+    transitivePeerDependencies:
+      - supports-color
+
   '@noble/hashes@1.8.0':
     optional: true
 
@@ -3718,10 +3726,6 @@ snapshots:
       '@types/koa': 3.0.0
       '@types/node': 24.5.2
 
-  '@types/koa-router@7.4.8':
-    dependencies:
-      '@types/koa': 3.0.0
-
   '@types/koa@3.0.0':
     dependencies:
       '@types/accepts': 1.3.7
@@ -3732,6 +3736,10 @@ snapshots:
       '@types/keygrip': 1.0.6
       '@types/koa-compose': 3.2.8
       '@types/node': 24.5.2
+
+  '@types/koa__router@12.0.4':
+    dependencies:
+      '@types/koa': 3.0.0
 
   '@types/methods@1.1.4': {}
 
@@ -5158,15 +5166,6 @@ snapshots:
       helmet: 8.1.0
 
   koa-is-json@1.0.0: {}
-
-  koa-router@14.0.0:
-    dependencies:
-      debug: 4.4.3(supports-color@5.5.0)
-      http-errors: 2.0.0
-      koa-compose: 4.1.0
-      path-to-regexp: 8.3.0
-    transitivePeerDependencies:
-      - supports-color
 
   koa@3.0.1:
     dependencies:
