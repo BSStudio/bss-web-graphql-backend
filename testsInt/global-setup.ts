@@ -16,7 +16,7 @@ declare module 'vitest' {
 const BUILD_CONTEXT = path.resolve(__dirname, './../')
 const COMPOSE_FILES = ['docker-compose.yml', 'docker-compose.ci.yml']
 
-let compose: StartedDockerComposeEnvironment
+let compose: StartedDockerComposeEnvironment | undefined
 
 export async function setup(project: TestProject) {
   const dockerComposeEnvironment = new DockerComposeEnvironment(
@@ -33,5 +33,6 @@ export async function setup(project: TestProject) {
 }
 
 export async function teardown() {
+  if (!compose) return
   await compose.down()
 }
