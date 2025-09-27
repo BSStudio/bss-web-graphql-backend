@@ -74,7 +74,7 @@ jobs:
         id: scan
         if: ${{ github.event_name != 'pull_request' && github.event_name != 'merge_group' }}
         with:
-          image: "ghcr.io/bsstudio/bss-web-graphql:${{ env.DOCKER_METADATA_OUTPUT_VERSION }}"
+          image: "ghcr.io/bsstudio/bss-web-graphql-backend:${{ env.DOCKER_METADATA_OUTPUT_VERSION }}"
           cache-db: true
           severity-cutoff: 'high'
           fail-build: false
