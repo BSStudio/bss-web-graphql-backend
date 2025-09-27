@@ -1,6 +1,9 @@
 # BSS web graphQL backend
 
-![CircleCI](https://img.shields.io/circleci/build/github/BSStudio/bss-web-graphql-backend/main?label=build)
+[![Build](https://github.com/BSStudio/bss-web-graphql-backend/actions/workflows/build.yml/badge.svg)](https://github.com/BSStudio/bss-web-graphql-backend/actions/workflows/build.yml)
+[![Release](https://github.com/BSStudio/bss-web-graphql-backend/actions/workflows/release.yml/badge.svg)](https://github.com/BSStudio/bss-web-graphql-backend/actions/workflows/release.yml)
+[![Docker](https://github.com/BSStudio/bss-web-graphql-backend/actions/workflows/docker.yml/badge.svg)](https://github.com/BSStudio/bss-web-graphql-backend/actions/workflows/docker.yml)
+[![CodeQL](https://github.com/BSStudio/bss-web-graphql-backend/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/BSStudio/bss-web-graphql-backend/actions/workflows/github-code-scanning/codeql)
 ![GitHub Release Date](https://img.shields.io/github/release-date/BSStudio/bss-web-graphql-backend)
 ![GitHub Tag](https://img.shields.io/github/v/tag/BSStudio/bss-web-graphql-backend)
 ![GitHub branch checks state](https://img.shields.io/github/checks-status/BSStudio/bss-web-graphql-backend/main)
