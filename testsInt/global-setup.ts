@@ -1,10 +1,9 @@
 import path from 'node:path'
+import type { TestProject } from 'vitest/node'
 import {
-  DockerComposeEnvironment,
-  type StartedDockerComposeEnvironment,
+  DockerComposeEnvironment, StartedDockerComposeEnvironment,
   Wait,
 } from 'testcontainers'
-import type { GlobalSetupContext } from 'vitest/node'
 
 declare module 'vitest' {
   export interface ProvidedContext {
@@ -13,14 +12,12 @@ declare module 'vitest' {
   }
 }
 
-declare global {
-  var compose: StartedDockerComposeEnvironment
-}
-
 const BUILD_CONTEXT = path.resolve(__dirname, './../')
 const COMPOSE_FILES = ['docker-compose.yml', 'docker-compose.ci.yml']
 
-export async function setup({ provide }: GlobalSetupContext) {
+let compose: StartedDockerComposeEnvironment
+
+export async function setup(project: TestProject) {
   const dockerComposeEnvironment = new DockerComposeEnvironment(
     BUILD_CONTEXT,
     COMPOSE_FILES,
@@ -28,14 +25,13 @@ export async function setup({ provide }: GlobalSetupContext) {
     .withWaitStrategy('graphql-1', Wait.forHealthCheck())
     .withWaitStrategy('backend-1', Wait.forHealthCheck())
     .withWaitStrategy('db-1', Wait.forHealthCheck())
-  const startedDockerComposeEnvironment = await dockerComposeEnvironment.up()
+  compose = await dockerComposeEnvironment.up()
   const graphqlContainer =
-    startedDockerComposeEnvironment.getContainer('graphql-1')
-  provide('host', graphqlContainer.getHost())
-  provide('port', graphqlContainer.getMappedPort(3000))
-  globalThis.compose = startedDockerComposeEnvironment
+    compose.getContainer('graphql-1')
+  project.provide('host', graphqlContainer.getHost())
+  project.provide('port', graphqlContainer.getMappedPort(3000))
 }
 
 export async function teardown() {
-  await globalThis.compose.down()
+  await compose.down()
 }
