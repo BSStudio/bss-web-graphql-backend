@@ -34,7 +34,7 @@ jobs:
           node-version-file: package.json
           cache: 'pnpm'
       - run: pnpm install
-      - run: pnpm run test:coverage
+      - run: pnpm run test:int:ci
         env:
           DEBUG: testcontainers:compose
 
@@ -50,6 +50,7 @@ jobs:
           cache: 'pnpm'
       - run: pnpm install
       - run: pnpm run test:ci
+      - uses: codecov/codecov-action@5a1091511ad55cbe89839c7260b706298ca349f7 #v5.5.1
 
   lint:
     name: Lint
