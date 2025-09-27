@@ -9,21 +9,6 @@ executors:
     machine:
       image: ubuntu-2204:edge
       docker_layer_caching: true
-defaults:
-  docker_publish: &docker_publish
-    image: bsstudio/bss-web-graphql-backend
-    registry: ghcr.io
-    executor: docker/docker
-    remote-docker-version: default
-    use-remote-docker: true
-    remote-docker-dlc: true
-    use-buildkit: true
-  tag_only: &tag_only
-    filters:
-      branches:
-        ignore: /.*/
-      tags:
-        only: /.*/
 jobs:
   coverage:
     executor: node/default
@@ -46,16 +31,6 @@ jobs:
             - DEBUG: testcontainers:compose
       - store_test_results:
           path: reports
-  github_release:
-    docker:
-      - image: cimg/base:stable
-    steps:
-      - checkout
-      - github-cli/install:
-          version: 2.43.1
-      - github-cli/setup:
-          version: 2.43.1
-      - run: gh release create << pipeline.git.tag >> -t << pipeline.git.tag >> --generate-notes
 workflows:
   Build:
     jobs:
