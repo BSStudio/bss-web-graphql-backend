@@ -19,11 +19,7 @@
     {
       "groupName": "All GitHub Actions",
       "matchManagers": ["github-actions"],
-      "matchUpdateTypes": [
-        "digest",
-        "patch",
-        "minor"
-      ]
+      "matchUpdateTypes": ["digest", "patch", "minor"]
     }
   ]
 }
