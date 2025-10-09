@@ -20,7 +20,7 @@ services:
   # once db is initialized, we can shut down the container
   # however it makes it easy to add data to the db
   backend:
-    image: ghcr.io/bsstudio/bss-web-admin-backend:v2.4.1
+    image: ghcr.io/bsstudio/bss-web-admin-backend:v2.4.1@sha256:af3cede80fe3d7c89c4f458bc0a4cd4060949a94e60f29538f074e254ddc8a28
     healthcheck:
       test: "wget --tries=1 --no-verbose -qO- http://localhost:8080/actuator/health | grep -q UP"
       start_period: 5s
@@ -40,7 +40,7 @@ services:
       spring.flyway.default-schema: "private"
       spring.flyway.schemas: "private,public"
   db:
-    image: "postgres:16.3-alpine3.18"
+    image: "postgres:16.3-alpine3.18@sha256:64e18e8fb3e9c9aac89ac590c5dd8306b862478404f76cd9b5f7720d012b4c47"
     ports:
       - "127.0.0.1:5432:5432"
     environment:
