@@ -20,6 +20,7 @@ jobs:
         with:
           node-version-file: package.json
           cache: 'pnpm'
+          cache-dependency-path: 'pnpm-lock.yaml'
       - run: pnpm install
       - run: pnpm run build
 
@@ -33,6 +34,7 @@ jobs:
         with:
           node-version-file: package.json
           cache: 'pnpm'
+          cache-dependency-path: 'pnpm-lock.yaml'
       - run: pnpm install
       - run: pnpm run test:int:ci
         env:
@@ -50,6 +52,7 @@ jobs:
         with:
           node-version-file: package.json
           cache: 'pnpm'
+          cache-dependency-path: 'pnpm-lock.yaml'
       - run: pnpm install
       - run: pnpm run test:ci
       - uses: codecov/codecov-action@5a1091511ad55cbe89839c7260b706298ca349f7 #v5.5.1
@@ -66,5 +69,6 @@ jobs:
         with:
           node-version-file: package.json
           cache: 'pnpm'
+          cache-dependency-path: 'pnpm-lock.yaml'
       - run: pnpm install
       - run: pnpm run lint
