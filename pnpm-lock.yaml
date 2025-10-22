@@ -95,8 +95,8 @@ importers:
         specifier: 7.1.4
         version: 7.1.4
       testcontainers:
-        specifier: 11.7.1
-        version: 11.7.1
+        specifier: 11.7.2
+        version: 11.7.2
       vitest:
         specifier: 3.2.4
         version: 3.2.4(@types/node@24.6.2)(@vitest/ui@3.2.4)(yaml@2.8.1)
@@ -2798,8 +2798,8 @@ packages:
     resolution: {integrity: sha512-pFYqmTw68LXVjeWJMST4+borgQP2AyMNbg1BpZh9LbyhUeNkeaPF9gzfPGUAnSMV3qPYdWUwDIjjCLiSDOl7vg==}
     engines: {node: '>=18'}
 
-  testcontainers@11.7.1:
-    resolution: {integrity: sha512-fjut+07G4Avp6Lly/6hQePpUpQFv9ZyQd+7JC5iCDKg+dWa2Sw7fXD3pBrkzslYFfKqGx9M6kyIaLpg9VeMsjw==}
+  testcontainers@11.7.2:
+    resolution: {integrity: sha512-jeFzeyzLhIouRAbLnQNapJ2esBs/mvXkkYvO1/vSZehT3/7+Q557qaNxwKwMqAbfxfSh7gcx1OLlMsQUZ9JLdA==}
 
   text-decoder@1.2.3:
     resolution: {integrity: sha512-3/o9z3X0X0fTupwsYvR03pJ/DjWuqqrfwBgTQzdWDiQSm9KitAyz/9WqsT2JQW7KV2m+bC2ol/zqpW37NHxLaA==}
@@ -6338,7 +6338,7 @@ snapshots:
       minimatch: 9.0.5
     optional: true
 
-  testcontainers@11.7.1:
+  testcontainers@11.7.2:
     dependencies:
       '@balena/dockerignore': 1.0.2
       '@types/dockerode': 3.3.44
