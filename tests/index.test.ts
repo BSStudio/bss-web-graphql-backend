@@ -1,4 +1,3 @@
-import koa from 'koa'
 import { describe, expect, it, vi } from 'vitest'
 import config from '../src/config.js'
 import {
@@ -9,14 +8,17 @@ import {
 } from '../src/middleware/index.js'
 import { healthRouter } from '../src/router/index.js'
 
-vi.mock('koa', () => {
-  return {
-    default: class MockKoa {
-      use = vi.fn().mockName('use').mockReturnThis()
-      listen = vi.fn().mockName('listen').mockImplementation((_port, cb) => cb())
-    }
-  }
-})
+const MockKoaClass = vi.fn().mockImplementation(() => ({
+  use: vi.fn().mockName('use').mockReturnThis(),
+  listen: vi
+    .fn()
+    .mockName('listen')
+    .mockImplementation((_port, cb) => cb()),
+}))
+
+vi.mock('koa', () => ({
+  default: MockKoaClass,
+}))
 vi.mock('../src/config.js', () => ({
   default: {
     port: 1234,
@@ -35,7 +37,6 @@ vi.mock('../src/router/index.js', () => ({
   },
 }))
 
-const mockKoa = vi.mocked(koa)
 const mockConfig = vi.mocked(config)
 const mockBodyParser = vi.mocked(bodyParser)
 const mockCompress = vi.mocked(compress)
@@ -51,8 +52,8 @@ describe('index', () => {
 
     await import('../src/index.js')
 
-    expect.soft(mockKoa.mock.results).toHaveLength(1)
-    const mockKoaInstance = mockKoa.mock.results[0].value
+    expect.soft(MockKoaClass).toHaveBeenCalledTimes(1)
+    const mockKoaInstance = MockKoaClass.mock.results[0].value
     // assert use method is called 6 times with the following arguments
     expect.soft(mockKoaInstance.use).toHaveBeenCalledTimes(6)
     expect.soft(mockKoaInstance.use).toHaveBeenCalledWith(mockBodyParser)
