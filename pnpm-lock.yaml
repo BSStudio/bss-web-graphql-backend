@@ -49,8 +49,8 @@ importers:
         specifier: 4.3.13
         version: 4.3.13
       '@types/koa-compress':
-        specifier: 4.0.6
-        version: 4.0.6
+        specifier: 4.0.7
+        version: 4.0.7
       '@types/koa__router':
         specifier: 12.0.5
         version: 12.0.5
@@ -759,8 +759,8 @@ packages:
   '@types/koa-compose@3.2.8':
     resolution: {integrity: sha512-4Olc63RY+MKvxMwVknCUDhRQX1pFQoBZ/lXcRLP69PQkEpze/0cr8LNqJQe5NFb/b19DWi2a5bTi2VAlQzhJuA==}
 
-  '@types/koa-compress@4.0.6':
-    resolution: {integrity: sha512-jJzlsQTeIXRfQzY7y2Dl/syqOxvEaNJzFTJ8ZGaDFWvqgMmCXplfCGjPfHQgU7xYNKq/mCdN3YWus1YOldfIwg==}
+  '@types/koa-compress@4.0.7':
+    resolution: {integrity: sha512-NqP9qCBfXCu2+RYkGzEENBkqXWExOPeBEsvj3F0xtVxKDwwdfRRtVdpxJeTRAq2Ml3qlUnDbK8bKHWwe6V1kkg==}
 
   '@types/koa@3.0.1':
     resolution: {integrity: sha512-VkB6WJUQSe0zBpR+Q7/YIUESGp5wPHcaXr0xueU5W0EOUWtlSbblsl+Kl31lyRQ63nIILh0e/7gXjQ09JXJIHw==}
@@ -3797,7 +3797,7 @@ snapshots:
     dependencies:
       '@types/koa': 3.0.1
 
-  '@types/koa-compress@4.0.6':
+  '@types/koa-compress@4.0.7':
     dependencies:
       '@types/koa': 3.0.1
       '@types/node': 24.6.2
