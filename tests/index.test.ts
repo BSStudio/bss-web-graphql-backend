@@ -9,15 +9,14 @@ import {
 } from '../src/middleware/index.js'
 import { healthRouter } from '../src/router/index.js'
 
-vi.mock('koa', () => ({
-  default: vi.fn(() => ({
-    use: vi.fn().mockName('use').mockReturnThis(),
-    listen: vi
-      .fn()
-      .mockName('listen')
-      .mockImplementation((_port, cb) => cb()),
-  })),
-}))
+vi.mock('koa', () => {
+  return {
+    default: class MockKoa {
+      use = vi.fn().mockName('use').mockReturnThis()
+      listen = vi.fn().mockName('listen').mockImplementation((_port, cb) => cb())
+    }
+  }
+})
 vi.mock('../src/config.js', () => ({
   default: {
     port: 1234,
