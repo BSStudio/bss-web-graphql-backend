@@ -1,3 +1,1 @@
-import postgres from './postgres.js'
-
-export { postgres }
+export { default as postgres } from './postgres.js'
