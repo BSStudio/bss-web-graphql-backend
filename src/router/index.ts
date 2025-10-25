@@ -1,3 +1,1 @@
-import healthRouter from './health.js'
-
-export { healthRouter }
+export { default as healthRouter } from './health.js'

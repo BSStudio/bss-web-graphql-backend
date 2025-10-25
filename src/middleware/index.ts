@@ -1,6 +1,4 @@
-import bodyParser from './bodyparser.js'
-import compress from './compress.js'
-import helmet from './helmet.js'
-import postGraphile from './postgraphile.js'
-
-export { bodyParser, compress, helmet, postGraphile }
+export { default as bodyParser } from './bodyparser.js'
+export { default as compress } from './compress.js'
+export { default as helmet } from './helmet.js'
+export { default as postGraphile } from './postgraphile.js'
