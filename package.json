@@ -45,8 +45,8 @@
   "// optional": "Dependencies that required to test and lint the project",
   "optionalDependencies": {
     "@biomejs/biome": "2.3.0",
-    "@vitest/coverage-v8": "3.2.4",
-    "@vitest/ui": "3.2.4",
+    "@vitest/coverage-v8": "4.0.2",
+    "@vitest/ui": "4.0.2",
     "axios": "1.12.2",
     "graphql-request": "7.3.1",
     "nodemon": "3.1.10",
@@ -54,7 +54,7 @@
     "semantic-release": "25.0.1",
     "supertest": "7.1.4",
     "testcontainers": "11.7.2",
-    "vitest": "3.2.4"
+    "vitest": "4.0.2"
   },
   "repository": {
     "type": "git",
