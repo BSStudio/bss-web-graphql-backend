@@ -1,10 +1,10 @@
 import koa from 'koa'
 import supertest from 'supertest'
 import { afterAll, describe, expect, it, vi } from 'vitest'
-import { postgres } from '../../src/database/index.js'
-import healthRouter from '../../src/router/health.js'
+import { postgres } from '../database/index.js'
+import healthRouter from './health.js'
 
-vi.mock('../../src/database/index.js', () => ({
+vi.mock('../database/index.js', () => ({
   postgres: {
     query: vi.fn(),
   },
