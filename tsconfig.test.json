@@ -3,11 +3,5 @@
     "@tsconfig/strictest/tsconfig.json",
     "@tsconfig/node22/tsconfig.json"
   ],
-  "include": [
-    "tests/**/*.ts",
-    "testsInt/**/*.ts",
-    "testsInt/global-setup.ts",
-    "vitest.config.ts",
-    "vitest.int.config.ts"
-  ]
+  "include": ["testsInt/**/*.ts", "vitest.config.ts", "vitest.int.config.ts"]
 }

@@ -4,7 +4,7 @@ import { afterAll, describe, expect, it, vi } from 'vitest'
 import { postgres } from '../database/index.js'
 import healthRouter from './health.js'
 
-vi.mock('./index.js', () => ({
+vi.mock('../database/index.js', () => ({
   postgres: {
     query: vi.fn(),
   },
