@@ -1,13 +1,13 @@
 import koa from 'koa'
 import { describe, expect, it, vi } from 'vitest'
-import config from '../src/config.js'
+import config from './config.js'
 import {
   bodyParser,
   compress,
   helmet,
   postGraphile,
-} from '../src/middleware/index.js'
-import { healthRouter } from '../src/router/index.js'
+} from './middleware/index.js'
+import { healthRouter } from './router/index.js'
 
 vi.mock('koa', () => ({
   default: vi.fn(
@@ -19,18 +19,18 @@ vi.mock('koa', () => ({
     },
   ),
 }))
-vi.mock('../src/config.js', () => ({
+vi.mock('./config.js', () => ({
   default: {
     port: 1234,
   },
 }))
-vi.mock('../src/middleware/index.js', () => ({
+vi.mock('./middleware/index.js', () => ({
   bodyParser: vi.fn().mockName('bodyParser'),
   compress: vi.fn().mockName('compress'),
   helmet: vi.fn().mockName('helmet'),
   postGraphile: vi.fn().mockName('postGraphile'),
 }))
-vi.mock('../src/router/index.js', () => ({
+vi.mock('./router/index.js', () => ({
   healthRouter: {
     routes: vi.fn().mockName('healthRouter.routes'),
     allowedMethods: vi.fn().mockName('healthRouter.allowedMethods'),
@@ -42,7 +42,7 @@ describe('index', () => {
   it('should be tested', async () => {
     expect.assertions(12)
 
-    await import('../src/index.js')
+    await import('./index.js')
 
     expect.soft(vi.mocked(koa)).toHaveBeenCalledTimes(1)
     const mockKoaInstance = vi.mocked(koa).mock.results[0]?.value

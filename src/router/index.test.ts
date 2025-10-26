@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from 'vitest'
-import healthRouter from '../../src/router/health.js'
+import healthRouter from './health.js'
 
-vi.mock('../../src/router/health.js', () => ({
+vi.mock('./health.js', () => ({
   default: vi.fn(),
 }))
 
@@ -11,7 +11,7 @@ describe('index', () => {
   it('should export routers', async () => {
     expect.assertions(2)
 
-    const actual = await import('../../src/router/index.js')
+    const actual = await import('./index.js')
 
     const expected = { healthRouter: mockHealthRouter }
     expect.soft(actual).toMatchObject(expected)

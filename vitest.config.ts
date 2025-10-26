@@ -2,9 +2,19 @@ import { defineConfig } from 'vitest/config'
 
 export default defineConfig({
   test: {
-    include: ['tests/**/*.{test,spec}.?(c|m)[jt]s?(x)'],
+    include: ['src/**/*.{test,spec}.?(c|m)[jt]s?(x)'],
+    clearMocks: true,
     coverage: {
-      include: ['src/**'],
+      enabled: true,
+      provider: 'v8',
+      reporter: ['text', 'lcov', 'json-summary'],
+      include: ['src/**/*.{js,ts}'],
+      thresholds: {
+        statements: 100,
+      },
     },
+    unstubEnvs: true,
+    unstubGlobals: true,
+    restoreMocks: true,
   },
 })

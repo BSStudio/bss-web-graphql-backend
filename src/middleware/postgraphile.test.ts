@@ -25,7 +25,7 @@ describe('postgraphile', () => {
     expect.assertions(3)
 
     const { default: actual } = await import(
-      '../../src/middleware/postgraphile.js'
+      './postgraphile.js'
     )
 
     expect.soft(mockPostgraphile).toHaveBeenCalledOnce()

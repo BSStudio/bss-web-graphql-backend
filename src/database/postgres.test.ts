@@ -1,6 +1,6 @@
 import pg from 'pg'
 import { describe, expect, it, vi } from 'vitest'
-import config from '../../src/config.js'
+import config from '../config.js'
 
 vi.mock('pg', () => {
   return {
@@ -9,7 +9,7 @@ vi.mock('pg', () => {
     },
   }
 })
-vi.mock('../../src/config', () => ({
+vi.mock('../config', () => ({
   default: {
     database: { connectionString: 'connectionString' },
   },
@@ -22,7 +22,7 @@ describe('postgres', () => {
   it('should be tested', async () => {
     expect.assertions(2)
 
-    const { default: actual } = await import('../../src/database/postgres.js')
+    const { default: actual } = await import('./postgres.js')
 
     expect.soft(actual).toStrictEqual(new pg.Pool(mockConfig.database))
     expect.soft(mockPg.Pool).toHaveBeenCalledWith(mockConfig.database)
