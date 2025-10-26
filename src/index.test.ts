@@ -1,5 +1,5 @@
 import koa from 'koa'
-import { describe, expect, it, vi } from 'vitest'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
 import config from './config.js'
 import {
   bodyParser,
@@ -36,9 +36,12 @@ vi.mock('./router/index.js', () => ({
     allowedMethods: vi.fn().mockName('healthRouter.allowedMethods'),
   },
 }))
-vi.spyOn(globalThis.console, 'log').mockImplementation(() => {})
 
 describe('index', () => {
+  beforeEach(() => {
+    vi.spyOn(globalThis.console, 'log').mockImplementation(() => {})
+  })
+
   it('should be tested', async () => {
     expect.assertions(12)
 
