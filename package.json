@@ -61,7 +61,7 @@
     "url": "https://github.com/BSStudio/bss-web-graphql-backend.git"
   },
   "engines": {
-    "node": "22.21.0"
+    "node": "22.21.1"
   },
   "packageManager": "pnpm@10.19.0"
 }
