@@ -80,8 +80,8 @@ importers:
         specifier: 1.13.2
         version: 1.13.2
       graphql-request:
-        specifier: 7.3.1
-        version: 7.3.1(graphql@15.10.1)
+        specifier: 7.3.3
+        version: 7.3.3(graphql@15.10.1)
       nodemon:
         specifier: 3.1.10
         version: 3.1.10
@@ -1615,8 +1615,8 @@ packages:
     peerDependencies:
       graphql: '>=0.9 <0.14 || ^14.0.2 || ^15.4.0 || ^16.3.0'
 
-  graphql-request@7.3.1:
-    resolution: {integrity: sha512-GdinBsBVYrWzwEvOlzadrV5j8mdOc9ZT8In9QyRIZaxbhkTL08j35yNbPp96jAacYzjeD/hKKy2E2RGI7c7Yug==}
+  graphql-request@7.3.3:
+    resolution: {integrity: sha512-I0ZSz53XTpDiQZ0/KGElwfnzIqsdNek/D6tcZgheL8QOVeSbkgE3qG7r1G/MKtnNenWtEjHbsDf2iPlXSWxFtw==}
     peerDependencies:
       graphql: 14 - 16
 
@@ -4887,7 +4887,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  graphql-request@7.3.1(graphql@15.10.1):
+  graphql-request@7.3.3(graphql@15.10.1):
     dependencies:
       '@graphql-typed-document-node/core': 3.2.0(graphql@15.10.1)
       graphql: 15.10.1
