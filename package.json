@@ -31,7 +31,7 @@
   },
   "// build": "Dependencies required to build the project",
   "devDependencies": {
-    "@tsconfig/node22": "22.0.2",
+    "@tsconfig/node22": "22.0.3",
     "@tsconfig/strictest": "2.0.7",
     "@types/koa": "3.0.1",
     "@types/koa-bodyparser": "4.3.13",
