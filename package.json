@@ -54,7 +54,7 @@
     "semantic-release": "25.0.2",
     "supertest": "7.1.4",
     "testcontainers": "11.8.1",
-    "vitest": "4.0.9"
+    "vitest": "4.0.10"
   },
   "repository": {
     "type": "git",
