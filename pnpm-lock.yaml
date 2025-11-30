@@ -86,8 +86,8 @@ importers:
         specifier: 3.1.11
         version: 3.1.11
       prettier:
-        specifier: 3.6.2
-        version: 3.6.2
+        specifier: 3.7.0
+        version: 3.7.0
       semantic-release:
         specifier: 25.0.2
         version: 25.0.2(typescript@5.9.3)
@@ -2417,8 +2417,8 @@ packages:
     resolution: {integrity: sha512-9ZhXKM/rw350N1ovuWHbGxnGh/SNJ4cnxHiM0rxE4VN41wsg8P8zWn9hv/buK00RP4WvlOyr/RBDiptyxVbkZQ==}
     engines: {node: '>=0.10.0'}
 
-  prettier@3.6.2:
-    resolution: {integrity: sha512-I7AIg5boAr5R0FFtJ6rCfD+LFsWHp81dolrFD8S79U9tb8Az2nGrJncnMSnys+bpQJfRUzqs9hnA81OAA3hCuQ==}
+  prettier@3.7.0:
+    resolution: {integrity: sha512-pBiBj/gjRY9Qpk1b7cDda6Rbwvkaggos779AHQ0Ek/odwDx6xG6DRBxtnp1QmxbuD7pAO8/SQ8vuhtGv9LoLWA==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -5730,7 +5730,7 @@ snapshots:
     dependencies:
       xtend: 4.0.2
 
-  prettier@3.6.2:
+  prettier@3.7.0:
     optional: true
 
   pretty-ms@9.3.0:
