@@ -11,6 +11,9 @@ importers:
       '@graphile-contrib/pg-simplify-inflector':
         specifier: 6.1.0
         version: 6.1.0
+      '@koa/bodyparser':
+        specifier: 6.0.0
+        version: 6.0.0(koa@3.1.1)
       '@koa/router':
         specifier: 15.0.0
         version: 15.0.0
@@ -20,9 +23,6 @@ importers:
       koa:
         specifier: 3.1.1
         version: 3.1.1
-      koa-bodyparser:
-        specifier: 4.4.1
-        version: 4.4.1
       koa-compress:
         specifier: 5.1.1
         version: 5.1.1
@@ -45,15 +45,9 @@ importers:
       '@types/koa':
         specifier: 3.0.1
         version: 3.0.1
-      '@types/koa-bodyparser':
-        specifier: 4.3.13
-        version: 4.3.13
       '@types/koa-compress':
         specifier: 4.0.7
         version: 4.0.7
-      '@types/koa__router':
-        specifier: 12.0.5
-        version: 12.0.5
       '@types/pg':
         specifier: 8.15.6
         version: 8.15.6
@@ -413,6 +407,12 @@ packages:
   '@js-sdsl/ordered-map@4.4.2':
     resolution: {integrity: sha512-iUKgm52T8HOE/makSxjqoWhe95ZJA1/G1sYsGev2JDKUSS14KAgg1LHb+Ba+IPow0xflbnSkOsZcO08C7w1gYw==}
 
+  '@koa/bodyparser@6.0.0':
+    resolution: {integrity: sha512-CjM/tiisZHBA9iVkOOyj/ocLCNJTbpLsIUjCbVkrx5rkUOZlsFf/qSbXzAbY2SNJTMl0VtKgVen6SZdjaCfVhA==}
+    engines: {node: '>= 18'}
+    peerDependencies:
+      koa: '>=2'
+
   '@koa/router@15.0.0':
     resolution: {integrity: sha512-qAoA07CndM5XuBZbTbsnvUj1RNVZtwOvO9xGz7CCE/t4nSopI+xEiFGHyJS1UuSDCt8cJZ9vfCvqbAFga+0y7w==}
     engines: {node: '>= 20'}
@@ -700,6 +700,9 @@ packages:
   '@types/chai@5.2.2':
     resolution: {integrity: sha512-8kB30R7Hwqf40JPiKhVzodJs2Qc1ZJ5zuT3uzw5Hq/dhNCl3G3l83jfpdI1e20BP348+fV7VIL/+FxaXkqBmWg==}
 
+  '@types/co-body@6.1.3':
+    resolution: {integrity: sha512-UhuhrQ5hclX6UJctv5m4Rfp52AfG9o9+d9/HwjxhVB5NjXxr5t9oKgJxN8xRHgr35oo8meUEHUPFWiKg6y71aA==}
+
   '@types/connect@3.4.38':
     resolution: {integrity: sha512-K6uROf1LD88uDQqJCktA4yzL1YYAK6NgfsI0v/mTgyPKWsX1CnJ0XPSDhViejru1GcRkLWb8RlzFYJRqGUbaug==}
 
@@ -745,9 +748,6 @@ packages:
   '@types/keygrip@1.0.6':
     resolution: {integrity: sha512-lZuNAY9xeJt7Bx4t4dx0rYCDqGPW8RXhQZK1td7d4H6E9zYbLoOtjBvfwdTKpsyxQI/2jv+armjX/RW+ZNpXOQ==}
 
-  '@types/koa-bodyparser@4.3.13':
-    resolution: {integrity: sha512-yW9afsDnV1ymnhMBfAlzsKZ45sYnvIlTRS+eF5MUZOQ8ePIIj3ajwi+9b4a0vdyYvh6uJKYibU8R1zrUIpCmCA==}
-
   '@types/koa-compose@3.2.8':
     resolution: {integrity: sha512-4Olc63RY+MKvxMwVknCUDhRQX1pFQoBZ/lXcRLP69PQkEpze/0cr8LNqJQe5NFb/b19DWi2a5bTi2VAlQzhJuA==}
 
@@ -756,9 +756,6 @@ packages:
 
   '@types/koa@3.0.1':
     resolution: {integrity: sha512-VkB6WJUQSe0zBpR+Q7/YIUESGp5wPHcaXr0xueU5W0EOUWtlSbblsl+Kl31lyRQ63nIILh0e/7gXjQ09JXJIHw==}
-
-  '@types/koa__router@12.0.5':
-    resolution: {integrity: sha512-1HeLxuDn4n5it1yZYCSyOYXo++73zT0ffoviXnPxbwbxLbvDFEvWD9ZzpRiIpK4oKR0pi+K+Mk/ZjyROjW3HSw==}
 
   '@types/methods@1.1.4':
     resolution: {integrity: sha512-ymXWVrDiCxTBE3+RIrrP533E70eA+9qu7zdWoHuOmGujkYtzf4HQF96b8nwHLqhuf4ykX61IGRIB38CC6/sImQ==}
@@ -1202,9 +1199,6 @@ packages:
   cookies@0.9.1:
     resolution: {integrity: sha512-TG2hpqe4ELx54QER/S3HQ9SRVnQnGBtKUz5bLQWtYAQ+o6GpgMs6sYUvaiJjVxb+UXwhRhAEP3m7LbsIZ77Hmw==}
     engines: {node: '>= 0.8'}
-
-  copy-to@2.0.1:
-    resolution: {integrity: sha512-3DdaFaU/Zf1AnpLiFDeNCD4TOWe3Zl2RZaTzUvWiIk5ERzcCodOE20Vqq4fzCbNoHURFHT4/us/Lfq+S2zyY4w==}
 
   core-util-is@1.0.3:
     resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==}
@@ -1874,10 +1868,6 @@ packages:
     engines: {node: '>= 0.6'}
     deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
 
-  koa-bodyparser@4.4.1:
-    resolution: {integrity: sha512-kBH3IYPMb+iAXnrxIhXnW+gXV8OTzCu8VPDqvcDHW9SQrbkHmqPQtiZwrltNmSq6/lpipHnT7k7PsjlVD7kK0w==}
-    engines: {node: '>=8.0.0'}
-
   koa-compose@4.1.0:
     resolution: {integrity: sha512-8ODW8TrDuMYvXRwra/Kh7/rJo9BtOfPc6qO8eAfC80CnCvSjSl0bkRM24X6/XBBEyj0v1nRUQ1LyOy3dbqOWXw==}
 
@@ -1942,6 +1932,9 @@ packages:
 
   lodash.isstring@4.0.1:
     resolution: {integrity: sha512-0wJxfxH1wgO3GrbuP+dTTk7op+6L41QCXbGINEmD+ny/G/eCqGzxyCsh7159S+mgDDcoarnBw6PC1PS5+wUGgw==}
+
+  lodash.merge@4.6.2:
+    resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
 
   lodash.once@4.1.1:
     resolution: {integrity: sha512-Sb487aTOCr9drQVL8pIxOzVhafOjZN9UU54hiN8PU3uAiSV7lx1yYNpbNmex2PK6dSJoNTSJUUswT651yww3Mg==}
@@ -3378,6 +3371,14 @@ snapshots:
   '@js-sdsl/ordered-map@4.4.2':
     optional: true
 
+  '@koa/bodyparser@6.0.0(koa@3.1.1)':
+    dependencies:
+      '@types/co-body': 6.1.3
+      co-body: 6.2.0
+      koa: 3.1.1
+      lodash.merge: 4.6.2
+      type-is: 2.0.1
+
   '@koa/router@15.0.0':
     dependencies:
       debug: 4.4.3(supports-color@5.5.0)
@@ -3701,6 +3702,11 @@ snapshots:
       '@types/deep-eql': 4.0.2
     optional: true
 
+  '@types/co-body@6.1.3':
+    dependencies:
+      '@types/node': 24.6.2
+      '@types/qs': 6.14.0
+
   '@types/connect@3.4.38':
     dependencies:
       '@types/node': 24.6.2
@@ -3761,10 +3767,6 @@ snapshots:
 
   '@types/keygrip@1.0.6': {}
 
-  '@types/koa-bodyparser@4.3.13':
-    dependencies:
-      '@types/koa': 3.0.1
-
   '@types/koa-compose@3.2.8':
     dependencies:
       '@types/koa': 3.0.1
@@ -3784,10 +3786,6 @@ snapshots:
       '@types/keygrip': 1.0.6
       '@types/koa-compose': 3.2.8
       '@types/node': 24.6.2
-
-  '@types/koa__router@12.0.5':
-    dependencies:
-      '@types/koa': 3.0.1
 
   '@types/methods@1.1.4': {}
 
@@ -4379,8 +4377,6 @@ snapshots:
     dependencies:
       depd: 2.0.0
       keygrip: 1.1.0
-
-  copy-to@2.0.1: {}
 
   core-util-is@1.0.3:
     optional: true
@@ -5196,12 +5192,6 @@ snapshots:
     dependencies:
       tsscmp: 1.0.6
 
-  koa-bodyparser@4.4.1:
-    dependencies:
-      co-body: 6.2.0
-      copy-to: 2.0.1
-      type-is: 1.6.18
-
   koa-compose@4.1.0: {}
 
   koa-compress@5.1.1:
@@ -5283,6 +5273,8 @@ snapshots:
   lodash.isplainobject@4.0.6: {}
 
   lodash.isstring@4.0.1: {}
+
+  lodash.merge@4.6.2: {}
 
   lodash.once@4.1.1: {}
 
