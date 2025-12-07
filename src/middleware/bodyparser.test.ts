@@ -1,7 +1,7 @@
-import bodyParser from 'koa-bodyparser'
+import bodyParser from '@koa/bodyparser'
 import { describe, expect, it, vi } from 'vitest'
 
-vi.mock('koa-bodyparser')
+vi.mock('@koa/bodyparser')
 const mockBodyParser = vi.mocked(bodyParser)
 
 describe('bodyparser', () => {
