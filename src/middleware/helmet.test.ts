@@ -1,7 +1,7 @@
-import helmet from 'koa-helmet'
+import helmet from 'helmet'
 import { describe, expect, it, vi } from 'vitest'
 
-vi.mock('koa-helmet')
+vi.mock('helmet')
 
 describe('helmet', () => {
   it('should export helmet', async () => {
@@ -9,7 +9,7 @@ describe('helmet', () => {
 
     const { default: actual } = await import('./helmet.js')
 
-    expect(helmet.default).toHaveBeenCalledOnce()
-    expect(actual).toStrictEqual(helmet.default())
+    expect(helmet).toHaveBeenCalledOnce()
+    expect(actual).toStrictEqual(helmet)
   })
 })
