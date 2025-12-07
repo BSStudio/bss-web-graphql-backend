@@ -14,7 +14,7 @@ app
   // register common middleware
   .use(bodyParser)
   .use(compress)
-  .use(helmet)
+  .use(helmet())
   // register health router
   .use(healthRouter.routes())
   .use(healthRouter.allowedMethods())
