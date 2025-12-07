@@ -1,35 +1,45 @@
 import helmet from 'helmet'
 import type { Context } from 'koa'
-import { describe, expect, it, vi } from 'vitest'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
 
 vi.mock('helmet')
 
 describe('helmet', () => {
-  it('should export a function that wraps helmet for Koa', async () => {
-    expect.assertions(2)
+  beforeEach(() => {
+    vi.clearAllMocks()
+  })
 
-    const { default: helmetMiddleware } = await import('./helmet.js')
+  it('should export a factory that calls helmet and returns Koa middleware', async () => {
+    expect.assertions(3)
 
-    expect(helmetMiddleware).toBeTypeOf('function')
+    const mockExpressHelmet = vi.fn()
+    const mockHelmet = vi.mocked(helmet)
+    mockHelmet.mockReturnValue(mockExpressHelmet)
 
-    // Call the function to create middleware
-    const middleware = helmetMiddleware()
+    const { default: helmetFactory } = await import('./helmet.js')
 
+    const middleware = helmetFactory()
+
+    expect(mockHelmet).toHaveBeenCalledOnce()
+    expect(mockHelmet).toHaveBeenCalledWith(undefined)
     expect(middleware).toBeTypeOf('function')
   })
 
   it('should call helmet with options when provided', async () => {
-    expect.assertions(1)
+    expect.assertions(3)
 
+    const mockExpressHelmet = vi.fn()
     const mockHelmet = vi.mocked(helmet)
-    mockHelmet.mockReturnValue(vi.fn())
+    mockHelmet.mockReturnValue(mockExpressHelmet)
 
-    const { default: helmetMiddleware } = await import('./helmet.js')
+    const { default: helmetFactory } = await import('./helmet.js')
 
     const options = { contentSecurityPolicy: false }
-    helmetMiddleware(options)
+    const middleware = helmetFactory(options)
 
+    expect(mockHelmet).toHaveBeenCalledOnce()
     expect(mockHelmet).toHaveBeenCalledWith(options)
+    expect(middleware).toBeTypeOf('function')
   })
 
   it('should call the express helmet middleware and continue to next', async () => {
