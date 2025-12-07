@@ -51,9 +51,9 @@ describe('helmet', () => {
     const mockHelmet = vi.mocked(helmet)
     mockHelmet.mockReturnValue(mockExpressHelmet)
 
-    const { default: helmetMiddleware } = await import('./helmet.js')
+    const { default: helmetFactory } = await import('./helmet.js')
 
-    const middleware = helmetMiddleware()
+    const middleware = helmetFactory()
 
     const ctx = {
       req: {},
@@ -81,9 +81,9 @@ describe('helmet', () => {
     const mockHelmet = vi.mocked(helmet)
     mockHelmet.mockReturnValue(mockExpressHelmet)
 
-    const { default: helmetMiddleware } = await import('./helmet.js')
+    const { default: helmetFactory } = await import('./helmet.js')
 
-    const middleware = helmetMiddleware()
+    const middleware = helmetFactory()
 
     const ctx = {
       req: {},
