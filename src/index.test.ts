@@ -4,7 +4,7 @@ import config from './config.js'
 import {
   bodyParser,
   compress,
-  helmet,
+  koaHelmet,
   postGraphile,
 } from './middleware/index.js'
 import { healthRouter } from './router/index.js'
@@ -27,9 +27,9 @@ vi.mock('./config.js', () => ({
 vi.mock('./middleware/index.js', () => ({
   bodyParser: vi.fn().mockName('bodyParser'),
   compress: vi.fn().mockName('compress'),
-  helmet: vi
+  koaHelmet: vi
     .fn()
-    .mockName('helmet')
+    .mockName('koaHelmet')
     .mockReturnValue(vi.fn().mockName('helmet-middleware')),
   postGraphile: vi.fn().mockName('postGraphile'),
 }))
@@ -56,8 +56,8 @@ describe('index', () => {
     expect.soft(mockKoaInstance.use).toHaveBeenCalledTimes(6)
     expect.soft(mockKoaInstance.use).toHaveBeenCalledWith(bodyParser)
     expect.soft(mockKoaInstance.use).toHaveBeenCalledWith(compress)
-    expect.soft(helmet).toHaveBeenCalledWith()
-    expect.soft(mockKoaInstance.use).toHaveBeenCalledWith(helmet())
+    expect.soft(koaHelmet).toHaveBeenCalledWith()
+    expect.soft(mockKoaInstance.use).toHaveBeenCalledWith(koaHelmet())
     expect.soft(healthRouter.routes).toHaveBeenCalledOnce()
     expect.soft(mockKoaInstance.use).toHaveBeenCalledWith(healthRouter.routes())
     expect.soft(healthRouter.allowedMethods).toHaveBeenCalledOnce()

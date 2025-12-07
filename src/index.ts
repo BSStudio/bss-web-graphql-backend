@@ -3,7 +3,7 @@ import config from './config.js'
 import {
   bodyParser,
   compress,
-  helmet,
+  koaHelmet,
   postGraphile,
 } from './middleware/index.js'
 import { healthRouter } from './router/index.js'
@@ -14,7 +14,7 @@ app
   // register common middleware
   .use(bodyParser)
   .use(compress)
-  .use(helmet())
+  .use(koaHelmet())
   // register health router
   .use(healthRouter.routes())
   .use(healthRouter.allowedMethods())

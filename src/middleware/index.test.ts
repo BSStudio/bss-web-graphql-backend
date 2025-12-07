@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from 'vitest'
 import bodyParser from './bodyparser.js'
 import compress from './compress.js'
-import helmet from './helmet.js'
+import { koaHelmet } from './helmet.js'
 import postGraphile from './postgraphile.js'
 
 vi.mock('./bodyparser', () => ({
@@ -11,7 +11,7 @@ vi.mock('./compress', () => ({
   default: vi.fn().mockName('compress'),
 }))
 vi.mock('./helmet', () => ({
-  default: vi.fn().mockName('helmet'),
+  koaHelmet: vi.fn().mockName('helmet'),
 }))
 vi.mock('./postgraphile', () => ({
   default: vi.fn().mockName('postgraphile'),
@@ -26,10 +26,10 @@ describe('index', () => {
     const expected = {
       bodyParser,
       compress,
-      helmet,
+      koaHelmet,
       postGraphile,
     }
     expect.soft(actual).toMatchObject(expected)
-    expect.soft(Object.keys(actual)).toEqual(Object.keys(expected))
+    expect.soft(Object.keys(actual).sort()).toEqual(Object.keys(expected).sort())
   })
 })

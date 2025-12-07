@@ -16,9 +16,9 @@ describe('helmet', () => {
     const mockHelmet = vi.mocked(helmet)
     mockHelmet.mockReturnValue(mockExpressHelmet)
 
-    const { default: helmetFactory } = await import('./helmet.js')
+    const { koaHelmet } = await import('./helmet.js')
 
-    const middleware = helmetFactory()
+    const middleware = koaHelmet()
 
     expect(mockHelmet).toHaveBeenCalledOnce()
     expect(mockHelmet).toHaveBeenCalledWith(undefined)
@@ -32,10 +32,10 @@ describe('helmet', () => {
     const mockHelmet = vi.mocked(helmet)
     mockHelmet.mockReturnValue(mockExpressHelmet)
 
-    const { default: helmetFactory } = await import('./helmet.js')
+    const { koaHelmet } = await import('./helmet.js')
 
     const options = { contentSecurityPolicy: false }
-    const middleware = helmetFactory(options)
+    const middleware = koaHelmet(options)
 
     expect(mockHelmet).toHaveBeenCalledOnce()
     expect(mockHelmet).toHaveBeenCalledWith(options)
@@ -51,9 +51,9 @@ describe('helmet', () => {
     const mockHelmet = vi.mocked(helmet)
     mockHelmet.mockReturnValue(mockExpressHelmet)
 
-    const { default: helmetFactory } = await import('./helmet.js')
+    const { koaHelmet } = await import('./helmet.js')
 
-    const middleware = helmetFactory()
+    const middleware = koaHelmet()
 
     const ctx = {
       req: {},
@@ -81,9 +81,9 @@ describe('helmet', () => {
     const mockHelmet = vi.mocked(helmet)
     mockHelmet.mockReturnValue(mockExpressHelmet)
 
-    const { default: helmetFactory } = await import('./helmet.js')
+    const { koaHelmet } = await import('./helmet.js')
 
-    const middleware = helmetFactory()
+    const middleware = koaHelmet()
 
     const ctx = {
       req: {},

@@ -6,7 +6,7 @@ import type { Middleware } from 'koa'
  *
  * Accepts the same options helmet() does.
  */
-export default function (options?: HelmetOptions): Middleware {
+export function koaHelmet(options?: HelmetOptions): Middleware {
   const expressHelmet = helmet(options)
   return async (ctx, next) => {
     await new Promise<void>((resolve, reject) => {
