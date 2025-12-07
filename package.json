@@ -27,8 +27,7 @@
     "koa": "3.1.1",
     "koa-compress": "5.1.1",
     "pg": "8.16.3",
-    "postgraphile": "4.14.1",
-    "test": "^3.3.0"
+    "postgraphile": "4.14.1"
   },
   "// build": "Dependencies required to build the project",
   "devDependencies": {
