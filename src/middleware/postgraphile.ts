@@ -12,7 +12,7 @@ const options: PostGraphileOptions = {
   setofFunctionsContainNulls: false,
   ignoreRBAC: false,
   extendedErrors: ['errcode'],
-  appendPlugins: [PgSimplifyInflectorPlugin],
+  appendPlugins: [PgSimplifyInflectorPlugin.default],
   graphiql: false,
   enableQueryBatching: true,
   disableQueryLog: true,
