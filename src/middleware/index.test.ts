@@ -30,6 +30,8 @@ describe('index', () => {
       postGraphile,
     }
     expect.soft(actual).toMatchObject(expected)
-    expect.soft(Object.keys(actual).sort()).toEqual(Object.keys(expected).sort())
+    expect
+      .soft(Object.keys(actual).sort())
+      .toEqual(Object.keys(expected).sort())
   })
 })
