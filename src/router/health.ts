@@ -17,7 +17,6 @@ router.get('/health', async (ctx) => {
       }
       ctx.body = 'ERROR: no views found in database'
       ctx.status = 500
-      return
     })
     .catch(() => {
       ctx.body = 'ERROR: cannot connect to database'

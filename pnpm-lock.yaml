@@ -20,15 +20,15 @@ importers:
       dotenv:
         specifier: 17.2.3
         version: 17.2.3
+      helmet:
+        specifier: 8.1.0
+        version: 8.1.0
       koa:
         specifier: 3.1.1
         version: 3.1.1
       koa-compress:
         specifier: 5.1.1
         version: 5.1.1
-      koa-helmet:
-        specifier: 8.0.1
-        version: 8.0.1(helmet@8.1.0)
       pg:
         specifier: 8.16.3
         version: 8.16.3
@@ -1873,12 +1873,6 @@ packages:
   koa-compress@5.1.1:
     resolution: {integrity: sha512-UgMIN7ZoEP2DuoSQmD6CYvFSLt0NReGlc2qSY4bO4Oq0L56OiD9pDG41Kj/zFmVY/A3Wvmn4BqKcfq5H30LGIg==}
     engines: {node: '>= 12'}
-
-  koa-helmet@8.0.1:
-    resolution: {integrity: sha512-lXDqTqNLgqyOKEuCSF3MFReJmEQQ0GD0NzkdSe9dKH87NSMc5GxAA7H5mYaAT+UJypYkIS1lPNRqTuEUgl+l3Q==}
-    engines: {node: '>= 18.0.0'}
-    peerDependencies:
-      helmet: '>= 6'
 
   koa-is-json@1.0.0:
     resolution: {integrity: sha512-+97CtHAlWDx0ndt0J8y3P12EWLwTLMXIfMnYDev3wOTwH/RpBGMlfn4bDXlMEg1u73K6XRE9BbUp+5ZAYoRYWw==}
@@ -5201,10 +5195,6 @@ snapshots:
       compressible: 2.0.18
       http-errors: 1.8.1
       koa-is-json: 1.0.0
-
-  koa-helmet@8.0.1(helmet@8.1.0):
-    dependencies:
-      helmet: 8.1.0
 
   koa-is-json@1.0.0: {}
 
