@@ -46,7 +46,7 @@
     "@vitest/coverage-v8": "4.0.15",
     "@vitest/ui": "4.0.15",
     "axios": "1.13.2",
-    "graphql-request": "7.3.5",
+    "graphql-request": "7.4.0",
     "nodemon": "3.1.11",
     "prettier": "3.7.4",
     "semantic-release": "25.0.2",
