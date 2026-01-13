@@ -58,5 +58,5 @@
     "type": "git",
     "url": "https://github.com/BSStudio/bss-web-graphql-backend.git"
   },
-  "packageManager": "pnpm@10.27.0"
+  "packageManager": "pnpm@10.28.0"
 }
