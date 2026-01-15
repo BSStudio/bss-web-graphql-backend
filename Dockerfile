@@ -1,4 +1,4 @@
-FROM node:24-alpine@sha256:6ad8c47f099bc2440e0fc42f17a03297fa79955f559f10087cabf377c43ddbce AS base
+FROM node:24-alpine@sha256:abba54e1aa65f9d795ec66541e3e829986072483bf7812ea66df83dd69f95dae AS base
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 RUN corepack enable
