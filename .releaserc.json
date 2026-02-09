@@ -3,14 +3,14 @@
   "plugins": [
     "@semantic-release/commit-analyzer",
     [
-        "@semantic-release/release-notes-generator",
-        {
-          "presetConfig": {
-            "types": [
-              { "type": "chore", "section": "Chores" }
-            ]
-          }
+      "@semantic-release/release-notes-generator",
+      {
+        "presetConfig": {
+          "types": [
+            { "type": "chore", "section": "Chores" }
+          ]
         }
+      }
     ],
     "@semantic-release/github"
   ]
