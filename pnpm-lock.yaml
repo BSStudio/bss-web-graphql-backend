@@ -27,8 +27,8 @@ importers:
         specifier: 3.1.1
         version: 3.1.1
       koa-compress:
-        specifier: 5.1.1
-        version: 5.1.1
+        specifier: 5.2.0
+        version: 5.2.0
       pg:
         specifier: 8.18.0
         version: 8.18.0
@@ -1888,8 +1888,8 @@ packages:
   koa-compose@4.1.0:
     resolution: {integrity: sha512-8ODW8TrDuMYvXRwra/Kh7/rJo9BtOfPc6qO8eAfC80CnCvSjSl0bkRM24X6/XBBEyj0v1nRUQ1LyOy3dbqOWXw==}
 
-  koa-compress@5.1.1:
-    resolution: {integrity: sha512-UgMIN7ZoEP2DuoSQmD6CYvFSLt0NReGlc2qSY4bO4Oq0L56OiD9pDG41Kj/zFmVY/A3Wvmn4BqKcfq5H30LGIg==}
+  koa-compress@5.2.0:
+    resolution: {integrity: sha512-RsRnI+v+/rs1lYpcAUcxowUzHYssf71qbMr0Mpdq1wktbtXDZmxBIgxJHtaEsBjSe4jiWYELpGFbASa2AemmOg==}
     engines: {node: '>= 12'}
 
   koa-is-json@1.0.0:
@@ -2106,6 +2106,10 @@ packages:
 
   negotiator@0.6.3:
     resolution: {integrity: sha512-+EUsqGPLsM+j/zdChZjsnX51g4XrHFOIXwfnCVPGlQk/k5giakcKsuxCObBRu6DSm9opw/O6slWbJdghQM4bBg==}
+    engines: {node: '>= 0.6'}
+
+  negotiator@1.0.0:
+    resolution: {integrity: sha512-8Ofs/AUQh8MaEcrlq5xOX0CQ9ypTF5dl78mjlMNfOK08fzpgTHQRQPBxcPlEtIw0yRpws+Zo/3r+5WRby7u3Gg==}
     engines: {node: '>= 0.6'}
 
   neo-async@2.6.2:
@@ -5204,12 +5208,13 @@ snapshots:
 
   koa-compose@4.1.0: {}
 
-  koa-compress@5.1.1:
+  koa-compress@5.2.0:
     dependencies:
       bytes: 3.1.2
       compressible: 2.0.18
-      http-errors: 1.8.1
+      http-errors: 2.0.1
       koa-is-json: 1.0.0
+      negotiator: 1.0.0
 
   koa-is-json@1.0.0: {}
 
@@ -5438,6 +5443,8 @@ snapshots:
     optional: true
 
   negotiator@0.6.3: {}
+
+  negotiator@1.0.0: {}
 
   neo-async@2.6.2:
     optional: true
