@@ -24,7 +24,7 @@
     "@koa/router": "15.3.0",
     "dotenv": "17.3.1",
     "helmet": "8.1.0",
-    "koa": "3.1.1",
+    "koa": "3.1.2",
     "koa-compress": "5.2.0",
     "pg": "8.18.0",
     "postgraphile": "4.14.1"
