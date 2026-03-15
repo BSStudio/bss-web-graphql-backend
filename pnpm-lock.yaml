@@ -27,8 +27,8 @@ importers:
         specifier: 3.1.2
         version: 3.1.2
       koa-compress:
-        specifier: 5.2.0
-        version: 5.2.0
+        specifier: 5.2.1
+        version: 5.2.1
       pg:
         specifier: 8.20.0
         version: 8.20.0
@@ -1915,8 +1915,8 @@ packages:
   koa-compose@4.1.0:
     resolution: {integrity: sha512-8ODW8TrDuMYvXRwra/Kh7/rJo9BtOfPc6qO8eAfC80CnCvSjSl0bkRM24X6/XBBEyj0v1nRUQ1LyOy3dbqOWXw==}
 
-  koa-compress@5.2.0:
-    resolution: {integrity: sha512-RsRnI+v+/rs1lYpcAUcxowUzHYssf71qbMr0Mpdq1wktbtXDZmxBIgxJHtaEsBjSe4jiWYELpGFbASa2AemmOg==}
+  koa-compress@5.2.1:
+    resolution: {integrity: sha512-k8VJMZI7vvSq1/G/t6Jggeg4h7fec1NJxcYaDWC4/1PK6mJFPs0OYqj44vx/soUcDVEJR7ysR5cc6pszKpnzXA==}
     engines: {node: '>= 12'}
 
   koa-is-json@1.0.0:
@@ -5263,7 +5263,7 @@ snapshots:
 
   koa-compose@4.1.0: {}
 
-  koa-compress@5.2.0:
+  koa-compress@5.2.1:
     dependencies:
       bytes: 3.1.2
       compressible: 2.0.18
