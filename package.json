@@ -42,7 +42,7 @@
   },
   "// optional": "Dependencies that required to test and lint the project",
   "optionalDependencies": {
-    "@biomejs/biome": "2.4.6",
+    "@biomejs/biome": "2.4.7",
     "@vitest/coverage-v8": "4.1.0",
     "@vitest/ui": "4.1.0",
     "axios": "1.13.6",
