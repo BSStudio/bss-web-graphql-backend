@@ -21,7 +21,7 @@
   "dependencies": {
     "@graphile-contrib/pg-simplify-inflector": "6.1.0",
     "@koa/bodyparser": "6.1.0",
-    "@koa/router": "15.3.1",
+    "@koa/router": "15.3.2",
     "dotenv": "17.3.1",
     "helmet": "8.1.0",
     "koa": "3.1.2",
