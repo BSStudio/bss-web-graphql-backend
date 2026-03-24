@@ -49,8 +49,8 @@ importers:
         specifier: 4.0.7
         version: 4.0.7
       '@types/pg':
-        specifier: 8.18.0
-        version: 8.18.0
+        specifier: 8.20.0
+        version: 8.20.0
       '@types/supertest':
         specifier: 7.2.0
         version: 7.2.0
@@ -631,8 +631,8 @@ packages:
   '@types/normalize-package-data@2.4.4':
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
 
-  '@types/pg@8.18.0':
-    resolution: {integrity: sha512-gT+oueVQkqnj6ajGJXblFR4iavIXWsGAFCk3dP4Kki5+a9R4NMt0JARdk6s8cUKcfUoqP5dAtDSLU8xYUTFV+Q==}
+  '@types/pg@8.20.0':
+    resolution: {integrity: sha512-bEPFOaMAHTEP1EzpvHTbmwR8UsFyHSKsRisLIHVMXnpNefSbGA1bD6CVy+qKjGSqmZqNqBDV2azOBo8TgkcVow==}
 
   '@types/qs@6.15.0':
     resolution: {integrity: sha512-JawvT8iBVWpzTrz3EGw9BTQFg3BQNmwERdKE22vlTxawwtbyUSlMppvZYKLZzB5zgACXdXxbD3m1bXaMqP/9ow==}
@@ -3706,7 +3706,7 @@ snapshots:
   '@types/normalize-package-data@2.4.4':
     optional: true
 
-  '@types/pg@8.18.0':
+  '@types/pg@8.20.0':
     dependencies:
       '@types/node': 25.5.0
       pg-protocol: 1.13.0
@@ -5556,7 +5556,7 @@ snapshots:
   pg-sql2@4.14.1(pg@8.20.0):
     dependencies:
       '@graphile/lru': 4.11.0
-      '@types/pg': 8.18.0
+      '@types/pg': 8.20.0
       debug: 4.4.3(supports-color@5.5.0)
       pg: 8.20.0
       tslib: 2.8.1
@@ -5627,7 +5627,7 @@ snapshots:
       '@graphile/lru': 4.11.0
       '@types/json5': 0.0.30
       '@types/jsonwebtoken': 9.0.10
-      '@types/pg': 8.18.0
+      '@types/pg': 8.20.0
       '@types/ws': 7.4.7
       body-parser: 1.20.4
       chalk: 2.4.2
