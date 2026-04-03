@@ -31,7 +31,7 @@ describe('index', () => {
     }
     expect.soft(actual).toMatchObject(expected)
     expect
-      .soft(Object.keys(actual).sort())
-      .toEqual(Object.keys(expected).sort())
+      .soft(Object.keys(actual).sort(String.localeCompare))
+      .toEqual(Object.keys(expected).sort(String.localeCompare))
   })
 })
