@@ -20,7 +20,7 @@ services:
   # once db is initialized, we can shut down the container
   # however it makes it easy to add data to the db
   backend:
-    image: ghcr.io/bsstudio/bss-web-admin-backend:v2.7.26@sha256:171d62869ec88187d24d79e4a2e61ffbd3e5f2998d7726c5a6f0cc4f4099853a
+    image: ghcr.io/bsstudio/bss-web-admin-backend:v2.7.27@sha256:7a4376b93b83ccad9f0d439d05aa3efb46be2f1e9776745cc1fae4df81a91b24
     healthcheck:
       test: "wget --tries=1 --no-verbose -qO- http://localhost:8080/actuator/health | grep -q UP"
       start_period: 5s
