@@ -33,7 +33,7 @@
   "devDependencies": {
     "@tsconfig/node24": "24.0.4",
     "@tsconfig/strictest": "2.0.8",
-    "@types/koa": "3.0.2",
+    "@types/koa": "3.0.3",
     "@types/koa-compress": "4.0.7",
     "@types/pg": "8.20.0",
     "@types/supertest": "7.2.0",
