@@ -13,10 +13,10 @@ importers:
         version: 6.1.0
       '@koa/bodyparser':
         specifier: 6.1.0
-        version: 6.1.0(koa@3.2.0)
+        version: 6.1.0(koa@3.2.1)
       '@koa/router':
         specifier: 15.5.0
-        version: 15.5.0(koa@3.2.0)
+        version: 15.5.0(koa@3.2.1)
       dotenv:
         specifier: 17.4.2
         version: 17.4.2
@@ -24,8 +24,8 @@ importers:
         specifier: 8.1.0
         version: 8.1.0
       koa:
-        specifier: 3.2.0
-        version: 3.2.0
+        specifier: 3.2.1
+        version: 3.2.1
       koa-compress:
         specifier: 5.2.1
         version: 5.2.1
@@ -1750,8 +1750,8 @@ packages:
   koa-is-json@1.0.0:
     resolution: {integrity: sha512-+97CtHAlWDx0ndt0J8y3P12EWLwTLMXIfMnYDev3wOTwH/RpBGMlfn4bDXlMEg1u73K6XRE9BbUp+5ZAYoRYWw==}
 
-  koa@3.2.0:
-    resolution: {integrity: sha512-TrM4/tnNY7uJ1aW55sIIa+dqBvc4V14WRIAlGcWat9wV5pRS9Wr5Zk2ZTjQP1jtfIHDoHiSbPuV08P0fUZo2pg==}
+  koa@3.2.1:
+    resolution: {integrity: sha512-e7IpWJrnanNUroVK2taAgMxoEZvHLXdQiNjeExSu/DEIWm83jaKGBgb7tLmu2rMYpA027qFB3iLR/k3AVpFRnA==}
     engines: {node: '>= 18'}
 
   lazystream@1.0.1:
@@ -3274,19 +3274,19 @@ snapshots:
   '@js-sdsl/ordered-map@4.4.2':
     optional: true
 
-  '@koa/bodyparser@6.1.0(koa@3.2.0)':
+  '@koa/bodyparser@6.1.0(koa@3.2.1)':
     dependencies:
       '@types/co-body': 6.1.3
       co-body: 6.2.0
-      koa: 3.2.0
+      koa: 3.2.1
       lodash.merge: 4.6.2
       type-is: 2.1.0
 
-  '@koa/router@15.5.0(koa@3.2.0)':
+  '@koa/router@15.5.0(koa@3.2.1)':
     dependencies:
       debug: 4.4.3(supports-color@5.5.0)
       http-errors: 2.0.1
-      koa: 3.2.0
+      koa: 3.2.1
       koa-compose: 4.1.0
       path-to-regexp: 8.4.2
     transitivePeerDependencies:
@@ -5088,7 +5088,7 @@ snapshots:
 
   koa-is-json@1.0.0: {}
 
-  koa@3.2.0:
+  koa@3.2.1:
     dependencies:
       accepts: 1.3.8
       content-disposition: 1.0.1
