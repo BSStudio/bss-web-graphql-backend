@@ -36,7 +36,7 @@
     "@types/koa": "3.0.3",
     "@types/koa-compress": "4.0.7",
     "@types/pg": "8.20.0",
-    "@types/supertest": "7.2.0",
+    "@types/supertest": "7.2.1",
     "ts-node": "10.9.2",
     "typescript": "6.0.3"
   },
