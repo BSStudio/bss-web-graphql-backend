@@ -7,7 +7,8 @@ COPY package.json pnpm-lock.yaml ./
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --ignore-scripts --frozen-lockfile --no-optional --prod
 
 FROM base AS builder
-RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --ignore-scripts --frozen-lockfile --no-optional
+# TypeScript 7 ships platform binaries as optionalDependencies; do not skip them here.
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --ignore-scripts --frozen-lockfile
 COPY ./src ./src
 COPY tsconfig.json ./
 RUN pnpm run build
