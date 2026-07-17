@@ -2,10 +2,10 @@ import koa from 'koa'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import config from './config.js'
 import {
+  addPostGraphile,
   bodyParser,
   compress,
   koaHelmet,
-  postGraphile,
 } from './middleware/index.js'
 import { healthRouter } from './router/index.js'
 
@@ -31,7 +31,7 @@ vi.mock('./middleware/index.js', () => ({
     .fn()
     .mockName('koaHelmet')
     .mockReturnValue(vi.fn().mockName('helmet-middleware')),
-  postGraphile: vi.fn().mockName('postGraphile'),
+  addPostGraphile: vi.fn().mockResolvedValue(undefined),
 }))
 vi.mock('./router/index.js', () => ({
   healthRouter: {
@@ -52,8 +52,8 @@ describe('index', () => {
 
     expect.soft(vi.mocked(koa)).toHaveBeenCalledTimes(1)
     const mockKoaInstance = vi.mocked(koa).mock.results[0]?.value
-    // assert use method is called 6 times with the following arguments
-    expect.soft(mockKoaInstance.use).toHaveBeenCalledTimes(6)
+    // assert use method is called 5 times with the following arguments
+    expect.soft(mockKoaInstance.use).toHaveBeenCalledTimes(5)
     expect.soft(mockKoaInstance.use).toHaveBeenCalledWith(bodyParser)
     expect.soft(mockKoaInstance.use).toHaveBeenCalledWith(compress)
     expect.soft(koaHelmet).toHaveBeenCalledWith()
@@ -64,7 +64,7 @@ describe('index', () => {
     expect
       .soft(mockKoaInstance.use)
       .toHaveBeenCalledWith(healthRouter.allowedMethods())
-    expect.soft(mockKoaInstance.use).toHaveBeenCalledWith(postGraphile)
+    expect.soft(addPostGraphile).toHaveBeenCalledWith(mockKoaInstance)
     expect
       .soft(mockKoaInstance.listen)
       .toHaveBeenCalledWith(config.port, expect.any(Function))

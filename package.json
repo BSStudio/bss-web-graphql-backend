@@ -19,15 +19,16 @@
   "type": "module",
   "//": "Dependencies required at runtime",
   "dependencies": {
-    "@graphile-contrib/pg-simplify-inflector": "6.1.0",
+    "@graphile/simplify-inflection": "8.0.0",
     "@koa/bodyparser": "6.1.0",
     "@koa/router": "15.7.0",
     "dotenv": "17.4.2",
+    "graphile-config": "1.0.0",
     "helmet": "8.3.0",
     "koa": "3.2.1",
     "koa-compress": "5.2.2",
     "pg": "8.22.0",
-    "postgraphile": "4.14.1"
+    "postgraphile": "5.1.0"
   },
   "// build": "Dependencies required to build the project",
   "devDependencies": {
