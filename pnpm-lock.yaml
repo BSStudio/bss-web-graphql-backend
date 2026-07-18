@@ -16,7 +16,7 @@ importers:
         version: 6.1.0(koa@3.2.1)
       '@koa/router':
         specifier: 15.7.0
-        version: 15.7.0(koa@3.2.1)
+        version: 15.7.0(koa@3.2.1)(supports-color@5.5.0)
       dotenv:
         specifier: 17.4.2
         version: 17.4.2
@@ -34,7 +34,7 @@ importers:
         version: 8.22.0
       postgraphile:
         specifier: 4.14.1
-        version: 4.14.1
+        version: 4.14.1(supports-color@5.5.0)
     devDependencies:
       '@tsconfig/node24':
         specifier: 24.0.4
@@ -62,8 +62,8 @@ importers:
         version: 7.0.2
     optionalDependencies:
       '@biomejs/biome':
-        specifier: 2.5.3
-        version: 2.5.3
+        specifier: 2.5.4
+        version: 2.5.4
       '@vitest/coverage-v8':
         specifier: 4.1.10
         version: 4.1.10(vitest@4.1.10)
@@ -72,7 +72,7 @@ importers:
         version: 4.1.10(vitest@4.1.10)
       axios:
         specifier: 1.18.1
-        version: 1.18.1
+        version: 1.18.1(supports-color@5.5.0)
       graphql-request:
         specifier: 7.4.0
         version: 7.4.0(graphql@15.10.2)
@@ -84,13 +84,13 @@ importers:
         version: 3.9.5
       semantic-release:
         specifier: 25.0.7
-        version: 25.0.7(typescript@7.0.2)
+        version: 25.0.7(supports-color@5.5.0)(typescript@7.0.2)
       supertest:
         specifier: 7.2.2
-        version: 7.2.2
+        version: 7.2.2(supports-color@5.5.0)
       testcontainers:
         specifier: 12.0.4
-        version: 12.0.4
+        version: 12.0.4(supports-color@5.5.0)
       vitest:
         specifier: 4.1.10
         version: 4.1.10(@types/node@26.1.1)(@vitest/coverage-v8@4.1.10)(@vitest/ui@4.1.10)(vite@8.1.4(@types/node@26.1.1)(yaml@2.9.0))
@@ -137,59 +137,59 @@ packages:
     resolution: {integrity: sha512-6zABk/ECA/QYSCQ1NGiVwwbQerUCZ+TQbp64Q3AgmfNvurHH0j8TtXa1qbShXA6qqkpAj4V5W8pP6mLe1mcMqA==}
     engines: {node: '>=18'}
 
-  '@biomejs/biome@2.5.3':
-    resolution: {integrity: sha512-MrJswFdei9EfDwwUy2tQrPDpK0AO+RmMFvBoaaJ6ayBc3sUbHdCE+XG5N8vp+5So41ZupZJQm0roHFFhMGVD7A==}
+  '@biomejs/biome@2.5.4':
+    resolution: {integrity: sha512-xy5FNE5kQJKyK5MR1gJy6ztXYx4WBAbYGlK04lMEgmyPRWKybY9NFwiG9yo0XdzOU8Xvhj41u034J1ywfoWfMw==}
     engines: {node: '>=14.21.3'}
     hasBin: true
 
-  '@biomejs/cli-darwin-arm64@2.5.3':
-    resolution: {integrity: sha512-QhYP9muVQ0nUO5zztFuPbEwi4+94sJWVjaZds9aMi1l/KNZBiUjdiSUrGHsTaMGDXrYl+r4AS2sUKfgH3w+V3g==}
+  '@biomejs/cli-darwin-arm64@2.5.4':
+    resolution: {integrity: sha512-4o3NFRobXHynkgcFVrlZsoDAFtF2ldlEGN8sORSws5ZQqyY4PXnPUIylu4ksfyHuwkfvDREuWh3JK+niRwGq3w==}
     engines: {node: '>=14.21.3'}
     cpu: [arm64]
     os: [darwin]
 
-  '@biomejs/cli-darwin-x64@2.5.3':
-    resolution: {integrity: sha512-NC1Ss13UaW7QZX+y8j44bF7AP0jSJdBl6iRhe0MAkvaSqZy+mWg3GaXsrb+eSoHoGDBtaXWEbMVV0iVN2cZ7cQ==}
+  '@biomejs/cli-darwin-x64@2.5.4':
+    resolution: {integrity: sha512-D32P5HkU2Y6PySuC/WsVDTOgsDwVFmujzhhhOQjajtATpVWFDXuVd3oRbsWNSEA+aaFzyzZm22szsyydBYlSyQ==}
     engines: {node: '>=14.21.3'}
     cpu: [x64]
     os: [darwin]
 
-  '@biomejs/cli-linux-arm64-musl@2.5.3':
-    resolution: {integrity: sha512-fccix0w6xp6csCXgxeC0dU/3ecgRQal0y+cv2SP9ajNlhe7Yrk2Ug7UDe2j9AT9ZDYitkXpvUKgZjjuoYeP4Vg==}
+  '@biomejs/cli-linux-arm64-musl@2.5.4':
+    resolution: {integrity: sha512-Rpm5/AT1m+DlJmUoYvS4/vXc+0tXJPJ2NQz25TGPyHVF5JrWy75PE0GH6kVxsKtQDuCH4OgzquZq0R4kj/wCVg==}
     engines: {node: '>=14.21.3'}
     cpu: [arm64]
     os: [linux]
     libc: [musl]
 
-  '@biomejs/cli-linux-arm64@2.5.3':
-    resolution: {integrity: sha512-ksx1KWeyYW18ILL04msF/J4ZBtBDN33znYK8Z/aNv/vlBVxL9/g3mGP+omgHJKy4+KWbK87vcmmpmurfNjSgiA==}
+  '@biomejs/cli-linux-arm64@2.5.4':
+    resolution: {integrity: sha512-pSEfW7B8kTsXUjUxC1xVVK+y85Ht3C5XxZ9gclmC7/3Ku9Vqz8jmI7k0p/BNIjQ6t4sFERI2sFeH73ybiZl6YQ==}
     engines: {node: '>=14.21.3'}
     cpu: [arm64]
     os: [linux]
     libc: [glibc]
 
-  '@biomejs/cli-linux-x64-musl@2.5.3':
-    resolution: {integrity: sha512-O/yU9YKRUiHhmcjF2f38PSjseVk3G4VLWYc0G2HWpzdBVREV6G8IGWIVEFf7MFPfWIzNUIvPsEjeAZQIOgnLcQ==}
+  '@biomejs/cli-linux-x64-musl@2.5.4':
+    resolution: {integrity: sha512-aby/PohmmgbShcHqFsZVzG8H6D98+P+A6xRWRrQcLW1pCjabcov5UUlke4UqNQBYTkDQav+jB4zyyDDeKB2GaA==}
     engines: {node: '>=14.21.3'}
     cpu: [x64]
     os: [linux]
     libc: [musl]
 
-  '@biomejs/cli-linux-x64@2.5.3':
-    resolution: {integrity: sha512-yMkJtilsgvILDcVkh187aVLTb64xYsrxYajx5kym+r1ULkO5HUOfu9AYKLGQbOVLwJtT2utNw7hhFNg+17mUYA==}
+  '@biomejs/cli-linux-x64@2.5.4':
+    resolution: {integrity: sha512-FNxojWJkL7EajAuzBgoLe0T2G0y112M4lBrDIFl/DomFTx8yqenYOIdsRLNXvOvBBofE8hJi85LjzLmBDpY7/Q==}
     engines: {node: '>=14.21.3'}
     cpu: [x64]
     os: [linux]
     libc: [glibc]
 
-  '@biomejs/cli-win32-arm64@2.5.3':
-    resolution: {integrity: sha512-cX5z+GYwRcqEok0AH3KSfQGgqYd0Nomfp6Fbe1uiTtELE38hdH2k842wQ9wLNaF/JJ7r4rjJQ4VR+ce+fRmQbw==}
+  '@biomejs/cli-win32-arm64@2.5.4':
+    resolution: {integrity: sha512-emoXexPZIPAZkz2RKmA95WJUqK3I5MJNYtwEbL5ESciRzhmFMMyekDhNG8hpeOaK+ZGRDxAU4wvGuA5IHQ0h0w==}
     engines: {node: '>=14.21.3'}
     cpu: [arm64]
     os: [win32]
 
-  '@biomejs/cli-win32-x64@2.5.3':
-    resolution: {integrity: sha512-ExSaJWi4/u6+GXCszlSKpWSjKNbDseAYqqkCznsCsZ/4uidZ/BEqsCc5/3ctlq6dfIubdIIRSVLC/PG9xPl70Q==}
+  '@biomejs/cli-win32-x64@2.5.4':
+    resolution: {integrity: sha512-U1jaluLw1qQc2Tx7/CeSoL9N5XcqIH+GWjpUAy1ouB5nVjSCMNO+NNHdY3RAs8zxNurLWAdj6pehQdCA2zyU+Q==}
     engines: {node: '>=14.21.3'}
     cpu: [x64]
     os: [win32]
@@ -3265,40 +3265,40 @@ snapshots:
   '@bcoe/v8-coverage@1.0.2':
     optional: true
 
-  '@biomejs/biome@2.5.3':
+  '@biomejs/biome@2.5.4':
     optionalDependencies:
-      '@biomejs/cli-darwin-arm64': 2.5.3
-      '@biomejs/cli-darwin-x64': 2.5.3
-      '@biomejs/cli-linux-arm64': 2.5.3
-      '@biomejs/cli-linux-arm64-musl': 2.5.3
-      '@biomejs/cli-linux-x64': 2.5.3
-      '@biomejs/cli-linux-x64-musl': 2.5.3
-      '@biomejs/cli-win32-arm64': 2.5.3
-      '@biomejs/cli-win32-x64': 2.5.3
+      '@biomejs/cli-darwin-arm64': 2.5.4
+      '@biomejs/cli-darwin-x64': 2.5.4
+      '@biomejs/cli-linux-arm64': 2.5.4
+      '@biomejs/cli-linux-arm64-musl': 2.5.4
+      '@biomejs/cli-linux-x64': 2.5.4
+      '@biomejs/cli-linux-x64-musl': 2.5.4
+      '@biomejs/cli-win32-arm64': 2.5.4
+      '@biomejs/cli-win32-x64': 2.5.4
     optional: true
 
-  '@biomejs/cli-darwin-arm64@2.5.3':
+  '@biomejs/cli-darwin-arm64@2.5.4':
     optional: true
 
-  '@biomejs/cli-darwin-x64@2.5.3':
+  '@biomejs/cli-darwin-x64@2.5.4':
     optional: true
 
-  '@biomejs/cli-linux-arm64-musl@2.5.3':
+  '@biomejs/cli-linux-arm64-musl@2.5.4':
     optional: true
 
-  '@biomejs/cli-linux-arm64@2.5.3':
+  '@biomejs/cli-linux-arm64@2.5.4':
     optional: true
 
-  '@biomejs/cli-linux-x64-musl@2.5.3':
+  '@biomejs/cli-linux-x64-musl@2.5.4':
     optional: true
 
-  '@biomejs/cli-linux-x64@2.5.3':
+  '@biomejs/cli-linux-x64@2.5.4':
     optional: true
 
-  '@biomejs/cli-win32-arm64@2.5.3':
+  '@biomejs/cli-win32-arm64@2.5.4':
     optional: true
 
-  '@biomejs/cli-win32-x64@2.5.3':
+  '@biomejs/cli-win32-x64@2.5.4':
     optional: true
 
   '@colors/colors@1.5.0':
@@ -3395,7 +3395,7 @@ snapshots:
       lodash.merge: 4.6.2
       type-is: 2.1.0
 
-  '@koa/router@15.7.0(koa@3.2.1)':
+  '@koa/router@15.7.0(koa@3.2.1)(supports-color@5.5.0)':
     dependencies:
       debug: 4.4.3(supports-color@5.5.0)
       http-errors: 2.0.1
@@ -3405,7 +3405,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@kwsites/file-exists@1.1.1':
+  '@kwsites/file-exists@1.1.1(supports-color@5.5.0)':
     dependencies:
       debug: 4.4.3(supports-color@5.5.0)
     transitivePeerDependencies:
@@ -3606,17 +3606,17 @@ snapshots:
   '@sec-ant/readable-stream@0.4.1':
     optional: true
 
-  '@semantic-release/commit-analyzer@13.0.1(semantic-release@25.0.7(typescript@7.0.2))':
+  '@semantic-release/commit-analyzer@13.0.1(semantic-release@25.0.7(supports-color@5.5.0)(typescript@7.0.2))(supports-color@5.5.0)':
     dependencies:
       conventional-changelog-angular: 8.3.1
       conventional-changelog-writer: 8.4.0
       conventional-commits-filter: 5.0.0
       conventional-commits-parser: 6.4.0
       debug: 4.4.3(supports-color@5.5.0)
-      import-from-esm: 2.0.0
+      import-from-esm: 2.0.0(supports-color@5.5.0)
       lodash-es: 4.18.1
       micromatch: 4.0.8
-      semantic-release: 25.0.7(typescript@7.0.2)
+      semantic-release: 25.0.7(supports-color@5.5.0)(typescript@7.0.2)
     transitivePeerDependencies:
       - supports-color
     optional: true
@@ -3624,7 +3624,7 @@ snapshots:
   '@semantic-release/error@4.0.0':
     optional: true
 
-  '@semantic-release/github@12.0.9(semantic-release@25.0.7(typescript@7.0.2))':
+  '@semantic-release/github@12.0.9(semantic-release@25.0.7(supports-color@5.5.0)(typescript@7.0.2))(supports-color@5.5.0)':
     dependencies:
       '@octokit/core': 7.0.6
       '@octokit/plugin-paginate-rest': 14.0.0(@octokit/core@7.0.6)
@@ -3634,13 +3634,13 @@ snapshots:
       aggregate-error: 5.0.0
       debug: 4.4.3(supports-color@5.5.0)
       dir-glob: 3.0.1
-      http-proxy-agent: 9.1.0
-      https-proxy-agent: 9.1.0
+      http-proxy-agent: 9.1.0(supports-color@5.5.0)
+      https-proxy-agent: 9.1.0(supports-color@5.5.0)
       issue-parser: 7.0.2
       lodash-es: 4.18.1
       mime: 4.1.0
       p-filter: 4.1.0
-      semantic-release: 25.0.7(typescript@7.0.2)
+      semantic-release: 25.0.7(supports-color@5.5.0)(typescript@7.0.2)
       tinyglobby: 0.2.17
       undici: 7.28.0
       url-join: 5.0.0
@@ -3649,7 +3649,7 @@ snapshots:
       - supports-color
     optional: true
 
-  '@semantic-release/npm@13.1.5(semantic-release@25.0.7(typescript@7.0.2))':
+  '@semantic-release/npm@13.1.5(semantic-release@25.0.7(supports-color@5.5.0)(typescript@7.0.2))':
     dependencies:
       '@actions/core': 3.0.1
       '@semantic-release/error': 4.0.0
@@ -3664,22 +3664,22 @@ snapshots:
       rc: 1.2.8
       read-pkg: 10.1.0
       registry-auth-token: 5.1.1
-      semantic-release: 25.0.7(typescript@7.0.2)
+      semantic-release: 25.0.7(supports-color@5.5.0)(typescript@7.0.2)
       semver: 7.8.5
       tempy: 3.2.0
     optional: true
 
-  '@semantic-release/release-notes-generator@14.1.1(semantic-release@25.0.7(typescript@7.0.2))':
+  '@semantic-release/release-notes-generator@14.1.1(semantic-release@25.0.7(supports-color@5.5.0)(typescript@7.0.2))(supports-color@5.5.0)':
     dependencies:
       conventional-changelog-angular: 8.3.1
       conventional-changelog-writer: 8.4.0
       conventional-commits-filter: 5.0.0
       conventional-commits-parser: 6.4.0
       debug: 4.4.3(supports-color@5.5.0)
-      import-from-esm: 2.0.0
+      import-from-esm: 2.0.0(supports-color@5.5.0)
       lodash-es: 4.18.1
       read-package-up: 11.0.0
-      semantic-release: 25.0.7(typescript@7.0.2)
+      semantic-release: 25.0.7(supports-color@5.5.0)(typescript@7.0.2)
     transitivePeerDependencies:
       - supports-color
     optional: true
@@ -4031,7 +4031,7 @@ snapshots:
 
   acorn@8.17.0: {}
 
-  agent-base@6.0.2:
+  agent-base@6.0.2(supports-color@5.5.0):
     dependencies:
       debug: 4.4.3(supports-color@5.5.0)
     transitivePeerDependencies:
@@ -4142,11 +4142,11 @@ snapshots:
 
   asynckit@0.4.0: {}
 
-  axios@1.18.1:
+  axios@1.18.1(supports-color@5.5.0):
     dependencies:
       follow-redirects: 1.16.0
       form-data: 4.0.6
-      https-proxy-agent: 5.0.1
+      https-proxy-agent: 5.0.1(supports-color@5.5.0)
       proxy-from-env: 2.1.0
     transitivePeerDependencies:
       - debug
@@ -4562,7 +4562,7 @@ snapshots:
       yaml: 2.9.0
     optional: true
 
-  docker-modem@5.0.7:
+  docker-modem@5.0.7(supports-color@5.5.0):
     dependencies:
       debug: 4.4.3(supports-color@5.5.0)
       readable-stream: 3.6.2
@@ -4572,12 +4572,12 @@ snapshots:
       - supports-color
     optional: true
 
-  dockerode@5.0.1:
+  dockerode@5.0.1(supports-color@5.5.0):
     dependencies:
       '@balena/dockerignore': 1.0.2
       '@grpc/grpc-js': 1.14.4
       '@grpc/proto-loader': 0.7.15
-      docker-modem: 5.0.7
+      docker-modem: 5.0.7(supports-color@5.5.0)
       protobufjs: 7.6.5
       tar-fs: 2.1.5
     transitivePeerDependencies:
@@ -4901,12 +4901,12 @@ snapshots:
   graceful-fs@4.2.11:
     optional: true
 
-  graphile-build-pg@4.14.1(graphql@15.10.2)(pg@8.22.0):
+  graphile-build-pg@4.14.1(graphql@15.10.2)(pg@8.22.0)(supports-color@5.5.0):
     dependencies:
       '@graphile/lru': 4.11.0
       chalk: 2.4.2
       debug: 4.4.3(supports-color@5.5.0)
-      graphile-build: 4.14.1(graphql@15.10.2)
+      graphile-build: 4.14.1(graphql@15.10.2)(supports-color@5.5.0)
       jsonwebtoken: 9.0.3
       lodash: 4.18.1
       lru-cache: 4.1.5
@@ -4916,13 +4916,13 @@ snapshots:
       - graphql
       - supports-color
 
-  graphile-build@4.14.1(graphql@15.10.2):
+  graphile-build@4.14.1(graphql@15.10.2)(supports-color@5.5.0):
     dependencies:
       '@graphile/lru': 4.11.0
       chalk: 2.4.2
       debug: 4.4.3(supports-color@5.5.0)
       graphql: 15.10.2
-      graphql-parse-resolve-info: 4.14.1(graphql@15.10.2)
+      graphql-parse-resolve-info: 4.14.1(graphql@15.10.2)(supports-color@5.5.0)
       iterall: 1.3.0
       lodash: 4.18.1
       lru-cache: 5.1.1
@@ -4931,17 +4931,17 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  graphile-utils@4.14.1(graphile-build-pg@4.14.1(graphql@15.10.2)(pg@8.22.0))(graphile-build@4.14.1(graphql@15.10.2)):
+  graphile-utils@4.14.1(graphile-build-pg@4.14.1(graphql@15.10.2)(pg@8.22.0)(supports-color@5.5.0))(graphile-build@4.14.1(graphql@15.10.2)(supports-color@5.5.0))(supports-color@5.5.0):
     dependencies:
       debug: 4.4.3(supports-color@5.5.0)
-      graphile-build: 4.14.1(graphql@15.10.2)
-      graphile-build-pg: 4.14.1(graphql@15.10.2)(pg@8.22.0)
+      graphile-build: 4.14.1(graphql@15.10.2)(supports-color@5.5.0)
+      graphile-build-pg: 4.14.1(graphql@15.10.2)(pg@8.22.0)(supports-color@5.5.0)
       graphql: 15.10.2
       tslib: 2.8.1
     transitivePeerDependencies:
       - supports-color
 
-  graphql-parse-resolve-info@4.14.1(graphql@15.10.2):
+  graphql-parse-resolve-info@4.14.1(graphql@15.10.2)(supports-color@5.5.0):
     dependencies:
       debug: 4.4.3(supports-color@5.5.0)
       graphql: 15.10.2
@@ -5028,7 +5028,7 @@ snapshots:
       statuses: 2.0.2
       toidentifier: 1.0.1
 
-  http-proxy-agent@9.1.0:
+  http-proxy-agent@9.1.0(supports-color@5.5.0):
     dependencies:
       agent-base: 9.0.0
       debug: 4.4.3(supports-color@5.5.0)
@@ -5038,15 +5038,15 @@ snapshots:
       - supports-color
     optional: true
 
-  https-proxy-agent@5.0.1:
+  https-proxy-agent@5.0.1(supports-color@5.5.0):
     dependencies:
-      agent-base: 6.0.2
+      agent-base: 6.0.2(supports-color@5.5.0)
       debug: 4.4.3(supports-color@5.5.0)
     transitivePeerDependencies:
       - supports-color
     optional: true
 
-  https-proxy-agent@9.1.0:
+  https-proxy-agent@9.1.0(supports-color@5.5.0):
     dependencies:
       agent-base: 9.0.0
       debug: 4.4.3(supports-color@5.5.0)
@@ -5078,7 +5078,7 @@ snapshots:
       resolve-from: 4.0.0
     optional: true
 
-  import-from-esm@2.0.0:
+  import-from-esm@2.0.0(supports-color@5.5.0):
     dependencies:
       debug: 4.4.3(supports-color@5.5.0)
       import-meta-resolve: 4.2.0
@@ -5793,15 +5793,15 @@ snapshots:
 
   postgraphile-core@4.14.1(graphql@15.10.2)(pg@8.22.0):
     dependencies:
-      graphile-build: 4.14.1(graphql@15.10.2)
-      graphile-build-pg: 4.14.1(graphql@15.10.2)(pg@8.22.0)
+      graphile-build: 4.14.1(graphql@15.10.2)(supports-color@5.5.0)
+      graphile-build-pg: 4.14.1(graphql@15.10.2)(pg@8.22.0)(supports-color@5.5.0)
       graphql: 15.10.2
       pg: 8.22.0
       tslib: 2.8.1
     transitivePeerDependencies:
       - supports-color
 
-  postgraphile@4.14.1:
+  postgraphile@4.14.1(supports-color@5.5.0):
     dependencies:
       '@graphile/lru': 4.11.0
       '@types/json5': 0.0.30
@@ -5813,9 +5813,9 @@ snapshots:
       commander: 2.20.3
       debug: 4.4.3(supports-color@5.5.0)
       finalhandler: 1.3.2
-      graphile-build: 4.14.1(graphql@15.10.2)
-      graphile-build-pg: 4.14.1(graphql@15.10.2)(pg@8.22.0)
-      graphile-utils: 4.14.1(graphile-build-pg@4.14.1(graphql@15.10.2)(pg@8.22.0))(graphile-build@4.14.1(graphql@15.10.2))
+      graphile-build: 4.14.1(graphql@15.10.2)(supports-color@5.5.0)
+      graphile-build-pg: 4.14.1(graphql@15.10.2)(pg@8.22.0)(supports-color@5.5.0)
+      graphile-utils: 4.14.1(graphile-build-pg@4.14.1(graphql@15.10.2)(pg@8.22.0)(supports-color@5.5.0))(graphile-build@4.14.1(graphql@15.10.2)(supports-color@5.5.0))(supports-color@5.5.0)
       graphql: 15.10.2
       graphql-ws: 5.16.2(graphql@15.10.2)
       http-errors: 1.8.1
@@ -5867,9 +5867,9 @@ snapshots:
       signal-exit: 3.0.7
     optional: true
 
-  properties-reader@3.0.1:
+  properties-reader@3.0.1(supports-color@5.5.0):
     dependencies:
-      '@kwsites/file-exists': 1.1.1
+      '@kwsites/file-exists': 1.1.1(supports-color@5.5.0)
       mkdirp: 3.0.1
     transitivePeerDependencies:
       - supports-color
@@ -6045,13 +6045,13 @@ snapshots:
 
   safer-buffer@2.1.2: {}
 
-  semantic-release@25.0.7(typescript@7.0.2):
+  semantic-release@25.0.7(supports-color@5.5.0)(typescript@7.0.2):
     dependencies:
-      '@semantic-release/commit-analyzer': 13.0.1(semantic-release@25.0.7(typescript@7.0.2))
+      '@semantic-release/commit-analyzer': 13.0.1(semantic-release@25.0.7(supports-color@5.5.0)(typescript@7.0.2))(supports-color@5.5.0)
       '@semantic-release/error': 4.0.0
-      '@semantic-release/github': 12.0.9(semantic-release@25.0.7(typescript@7.0.2))
-      '@semantic-release/npm': 13.1.5(semantic-release@25.0.7(typescript@7.0.2))
-      '@semantic-release/release-notes-generator': 14.1.1(semantic-release@25.0.7(typescript@7.0.2))
+      '@semantic-release/github': 12.0.9(semantic-release@25.0.7(supports-color@5.5.0)(typescript@7.0.2))(supports-color@5.5.0)
+      '@semantic-release/npm': 13.1.5(semantic-release@25.0.7(supports-color@5.5.0)(typescript@7.0.2))
+      '@semantic-release/release-notes-generator': 14.1.1(semantic-release@25.0.7(supports-color@5.5.0)(typescript@7.0.2))(supports-color@5.5.0)
       aggregate-error: 5.0.0
       cosmiconfig: 9.0.2(typescript@7.0.2)
       debug: 4.4.3(supports-color@5.5.0)
@@ -6063,7 +6063,7 @@ snapshots:
       git-log-parser: 1.2.1
       hook-std: 4.0.0
       hosted-git-info: 9.0.3
-      import-from-esm: 2.0.0
+      import-from-esm: 2.0.0(supports-color@5.5.0)
       lodash-es: 4.18.1
       marked: 15.0.12
       marked-terminal: 7.3.0(marked@15.0.12)
@@ -6307,7 +6307,7 @@ snapshots:
       time-span: 5.1.0
     optional: true
 
-  superagent@10.3.0:
+  superagent@10.3.0(supports-color@5.5.0):
     dependencies:
       component-emitter: 1.3.1
       cookiejar: 2.1.4
@@ -6322,11 +6322,11 @@ snapshots:
       - supports-color
     optional: true
 
-  supertest@7.2.2:
+  supertest@7.2.2(supports-color@5.5.0):
     dependencies:
       cookie-signature: 1.2.2
       methods: 1.1.2
-      superagent: 10.3.0
+      superagent: 10.3.0(supports-color@5.5.0)
     transitivePeerDependencies:
       - supports-color
     optional: true
@@ -6412,7 +6412,7 @@ snapshots:
       unique-string: 3.0.0
     optional: true
 
-  testcontainers@12.0.4:
+  testcontainers@12.0.4(supports-color@5.5.0):
     dependencies:
       '@balena/dockerignore': 1.0.2
       '@types/dockerode': 4.0.1
@@ -6421,10 +6421,10 @@ snapshots:
       byline: 5.0.0
       debug: 4.4.3(supports-color@5.5.0)
       docker-compose: 1.4.2
-      dockerode: 5.0.1
+      dockerode: 5.0.1(supports-color@5.5.0)
       get-port: 5.1.1
       proper-lockfile: 4.1.2
-      properties-reader: 3.0.1
+      properties-reader: 3.0.1(supports-color@5.5.0)
       ssh-remote-port-forward: 1.0.4
       tar-fs: 3.1.3
       tmp: 0.2.7
