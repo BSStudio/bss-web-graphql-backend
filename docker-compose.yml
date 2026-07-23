@@ -20,7 +20,7 @@ services:
   # once db is initialized, we can shut down the container
   # however it makes it easy to add data to the db
   backend:
-    image: ghcr.io/bsstudio/bss-web-admin-backend:v2.7.36@sha256:3e53eeb5d5b88326c101d6327b03b8135599dfa4460e9bee3cc13b304a77e404
+    image: ghcr.io/bsstudio/bss-web-admin-backend:v2.8.1@sha256:9fa0678162b375bacc137a847cf0405eb3c2924538eda6f3bf1cc7c958a04872
     healthcheck:
       test: "wget --tries=1 --no-verbose -qO- http://localhost:8080/actuator/health | grep -q UP"
       start_period: 5s
@@ -31,6 +31,8 @@ services:
       - db
     environment:
       bss.file-api.url: "http://mock-file-api:8080"
+      bss.file-api.username: "username"
+      bss.file-api.password: "password"
       spring.security.oauth2.resourceserver.opaquetoken.introspection-uri: "http://mock-oidc:8080/o/introspect"
       spring.security.oauth2.resourceserver.opaquetoken.client-id: client-id
       spring.security.oauth2.resourceserver.opaquetoken.client-secret: client-secret
