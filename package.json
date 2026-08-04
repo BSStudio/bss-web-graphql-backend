@@ -35,7 +35,7 @@
     "@tsconfig/strictest": "2.0.8",
     "@types/koa": "3.0.3",
     "@types/koa-compress": "4.0.7",
-    "@types/pg": "8.20.2",
+    "@types/pg": "8.20.3",
     "@types/supertest": "7.2.1",
     "ts-node": "10.9.2",
     "typescript": "7.0.2"
