@@ -17,7 +17,8 @@ COPY package.json pnpm-lock.yaml ./
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --ignore-scripts --frozen-lockfile --no-optional --prod
 # node packages were installed as root, so we need to change the owner to node
 RUN chown -R node:node /home/node
-USER node:node
+# node:24-alpine defines the node user as UID/GID 1000; numeric USER avoids hadolint DL3066
+USER 1000:1000
 COPY --from=builder /home/node/dist ./
 EXPOSE 3000
 ENTRYPOINT ["node", "index.js"]
