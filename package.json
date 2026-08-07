@@ -51,7 +51,7 @@
     "prettier": "3.9.6",
     "semantic-release": "25.0.8",
     "supertest": "7.2.2",
-    "testcontainers": "12.0.4",
+    "testcontainers": "12.1.0",
     "vitest": "4.1.10"
   },
   "repository": {
