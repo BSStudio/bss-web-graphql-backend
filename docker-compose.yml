@@ -10,13 +10,14 @@ services:
       POSTGRAPHILE_WATCH_PG: "true"
       POSTGRAPHILE_SHOW_ERROR_STACK: "true"
     depends_on:
-      - backend
+      backend:
+        condition: service_healthy
     healthcheck:
       test: "wget --tries=1 --no-verbose -qO- http://localhost:3000/actuator/health | grep -q UP"
-      start_period: 5s
+      start_period: 30s
       interval: 10s
       timeout: 5s
-      retries: 3
+      retries: 5
   # once db is initialized, we can shut down the container
   # however it makes it easy to add data to the db
   backend:
