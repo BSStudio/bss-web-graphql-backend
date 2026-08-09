@@ -21,8 +21,8 @@ importers:
         specifier: 17.4.2
         version: 17.4.2
       graphile-config:
-        specifier: 1.0.0
-        version: 1.0.0(supports-color@5.5.0)
+        specifier: 1.1.0
+        version: 1.1.0(supports-color@5.5.0)
       helmet:
         specifier: 8.3.0
         version: 8.3.0
@@ -37,7 +37,7 @@ importers:
         version: 8.22.0
       postgraphile:
         specifier: 5.1.0
-        version: 5.1.0(27c089c905225d8c849277483e3e30c0)
+        version: 5.1.0(88b534d09f1ea2e851884b756372832a)
     devDependencies:
       '@tsconfig/node24':
         specifier: 24.0.4
@@ -1047,9 +1047,6 @@ packages:
 
   '@types/http-errors@2.0.5':
     resolution: {integrity: sha512-r8Tayk8HJnX0FztbZN7oVqGccWgw98T/0neJphO91KkmOzug1KkofZURD4UaD5uH8AqcFLfdPErnBod0u71/qg==}
-
-  '@types/interpret@1.1.4':
-    resolution: {integrity: sha512-r+tPKWHYqaxJOYA3Eik0mMi+SEREqOXLmsooRFmc6GHv7nWUDixFtKN+cegvsPlDcEZd9wxsdp041v2imQuvag==}
 
   '@types/keygrip@1.0.6':
     resolution: {integrity: sha512-lZuNAY9xeJt7Bx4t4dx0rYCDqGPW8RXhQZK1td7d4H6E9zYbLoOtjBvfwdTKpsyxQI/2jv+armjX/RW+ZNpXOQ==}
@@ -2104,10 +2101,6 @@ packages:
       grafast: ^1.0.0-rc.8
       graphile-config: ^1.0.0-rc.5
       graphql: ^16.9.0
-
-  graphile-config@1.0.0:
-    resolution: {integrity: sha512-nPKrrpmYT/cMibqHnNL+zLIRrC/SQhop7yV4tZiyrC/C0mckdlghRWR9oPV7UppkeFIdgTt5/7UQCrwhX82faQ==}
-    engines: {node: '>=22'}
 
   graphile-config@1.1.0:
     resolution: {integrity: sha512-R9q8a1MtxYLpQCw79GBxktdCFwM5y6RYgf92Nv1uOBKTL9bCy01iCsOSLuLkeSJ9Ol9Z+/lGQTCbJSXoR3QhpQ==}
@@ -4089,7 +4082,7 @@ snapshots:
       grafast: 1.1.2(graphql@16.14.2)(supports-color@5.5.0)
       tslib: 2.8.1
 
-  '@dataplan/pg@1.1.1(@dataplan/json@1.0.1(grafast@1.1.2(graphql@16.14.2)(supports-color@5.5.0)))(grafast@1.1.2(graphql@16.14.2)(supports-color@5.5.0))(graphile-config@1.0.0(supports-color@5.5.0))(graphql@16.14.2)(pg-sql2@5.0.1)(pg@8.22.0)(supports-color@5.5.0)':
+  '@dataplan/pg@1.1.1(@dataplan/json@1.0.1(grafast@1.1.2(graphql@16.14.2)(supports-color@5.5.0)))(grafast@1.1.2(graphql@16.14.2)(supports-color@5.5.0))(graphile-config@1.1.0(supports-color@5.5.0))(graphql@16.14.2)(pg-sql2@5.0.1)(pg@8.22.0)(supports-color@5.5.0)':
     dependencies:
       '@dataplan/json': 1.0.1(grafast@1.1.2(graphql@16.14.2)(supports-color@5.5.0))
       '@graphile/lru': 5.0.0
@@ -4098,7 +4091,7 @@ snapshots:
       debug: 4.4.3(supports-color@5.5.0)
       eventemitter3: 5.0.4
       grafast: 1.1.2(graphql@16.14.2)(supports-color@5.5.0)
-      graphile-config: 1.0.0(supports-color@5.5.0)
+      graphile-config: 1.1.0(supports-color@5.5.0)
       graphql: 16.14.2
       pg-sql2: 5.0.1
       postgres-array: 3.0.4
@@ -4985,10 +4978,6 @@ snapshots:
   '@types/http-assert@1.5.6': {}
 
   '@types/http-errors@2.0.5': {}
-
-  '@types/interpret@1.1.4':
-    dependencies:
-      '@types/node': 26.1.2
 
   '@types/keygrip@1.0.6': {}
 
@@ -6106,16 +6095,16 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  grafserv@1.0.1(@types/node@26.1.2)(grafast@1.1.2(graphql@16.14.2)(supports-color@5.5.0))(graphile-config@1.0.0(supports-color@5.5.0))(graphql@16.14.2)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@5.5.0)(use-sync-external-store@1.6.0(react@19.2.8))(ws@8.21.2):
+  grafserv@1.0.1(@types/node@26.1.2)(grafast@1.1.2(graphql@16.14.2)(supports-color@5.5.0))(graphile-config@1.1.0(supports-color@5.5.0))(graphql@16.14.2)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@5.5.0)(use-sync-external-store@1.6.0(react@19.2.8))(ws@8.21.2):
     dependencies:
       '@graphile/lru': 5.0.0
       debug: 4.4.3(supports-color@5.5.0)
       eventemitter3: 5.0.4
       grafast: 1.1.2(graphql@16.14.2)(supports-color@5.5.0)
-      graphile-config: 1.0.0(supports-color@5.5.0)
+      graphile-config: 1.1.0(supports-color@5.5.0)
       graphql: 16.14.2
       graphql-ws: 6.2.1(graphql@16.14.2)(ws@8.21.2)
-      ruru: 2.0.1(@types/node@26.1.2)(debug@4.4.3(supports-color@5.5.0))(graphile-config@1.0.0(supports-color@5.5.0))(graphql-ws@6.2.1(graphql@16.14.2)(ws@8.21.2))(graphql@16.14.2)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(use-sync-external-store@1.6.0(react@19.2.8))
+      ruru: 2.0.1(@types/node@26.1.2)(debug@4.4.3(supports-color@5.5.0))(graphile-config@1.1.0(supports-color@5.5.0))(graphql-ws@6.2.1(graphql@16.14.2)(ws@8.21.2))(graphql@16.14.2)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(use-sync-external-store@1.6.0(react@19.2.8))
       tslib: 2.8.1
     optionalDependencies:
       ws: 8.21.2
@@ -6131,14 +6120,14 @@ snapshots:
       - supports-color
       - use-sync-external-store
 
-  graphile-build-pg@5.1.3(@dataplan/pg@1.1.1(@dataplan/json@1.0.1(grafast@1.1.2(graphql@16.14.2)(supports-color@5.5.0)))(grafast@1.1.2(graphql@16.14.2)(supports-color@5.5.0))(graphile-config@1.0.0(supports-color@5.5.0))(graphql@16.14.2)(pg-sql2@5.0.1)(pg@8.22.0)(supports-color@5.5.0))(grafast@1.1.2(graphql@16.14.2)(supports-color@5.5.0))(graphile-build@5.1.1(grafast@1.1.2(graphql@16.14.2)(supports-color@5.5.0))(graphile-config@1.0.0(supports-color@5.5.0))(graphql@16.14.2)(supports-color@5.5.0))(graphile-config@1.0.0(supports-color@5.5.0))(graphql@16.14.2)(pg-sql2@5.0.1)(pg@8.22.0)(supports-color@5.5.0)(tamedevil@0.1.1):
+  graphile-build-pg@5.1.3(@dataplan/pg@1.1.1(@dataplan/json@1.0.1(grafast@1.1.2(graphql@16.14.2)(supports-color@5.5.0)))(grafast@1.1.2(graphql@16.14.2)(supports-color@5.5.0))(graphile-config@1.1.0(supports-color@5.5.0))(graphql@16.14.2)(pg-sql2@5.0.1)(pg@8.22.0)(supports-color@5.5.0))(grafast@1.1.2(graphql@16.14.2)(supports-color@5.5.0))(graphile-build@5.1.1(grafast@1.1.2(graphql@16.14.2)(supports-color@5.5.0))(graphile-config@1.1.0(supports-color@5.5.0))(graphql@16.14.2)(supports-color@5.5.0))(graphile-config@1.1.0(supports-color@5.5.0))(graphql@16.14.2)(pg-sql2@5.0.1)(pg@8.22.0)(supports-color@5.5.0)(tamedevil@0.1.1):
     dependencies:
-      '@dataplan/pg': 1.1.1(@dataplan/json@1.0.1(grafast@1.1.2(graphql@16.14.2)(supports-color@5.5.0)))(grafast@1.1.2(graphql@16.14.2)(supports-color@5.5.0))(graphile-config@1.0.0(supports-color@5.5.0))(graphql@16.14.2)(pg-sql2@5.0.1)(pg@8.22.0)(supports-color@5.5.0)
+      '@dataplan/pg': 1.1.1(@dataplan/json@1.0.1(grafast@1.1.2(graphql@16.14.2)(supports-color@5.5.0)))(grafast@1.1.2(graphql@16.14.2)(supports-color@5.5.0))(graphile-config@1.1.0(supports-color@5.5.0))(graphql@16.14.2)(pg-sql2@5.0.1)(pg@8.22.0)(supports-color@5.5.0)
       '@types/node': 22.20.1
       debug: 4.4.3(supports-color@5.5.0)
       grafast: 1.1.2(graphql@16.14.2)(supports-color@5.5.0)
-      graphile-build: 5.1.1(grafast@1.1.2(graphql@16.14.2)(supports-color@5.5.0))(graphile-config@1.0.0(supports-color@5.5.0))(graphql@16.14.2)(supports-color@5.5.0)
-      graphile-config: 1.0.0(supports-color@5.5.0)
+      graphile-build: 5.1.1(grafast@1.1.2(graphql@16.14.2)(supports-color@5.5.0))(graphile-config@1.1.0(supports-color@5.5.0))(graphql@16.14.2)(supports-color@5.5.0)
+      graphile-config: 1.1.0(supports-color@5.5.0)
       graphql: 16.14.2
       jsonwebtoken: 9.0.3
       pg-introspection: 1.0.1
@@ -6150,7 +6139,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  graphile-build@5.1.1(grafast@1.1.2(graphql@16.14.2)(supports-color@5.5.0))(graphile-config@1.0.0(supports-color@5.5.0))(graphql@16.14.2)(supports-color@5.5.0):
+  graphile-build@5.1.1(grafast@1.1.2(graphql@16.14.2)(supports-color@5.5.0))(graphile-config@1.1.0(supports-color@5.5.0))(graphql@16.14.2)(supports-color@5.5.0):
     dependencies:
       '@types/node': 22.20.1
       '@types/pluralize': 0.0.33
@@ -6158,7 +6147,7 @@ snapshots:
       chalk: 4.1.2
       debug: 4.4.3(supports-color@5.5.0)
       grafast: 1.1.2(graphql@16.14.2)(supports-color@5.5.0)
-      graphile-config: 1.0.0(supports-color@5.5.0)
+      graphile-config: 1.1.0(supports-color@5.5.0)
       graphql: 16.14.2
       lodash: 4.18.1
       pluralize: 7.0.0
@@ -6166,20 +6155,6 @@ snapshots:
       tamedevil: 0.1.1
       transliteration: 2.6.1
       tslib: 2.8.1
-    transitivePeerDependencies:
-      - supports-color
-
-  graphile-config@1.0.0(supports-color@5.5.0):
-    dependencies:
-      '@types/interpret': 1.1.4
-      '@types/node': 22.20.1
-      '@types/semver': 7.8.0
-      chalk: 4.1.2
-      debug: 4.4.3(supports-color@5.5.0)
-      interpret: 3.1.1
-      semver: 7.8.5
-      tslib: 2.8.1
-      yargs: 17.7.3
     transitivePeerDependencies:
       - supports-color
 
@@ -6194,19 +6169,19 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  graphile-utils@5.0.3(a9229631d201cc89fc035f2b6a0a6764):
+  graphile-utils@5.0.3(577a59abf59930dd235e1ed7573aa1c1):
     dependencies:
-      '@dataplan/pg': 1.1.1(@dataplan/json@1.0.1(grafast@1.1.2(graphql@16.14.2)(supports-color@5.5.0)))(grafast@1.1.2(graphql@16.14.2)(supports-color@5.5.0))(graphile-config@1.0.0(supports-color@5.5.0))(graphql@16.14.2)(pg-sql2@5.0.1)(pg@8.22.0)(supports-color@5.5.0)
+      '@dataplan/pg': 1.1.1(@dataplan/json@1.0.1(grafast@1.1.2(graphql@16.14.2)(supports-color@5.5.0)))(grafast@1.1.2(graphql@16.14.2)(supports-color@5.5.0))(graphile-config@1.1.0(supports-color@5.5.0))(graphql@16.14.2)(pg-sql2@5.0.1)(pg@8.22.0)(supports-color@5.5.0)
       debug: 4.4.3(supports-color@5.5.0)
       grafast: 1.1.2(graphql@16.14.2)(supports-color@5.5.0)
-      graphile-build: 5.1.1(grafast@1.1.2(graphql@16.14.2)(supports-color@5.5.0))(graphile-config@1.0.0(supports-color@5.5.0))(graphql@16.14.2)(supports-color@5.5.0)
-      graphile-config: 1.0.0(supports-color@5.5.0)
+      graphile-build: 5.1.1(grafast@1.1.2(graphql@16.14.2)(supports-color@5.5.0))(graphile-config@1.1.0(supports-color@5.5.0))(graphql@16.14.2)(supports-color@5.5.0)
+      graphile-config: 1.1.0(supports-color@5.5.0)
       graphql: 16.14.2
       json5: 2.2.3
       tamedevil: 0.1.1
       tslib: 2.8.1
     optionalDependencies:
-      graphile-build-pg: 5.1.3(@dataplan/pg@1.1.1(@dataplan/json@1.0.1(grafast@1.1.2(graphql@16.14.2)(supports-color@5.5.0)))(grafast@1.1.2(graphql@16.14.2)(supports-color@5.5.0))(graphile-config@1.0.0(supports-color@5.5.0))(graphql@16.14.2)(pg-sql2@5.0.1)(pg@8.22.0)(supports-color@5.5.0))(grafast@1.1.2(graphql@16.14.2)(supports-color@5.5.0))(graphile-build@5.1.1(grafast@1.1.2(graphql@16.14.2)(supports-color@5.5.0))(graphile-config@1.0.0(supports-color@5.5.0))(graphql@16.14.2)(supports-color@5.5.0))(graphile-config@1.0.0(supports-color@5.5.0))(graphql@16.14.2)(pg-sql2@5.0.1)(pg@8.22.0)(supports-color@5.5.0)(tamedevil@0.1.1)
+      graphile-build-pg: 5.1.3(@dataplan/pg@1.1.1(@dataplan/json@1.0.1(grafast@1.1.2(graphql@16.14.2)(supports-color@5.5.0)))(grafast@1.1.2(graphql@16.14.2)(supports-color@5.5.0))(graphile-config@1.1.0(supports-color@5.5.0))(graphql@16.14.2)(pg-sql2@5.0.1)(pg@8.22.0)(supports-color@5.5.0))(grafast@1.1.2(graphql@16.14.2)(supports-color@5.5.0))(graphile-build@5.1.1(grafast@1.1.2(graphql@16.14.2)(supports-color@5.5.0))(graphile-config@1.1.0(supports-color@5.5.0))(graphql@16.14.2)(supports-color@5.5.0))(graphile-config@1.1.0(supports-color@5.5.0))(graphql@16.14.2)(pg-sql2@5.0.1)(pg@8.22.0)(supports-color@5.5.0)(tamedevil@0.1.1)
     transitivePeerDependencies:
       - supports-color
 
@@ -7125,20 +7100,20 @@ snapshots:
       source-map-js: 1.2.1
     optional: true
 
-  postgraphile@5.1.0(27c089c905225d8c849277483e3e30c0):
+  postgraphile@5.1.0(88b534d09f1ea2e851884b756372832a):
     dependencies:
       '@dataplan/json': 1.0.1(grafast@1.1.2(graphql@16.14.2)(supports-color@5.5.0))
-      '@dataplan/pg': 1.1.1(@dataplan/json@1.0.1(grafast@1.1.2(graphql@16.14.2)(supports-color@5.5.0)))(grafast@1.1.2(graphql@16.14.2)(supports-color@5.5.0))(graphile-config@1.0.0(supports-color@5.5.0))(graphql@16.14.2)(pg-sql2@5.0.1)(pg@8.22.0)(supports-color@5.5.0)
+      '@dataplan/pg': 1.1.1(@dataplan/json@1.0.1(grafast@1.1.2(graphql@16.14.2)(supports-color@5.5.0)))(grafast@1.1.2(graphql@16.14.2)(supports-color@5.5.0))(graphile-config@1.1.0(supports-color@5.5.0))(graphql@16.14.2)(pg-sql2@5.0.1)(pg@8.22.0)(supports-color@5.5.0)
       '@graphile/lru': 5.0.0
       '@types/node': 22.20.1
       '@types/pg': 8.20.4
       debug: 4.4.3(supports-color@5.5.0)
       grafast: 1.1.2(graphql@16.14.2)(supports-color@5.5.0)
-      grafserv: 1.0.1(@types/node@26.1.2)(grafast@1.1.2(graphql@16.14.2)(supports-color@5.5.0))(graphile-config@1.0.0(supports-color@5.5.0))(graphql@16.14.2)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@5.5.0)(use-sync-external-store@1.6.0(react@19.2.8))(ws@8.21.2)
-      graphile-build: 5.1.1(grafast@1.1.2(graphql@16.14.2)(supports-color@5.5.0))(graphile-config@1.0.0(supports-color@5.5.0))(graphql@16.14.2)(supports-color@5.5.0)
-      graphile-build-pg: 5.1.3(@dataplan/pg@1.1.1(@dataplan/json@1.0.1(grafast@1.1.2(graphql@16.14.2)(supports-color@5.5.0)))(grafast@1.1.2(graphql@16.14.2)(supports-color@5.5.0))(graphile-config@1.0.0(supports-color@5.5.0))(graphql@16.14.2)(pg-sql2@5.0.1)(pg@8.22.0)(supports-color@5.5.0))(grafast@1.1.2(graphql@16.14.2)(supports-color@5.5.0))(graphile-build@5.1.1(grafast@1.1.2(graphql@16.14.2)(supports-color@5.5.0))(graphile-config@1.0.0(supports-color@5.5.0))(graphql@16.14.2)(supports-color@5.5.0))(graphile-config@1.0.0(supports-color@5.5.0))(graphql@16.14.2)(pg-sql2@5.0.1)(pg@8.22.0)(supports-color@5.5.0)(tamedevil@0.1.1)
-      graphile-config: 1.0.0(supports-color@5.5.0)
-      graphile-utils: 5.0.3(a9229631d201cc89fc035f2b6a0a6764)
+      grafserv: 1.0.1(@types/node@26.1.2)(grafast@1.1.2(graphql@16.14.2)(supports-color@5.5.0))(graphile-config@1.1.0(supports-color@5.5.0))(graphql@16.14.2)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@5.5.0)(use-sync-external-store@1.6.0(react@19.2.8))(ws@8.21.2)
+      graphile-build: 5.1.1(grafast@1.1.2(graphql@16.14.2)(supports-color@5.5.0))(graphile-config@1.1.0(supports-color@5.5.0))(graphql@16.14.2)(supports-color@5.5.0)
+      graphile-build-pg: 5.1.3(@dataplan/pg@1.1.1(@dataplan/json@1.0.1(grafast@1.1.2(graphql@16.14.2)(supports-color@5.5.0)))(grafast@1.1.2(graphql@16.14.2)(supports-color@5.5.0))(graphile-config@1.1.0(supports-color@5.5.0))(graphql@16.14.2)(pg-sql2@5.0.1)(pg@8.22.0)(supports-color@5.5.0))(grafast@1.1.2(graphql@16.14.2)(supports-color@5.5.0))(graphile-build@5.1.1(grafast@1.1.2(graphql@16.14.2)(supports-color@5.5.0))(graphile-config@1.1.0(supports-color@5.5.0))(graphql@16.14.2)(supports-color@5.5.0))(graphile-config@1.1.0(supports-color@5.5.0))(graphql@16.14.2)(pg-sql2@5.0.1)(pg@8.22.0)(supports-color@5.5.0)(tamedevil@0.1.1)
+      graphile-config: 1.1.0(supports-color@5.5.0)
+      graphile-utils: 5.0.3(577a59abf59930dd235e1ed7573aa1c1)
       graphql: 16.14.2
       iterall: 1.3.0
       jsonwebtoken: 9.0.3
@@ -7431,10 +7406,10 @@ snapshots:
       - immer
       - use-sync-external-store
 
-  ruru@2.0.1(@types/node@26.1.2)(debug@4.4.3(supports-color@5.5.0))(graphile-config@1.0.0(supports-color@5.5.0))(graphql-ws@6.2.1(graphql@16.14.2)(ws@8.21.2))(graphql@16.14.2)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(use-sync-external-store@1.6.0(react@19.2.8)):
+  ruru@2.0.1(@types/node@26.1.2)(debug@4.4.3(supports-color@5.5.0))(graphile-config@1.1.0(supports-color@5.5.0))(graphql-ws@6.2.1(graphql@16.14.2)(ws@8.21.2))(graphql@16.14.2)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(use-sync-external-store@1.6.0(react@19.2.8)):
     dependencies:
       '@emotion/is-prop-valid': 1.4.0
-      graphile-config: 1.0.0(supports-color@5.5.0)
+      graphile-config: 1.1.0(supports-color@5.5.0)
       graphql: 16.14.2
       http-proxy: 1.18.1(debug@4.4.3(supports-color@5.5.0))
       ruru-types: 2.0.0(@emotion/is-prop-valid@1.4.0)(@types/node@26.1.2)(graphql-ws@6.2.1(graphql@16.14.2)(ws@8.21.2))(graphql@16.14.2)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(use-sync-external-store@1.6.0(react@19.2.8))

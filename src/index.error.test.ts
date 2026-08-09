@@ -2,11 +2,16 @@ import koa from 'koa'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { addPostGraphile } from './middleware/index.js'
 
+vi.mock('node:http', () => ({
+  createServer: vi.fn().mockReturnValue({
+    listen: vi.fn(),
+  }),
+}))
 vi.mock('koa', () => ({
   default: vi.fn(
     class {
       use = vi.fn().mockReturnThis()
-      listen = vi.fn()
+      callback = vi.fn().mockReturnValue(vi.fn().mockName('koa-handler'))
     },
   ),
 }))

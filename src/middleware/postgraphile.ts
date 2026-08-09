@@ -1,3 +1,4 @@
+import type { Server } from 'node:http'
 import { PgSimplifyInflectionPreset } from '@graphile/simplify-inflection'
 import type Koa from 'koa'
 import { postgraphile } from 'postgraphile'
@@ -30,15 +31,12 @@ const preset: GraphileConfig.Preset = {
     makePgService({
       pool: postgres,
       schemas: [config.schema],
+      pubsub: true,
     }),
   ],
 }
 
-const pgl = postgraphile(preset)
-const serv = pgl.createServ(grafserv)
-
-export async function addPostGraphile(app: Koa): Promise<void> {
-  await serv.addTo(app, null)
+export async function addPostGraphile(app: Koa, server: Server): Promise<void> {
+  const pgl = postgraphile(preset)
+  await pgl.createServ(grafserv).addTo(app, server)
 }
-
-export default pgl

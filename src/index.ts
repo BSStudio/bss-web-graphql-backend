@@ -1,3 +1,4 @@
+import { createServer } from 'node:http'
 import koa from 'koa'
 import config from './config.js'
 import {
@@ -19,14 +20,16 @@ app
   .use(healthRouter.routes())
   .use(healthRouter.allowedMethods())
 
+const server = createServer(app.callback())
+
 try {
-  await addPostGraphile(app)
+  await addPostGraphile(app, server)
 } catch (error) {
   console.error('Failed to start PostGraphile:', error)
   process.exit(1)
 }
 
 // start server
-app.listen(config.port, () => {
+server.listen(config.port, () => {
   console.log(`Server running on port :${config.port.toString()}`)
 })

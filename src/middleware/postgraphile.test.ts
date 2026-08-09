@@ -58,10 +58,12 @@ describe('postgraphile', () => {
 
     const { addPostGraphile } = await import('./postgraphile.js')
     const mockApp = { use: vi.fn() }
+    const mockServer = { listen: vi.fn() }
+
+    await addPostGraphile(mockApp as never, mockServer as never)
+
     const mockCreateServ = mockPostgraphile.mock.results[0]?.value.createServ
     const mockServ = mockCreateServ.mock.results[0]?.value
-
-    await addPostGraphile(mockApp as never)
 
     expect.soft(mockMakeV4Preset).toHaveBeenCalledWith({
       subscriptions: true,
@@ -77,6 +79,7 @@ describe('postgraphile', () => {
     expect.soft(mockMakePgService).toHaveBeenCalledWith({
       pool: mockPostgres,
       schemas: [mockConfig.schema],
+      pubsub: true,
     })
     expect.soft(mockPostgraphile).toHaveBeenCalledOnce()
     expect.soft(mockPostgraphile).toHaveBeenCalledWith({
@@ -88,6 +91,6 @@ describe('postgraphile', () => {
       pgServices: [mockMakePgService.mock.results[0]?.value],
     })
     expect.soft(mockCreateServ).toHaveBeenCalledWith(mockGrafserv)
-    expect.soft(mockServ.addTo).toHaveBeenCalledWith(mockApp, null)
+    expect.soft(mockServ.addTo).toHaveBeenCalledWith(mockApp, mockServer)
   })
 })
