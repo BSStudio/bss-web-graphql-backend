@@ -1,21 +1,31 @@
+import { createServer } from 'node:http'
 import koa from 'koa'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import config from './config.js'
 import {
+  addPostGraphile,
   bodyParser,
   compress,
   koaHelmet,
-  postGraphile,
 } from './middleware/index.js'
 import { healthRouter } from './router/index.js'
 
+const { mockServerListen } = vi.hoisted(() => ({
+  mockServerListen: vi
+    .fn()
+    .mockImplementation((_port, cb: CallableFunction) => cb()),
+}))
+
+vi.mock('node:http', () => ({
+  createServer: vi.fn().mockReturnValue({
+    listen: mockServerListen,
+  }),
+}))
 vi.mock('koa', () => ({
   default: vi.fn(
     class {
       use = vi.fn().mockReturnThis()
-      listen = vi
-        .fn()
-        .mockImplementation((_port: number, cb: CallableFunction) => cb())
+      callback = vi.fn().mockReturnValue(vi.fn().mockName('koa-handler'))
     },
   ),
 }))
@@ -31,7 +41,7 @@ vi.mock('./middleware/index.js', () => ({
     .fn()
     .mockName('koaHelmet')
     .mockReturnValue(vi.fn().mockName('helmet-middleware')),
-  postGraphile: vi.fn().mockName('postGraphile'),
+  addPostGraphile: vi.fn().mockResolvedValue(undefined),
 }))
 vi.mock('./router/index.js', () => ({
   healthRouter: {
@@ -46,14 +56,14 @@ describe('index', () => {
   })
 
   it('should be tested', async () => {
-    expect.assertions(13)
+    expect.assertions(14)
 
     await import('./index.js')
 
     expect.soft(vi.mocked(koa)).toHaveBeenCalledTimes(1)
     const mockKoaInstance = vi.mocked(koa).mock.results[0]?.value
-    // assert use method is called 6 times with the following arguments
-    expect.soft(mockKoaInstance.use).toHaveBeenCalledTimes(6)
+    const mockServer = vi.mocked(createServer).mock.results[0]?.value
+    expect.soft(mockKoaInstance.use).toHaveBeenCalledTimes(5)
     expect.soft(mockKoaInstance.use).toHaveBeenCalledWith(bodyParser)
     expect.soft(mockKoaInstance.use).toHaveBeenCalledWith(compress)
     expect.soft(koaHelmet).toHaveBeenCalledWith()
@@ -64,9 +74,12 @@ describe('index', () => {
     expect
       .soft(mockKoaInstance.use)
       .toHaveBeenCalledWith(healthRouter.allowedMethods())
-    expect.soft(mockKoaInstance.use).toHaveBeenCalledWith(postGraphile)
+    expect.soft(createServer).toHaveBeenCalledWith(mockKoaInstance.callback())
     expect
-      .soft(mockKoaInstance.listen)
+      .soft(addPostGraphile)
+      .toHaveBeenCalledWith(mockKoaInstance, mockServer)
+    expect
+      .soft(mockServerListen)
       .toHaveBeenCalledWith(config.port, expect.any(Function))
     expect
       .soft(globalThis.console.log)

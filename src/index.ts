@@ -1,10 +1,11 @@
+import { createServer } from 'node:http'
 import koa from 'koa'
 import config from './config.js'
 import {
+  addPostGraphile,
   bodyParser,
   compress,
   koaHelmet,
-  postGraphile,
 } from './middleware/index.js'
 import { healthRouter } from './router/index.js'
 
@@ -18,9 +19,17 @@ app
   // register health router
   .use(healthRouter.routes())
   .use(healthRouter.allowedMethods())
-  // postGraphile middleware
-  .use(postGraphile)
-  // start server
-  .listen(config.port, () => {
-    console.log(`Server running on port :${config.port.toString()}`)
-  })
+
+const server = createServer(app.callback())
+
+try {
+  await addPostGraphile(app, server)
+} catch (error) {
+  console.error('Failed to start PostGraphile:', error)
+  process.exit(1)
+}
+
+// start server
+server.listen(config.port, () => {
+  console.log(`Server running on port :${config.port.toString()}`)
+})
