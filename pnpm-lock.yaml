@@ -71,8 +71,8 @@ importers:
         specifier: 4.1.11
         version: 4.1.11(vitest@4.1.11)
       axios:
-        specifier: 1.19.0
-        version: 1.19.0(debug@4.4.3(supports-color@5.5.0))(supports-color@5.5.0)
+        specifier: 1.20.0
+        version: 1.20.0(debug@4.4.3(supports-color@5.5.0))(supports-color@5.5.0)
       graphql-request:
         specifier: 7.4.0
         version: 7.4.0(graphql@15.10.2)
@@ -912,8 +912,8 @@ packages:
   asynckit@0.4.0:
     resolution: {integrity: sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==}
 
-  axios@1.19.0:
-    resolution: {integrity: sha512-ht/iuYZXEjFxLH/Hkezgd7m6JKlHHXEUSneaDz8uZe1Gj5QZtCnpyDsckvAiEnT89OEbCLmnte4R4sn7P0EKFw==}
+  axios@1.20.0:
+    resolution: {integrity: sha512-r8aOh8j9cGKpgQAqpzrUHnSIc6a59Y3Xf/cv8sy1DrHCkZHzQGEuoq1tARk6qSyDdtQGSDgpb9kFlruzPvrgwg==}
 
   b4a@1.8.1:
     resolution: {integrity: sha512-aiqre1Nr0B/6DgE2N5vwTc+2/oQZ4Wh1t4NznYY4E00y8LCt6NqdRv81so00oo27D8MVKTpUa/MwUUtBLXCoDw==}
@@ -4103,7 +4103,7 @@ snapshots:
 
   asynckit@0.4.0: {}
 
-  axios@1.19.0(debug@4.4.3(supports-color@5.5.0))(supports-color@5.5.0):
+  axios@1.20.0(debug@4.4.3(supports-color@5.5.0))(supports-color@5.5.0):
     dependencies:
       follow-redirects: 1.16.0(debug@4.4.3(supports-color@5.5.0))
       form-data: 4.0.6
