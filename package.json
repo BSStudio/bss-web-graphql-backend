@@ -31,10 +31,11 @@
   },
   "// build": "Dependencies required to build the project",
   "devDependencies": {
-    "@tsconfig/node24": "24.0.4",
+    "@tsconfig/node24": "24.0.5",
     "@tsconfig/strictest": "2.0.8",
     "@types/koa": "3.0.3",
     "@types/koa-compress": "4.0.7",
+    "@types/node": "24.13.3",
     "@types/pg": "8.23.1",
     "@types/supertest": "7.2.1",
     "ts-node": "10.9.2",
