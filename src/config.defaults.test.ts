@@ -37,7 +37,9 @@ describe('config', () => {
         showErrorStack: false,
       },
     }
-    expect(mockDotenv.configDotenv).toHaveBeenCalledOnce()
+    expect(mockDotenv.configDotenv).toHaveBeenCalledExactlyOnceWith({
+      fast: true,
+    })
     expect(actual).toStrictEqual(expected)
   })
 })

@@ -10,7 +10,7 @@ export interface Config {
   postGraphile: PostGraphileOptions
 }
 
-dotenv.configDotenv()
+dotenv.configDotenv({ fast: true })
 
 if (process.env['DATABASE_CONNECTION_STRING'] === undefined) {
   throw new Error('DATABASE_CONNECTION_STRING is not set')
