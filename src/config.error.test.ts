@@ -22,6 +22,8 @@ describe('config', () => {
     await expect(() => import('../src/config.js')).rejects.toThrow(
       'DATABASE_CONNECTION_STRING is not set',
     )
-    expect(mockDotenv.configDotenv).toHaveBeenCalledOnce()
+    expect(mockDotenv.configDotenv).toHaveBeenCalledExactlyOnceWith({
+      fast: true,
+    })
   })
 })
