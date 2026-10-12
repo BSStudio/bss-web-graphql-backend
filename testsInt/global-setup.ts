@@ -13,7 +13,7 @@ declare module 'vitest' {
   }
 }
 
-const BUILD_CONTEXT = path.resolve(__dirname, './../')
+const BUILD_CONTEXT = path.resolve(import.meta.dirname, './../')
 const COMPOSE_FILES = ['docker-compose.yml', 'docker-compose.ci.yml']
 
 let compose: StartedDockerComposeEnvironment | undefined
