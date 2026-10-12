@@ -215,3 +215,6 @@ dist
 # test reports
 reports
 
+
+# vitest artifacts
+.vitest

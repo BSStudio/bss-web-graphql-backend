@@ -1,14 +1,10 @@
 import helmet from 'helmet'
 import type { Context } from 'koa'
-import { beforeEach, describe, expect, it, vi } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 
 vi.mock('helmet')
 
 describe('helmet', () => {
-  beforeEach(() => {
-    vi.clearAllMocks()
-  })
-
   it('should export a factory that calls helmet and returns Koa middleware', async () => {
     expect.assertions(3)
 
