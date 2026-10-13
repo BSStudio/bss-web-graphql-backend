@@ -15,12 +15,12 @@ RUN pnpm run build
 FROM base AS runtime
 COPY package.json pnpm-lock.yaml ./
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --ignore-scripts --frozen-lockfile --no-optional --prod
-# pick up OS security fixes published after the base image was built, and drop the npm CLI
-# bundled with Node: the app never runs it, but its vendored dependencies show up in image scans
+# - pick up OS security fixes published after the base image was built
+# - drop the npm CLI bundled with Node: the app never runs it, but its vendored dependencies show up in image scans
+# - node packages were installed as root, so we need to change the owner to node
 RUN apk upgrade --no-cache \
-    && rm -rf /usr/local/lib/node_modules/npm /usr/local/bin/npm /usr/local/bin/npx
-# node packages were installed as root, so we need to change the owner to node
-RUN chown -R node:node /home/node
+    && rm -rf /usr/local/lib/node_modules/npm /usr/local/bin/npm /usr/local/bin/npx \
+    && chown -R node:node /home/node
 # node:24-alpine defines the node user as UID/GID 1000; numeric USER avoids hadolint DL3066
 USER 1000:1000
 COPY --from=builder /home/node/dist ./
