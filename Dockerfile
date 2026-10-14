@@ -12,13 +12,20 @@ COPY ./src ./src
 COPY tsconfig.json ./
 RUN pnpm run build
 
-FROM base AS runtime
+FROM base AS deps
 COPY package.json pnpm-lock.yaml ./
+# --ignore-scripts: no native addons are built, so node_modules is portable to the glibc runtime below
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --ignore-scripts --frozen-lockfile --no-optional --prod
-# node packages were installed as root, so we need to change the owner to node
-RUN chown -R node:node /home/node
-# node:24-alpine defines the node user as UID/GID 1000; numeric USER avoids hadolint DL3066
-USER 1000:1000
+
+# distroless: no shell, package manager, npm or corepack; runs as the image's non-root user
+FROM gcr.io/distroless/nodejs24-debian13:nonroot@sha256:9eeb7f5887d0e239e78264b06f7f11d2e14be534050481803a9e4728fcdd278e AS runtime
+USER 65532:65532
+WORKDIR /home/nonroot
+# files stay root-owned, so the app cannot modify them; package.json sets "type": "module"
+COPY package.json ./
+COPY --from=deps /home/node/node_modules ./node_modules
 COPY --from=builder /home/node/dist ./
 EXPOSE 3000
-ENTRYPOINT ["node", "index.js"]
+HEALTHCHECK --interval=10s --timeout=5s --start-period=5s --retries=3 \
+    CMD ["/nodejs/bin/node", "-e", "fetch('http://localhost:3000/actuator/health').then((r) => process.exit(r.ok ? 0 : 1), () => process.exit(1))"]
+ENTRYPOINT ["/nodejs/bin/node", "index.js"]
