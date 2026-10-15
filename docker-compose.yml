@@ -11,16 +11,13 @@ services:
       POSTGRAPHILE_SHOW_ERROR_STACK: "true"
     depends_on:
       - backend
-    healthcheck:
-      test: "wget --tries=1 --no-verbose -qO- http://localhost:3000/actuator/health | grep -q UP"
-      start_period: 5s
-      interval: 10s
-      timeout: 5s
-      retries: 3
+    # healthcheck: defined by the image's HEALTHCHECK (the distroless image has no wget)
   # once db is initialized, we can shut down the container
   # however it makes it easy to add data to the db
   backend:
     image: ghcr.io/bsstudio/bss-web-admin-backend:v2.8.17@sha256:af09b3facd79f57eb8de7e8a5b6858704c741ef14bb0b63ccd34638ae721f02a
+    # backend releases built on the distroless image have no wget: drop this healthcheck
+    # (the image's HEALTHCHECK then applies) when bumping to such a release
     healthcheck:
       test: "wget --tries=1 --no-verbose -qO- http://localhost:8080/actuator/health | grep -q UP"
       start_period: 5s
