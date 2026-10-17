@@ -15,7 +15,7 @@ services:
   # once db is initialized, we can shut down the container
   # however it makes it easy to add data to the db
   backend:
-    image: ghcr.io/bsstudio/bss-web-admin-backend:v2.8.17@sha256:af09b3facd79f57eb8de7e8a5b6858704c741ef14bb0b63ccd34638ae721f02a
+    image: ghcr.io/bsstudio/bss-web-admin-backend:v2.10.1@sha256:8af33e5f86d9d870b68992457bfa579f60ed792ee40f50978fa949213bfdc3a6
     # backend releases built on the distroless image have no wget: drop this healthcheck
     # (the image's HEALTHCHECK then applies) when bumping to such a release
     healthcheck:
