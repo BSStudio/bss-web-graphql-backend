@@ -173,8 +173,8 @@ importers:
         specifier: 6.1.0
         version: 6.1.0(koa@3.2.1)
       '@koa/router':
-        specifier: 15.7.0
-        version: 15.7.0(koa@3.2.1)(supports-color@5.5.0)
+        specifier: 15.7.1
+        version: 15.7.1(koa@3.2.1)(supports-color@5.5.0)
       dotenv:
         specifier: 18.0.9
         version: 18.0.9
@@ -418,8 +418,8 @@ packages:
     peerDependencies:
       koa: '>=2'
 
-  '@koa/router@15.7.0':
-    resolution: {integrity: sha512-WaAlk4TOl/O0rhTpOR0l052gz03syPMmI6Pe2gd7v3ubjfv5UcSGcnb0Y/J5NNC/ln+5FiUqPJTc/a15I+XqAA==}
+  '@koa/router@15.7.1':
+    resolution: {integrity: sha512-dAMN3Sp/YBSSpaJ/Mgb2emPs4nPWnrKyfv+Zy22AQGBDC53gClhBwiyXdaC/ZPccMs7JWnzgIl1ungYyzyoScg==}
     engines: {node: '>= 20'}
     peerDependencies:
       koa: ^2.0.0 || ^3.0.0
@@ -3511,7 +3511,7 @@ snapshots:
       lodash.merge: 4.6.2
       type-is: 2.1.0
 
-  '@koa/router@15.7.0(koa@3.2.1)(supports-color@5.5.0)':
+  '@koa/router@15.7.1(koa@3.2.1)(supports-color@5.5.0)':
     dependencies:
       debug: 4.4.3(supports-color@5.5.0)
       http-errors: 2.0.1
