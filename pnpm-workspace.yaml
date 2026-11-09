@@ -1,5 +1,5 @@
 allowBuilds:
-  '@biomejs/biome': true
+  "@biomejs/biome": true
   cpu-features: false
   esbuild: false
   protobufjs: false
