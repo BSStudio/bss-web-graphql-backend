@@ -1,7 +1,8 @@
-FROM node:24-alpine@sha256:a34ab6d7f6f4813f4d0c5469d74685604b962fbdbf5793a7bc7b4998ecb867c8 AS base
+FROM node:26-alpine@sha256:8996bb5821d62a8fd9bb27c1cb07462f3fdce6e47d640c6a881ead0b064ce216 AS base
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
-RUN corepack enable
+# Node 25+ images no longer bundle corepack
+RUN npm install --global --ignore-scripts corepack@0.36.0 && corepack enable
 WORKDIR /home/node
 
 FROM base AS builder
@@ -18,7 +19,7 @@ COPY package.json pnpm-lock.yaml ./
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --ignore-scripts --frozen-lockfile --no-optional --prod
 
 # distroless: no shell, package manager, npm or corepack; runs as the image's non-root user
-FROM gcr.io/distroless/nodejs24-debian13:nonroot@sha256:088a01637f22908632ba09018be2e0b516f2fa6f7869c191d29491139db43c78 AS runtime
+FROM gcr.io/distroless/nodejs26-debian13:nonroot@sha256:33c86a63859efc2ebd88ea0a355863582ec6f1220d048de62baffb2584e709b3 AS runtime
 USER 65532:65532
 WORKDIR /home/nonroot
 # files stay root-owned, so the app cannot modify them; package.json sets "type": "module"
