@@ -8,7 +8,8 @@ FROM base AS builder
 # pnpm-workspace.yaml holds project settings that affect the install
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 # TypeScript 7 ships platform binaries as optionalDependencies; do not skip them here.
-RUN --mount=type=cache,id=pnpm,target=/var/cache/pnpm pnpm install --store-dir /var/cache/pnpm --ignore-scripts --frozen-lockfile
+RUN --mount=type=cache,id=pnpm,target=/var/cache/pnpm \
+    pnpm install --store-dir /var/cache/pnpm --ignore-scripts --frozen-lockfile
 COPY ./src ./src
 COPY tsconfig.json ./
 RUN pnpm run build
@@ -16,7 +17,9 @@ RUN pnpm run build
 FROM base AS deps
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 # --ignore-scripts: no native addons are built, so node_modules is portable to the glibc runtime below
-RUN --mount=type=cache,id=pnpm,target=/var/cache/pnpm pnpm install --store-dir /var/cache/pnpm --ignore-scripts --frozen-lockfile --no-optional --prod
+RUN --mount=type=cache,id=pnpm,target=/var/cache/pnpm \
+    pnpm install --store-dir /var/cache/pnpm --ignore-scripts --frozen-lockfile \
+    --no-optional --prod
 
 # distroless: no shell, package manager, npm or corepack; runs as the image's non-root user
 FROM gcr.io/distroless/nodejs24-debian13:nonroot@sha256:088a01637f22908632ba09018be2e0b516f2fa6f7869c191d29491139db43c78 AS runtime
