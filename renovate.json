@@ -19,6 +19,10 @@
       "groupName": "All GitHub Actions",
       "matchManagers": ["github-actions"],
       "matchUpdateTypes": ["digest", "patch", "minor"]
+    },
+    {
+      "groupName": "pnpm",
+      "matchPackageNames": ["pnpm", "ghcr.io/pnpm/pnpm"]
     }
   ]
 }
