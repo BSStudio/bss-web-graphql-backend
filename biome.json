@@ -16,7 +16,7 @@
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": true,
+      "preset": "recommended",
       "style": {
         "noParameterAssign": "error",
         "useAsConstAssertion": "error",
@@ -35,6 +35,11 @@
     "formatter": {
       "quoteStyle": "single",
       "semicolons": "asNeeded"
+    }
+  },
+  "markdown": {
+    "formatter": {
+      "enabled": false
     }
   }
 }
