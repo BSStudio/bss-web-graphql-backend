@@ -1,6 +1,6 @@
 FROM node:26-alpine@sha256:6bd9ab43c0ec0190ca7b2d193906cb8b7edf6e7f4afa43ddeccd6452710bffb5 AS base
 # Node 25+ images don't ship Corepack: copy the standalone pnpm binary instead.
-# Keep the version in sync with "packageManager" in package.json (Renovate groups them).
+# The version must match "packageManager" in package.json; the "Lint Dockerfile" job checks it.
 COPY --from=ghcr.io/pnpm/pnpm:12.21.0-alpine@sha256:0251e9865e906e94d68a1267b4b4bc10e07f6350b850b4532404ee65dc1bfbb8 /opt/pnpm /opt/pnpm
 RUN ln -s /opt/pnpm/pnpm /usr/local/bin/pnpm
 WORKDIR /home/node
