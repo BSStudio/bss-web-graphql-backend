@@ -20,6 +20,16 @@ jobs:
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - uses: hadolint/hadolint-action@06be81baf89a55ffd0e24b8f04a4185738dd3387 # v3.5.0
+      # Renovate can update the pnpm image and "packageManager" in separate PRs; fail until they match.
+      - name: Check the pnpm image matches packageManager
+        run: |
+          image=$(sed -nE 's|^COPY --from=ghcr\.io/pnpm/pnpm:([^-@ ]+).*|\1|p' Dockerfile)
+          package=$(jq -r '.packageManager | sub("^pnpm@"; "") | sub("\\+.*$"; "")' package.json)
+          if [ -z "$image" ] || [ "$image" != "$package" ]; then
+            echo "::error file=Dockerfile::pnpm image version '${image}' does not match packageManager '${package}' in package.json"
+            exit 1
+          fi
+          echo "pnpm ${image} in both the Dockerfile and package.json"
 
   build:
     name: Build and publish
