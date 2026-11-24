@@ -15,7 +15,7 @@ services:
   # once db is initialized, we can shut down the container
   # however it makes it easy to add data to the db
   backend:
-    image: ghcr.io/bsstudio/bss-web-admin-backend:v3.6.5@sha256:72ab79f3bb0ec352e57d7545f8422b25311ff8d441cf4f41da8785190efe48d8
+    image: ghcr.io/bsstudio/bss-web-admin-backend:v3.6.8@sha256:c77f05264986543ced5766d6559bfc4adf26bdcff2a7cbdc9a705e329f3da745
     depends_on:
       - db
     environment:
