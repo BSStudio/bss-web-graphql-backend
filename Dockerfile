@@ -22,7 +22,7 @@ RUN --mount=type=cache,id=pnpm,target=/var/cache/pnpm \
     pnpm install --store-dir /var/cache/pnpm --ignore-scripts --frozen-lockfile --no-optional --prod
 
 # distroless: no shell, package manager, npm or corepack; runs as the image's non-root user
-FROM gcr.io/distroless/nodejs26-debian13:nonroot@sha256:ffa8a7545403036c94ec76674b5dbac2d425af2d679147cdf3e30180071487b7 AS runtime
+FROM gcr.io/distroless/nodejs26-debian13:nonroot@sha256:a84242e747fbb5aaaa0180c273b6f7130ca34b3300082192ef58eea96089eb3c AS runtime
 USER 65532:65532
 WORKDIR /home/nonroot
 # files stay root-owned, so the app cannot modify them; package.json sets "type": "module"
